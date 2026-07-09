@@ -10,9 +10,9 @@ export const categoryDirectory: DirectoryGroup[] = [
   {
     title: 'Major Surgical Specialties',
     items: [
-      { name: 'Cardiology & Cardiac Surgery' },
+      { name: 'Cardiology & Cardiac Surgery', builtSlug: 'cardiology' },
       { name: 'Oncology / Cancer Treatment' },
-      { name: 'Orthopedics & Joint Replacement' },
+      { name: 'Orthopedics & Joint Replacement', builtSlug: 'orthopedics' },
       { name: 'Neurology & Neurosurgery' },
       { name: 'Organ Transplant (Kidney, Liver)' },
       { name: 'Bariatric & Weight-Loss Surgery', builtSlug: 'weight-loss' },
@@ -29,7 +29,7 @@ export const categoryDirectory: DirectoryGroup[] = [
       { name: 'Dental Care', builtSlug: 'dental' },
       { name: 'Hair Transplant', builtSlug: 'hair-transplant' },
       { name: 'Dermatology & Skin Treatments' },
-      { name: 'Eye Care (Ophthalmology) — incl. LASIK, cataract' },
+      { name: 'Eye Care (Ophthalmology) — incl. LASIK, cataract', builtSlug: 'eye-care' },
     ],
   },
   {
@@ -44,9 +44,9 @@ export const categoryDirectory: DirectoryGroup[] = [
   {
     title: 'Wellness, Prevention & Longevity',
     items: [
-      { name: 'Health Screenings & Executive Checkups' },
-      { name: 'Anti-Aging & Longevity Medicine' },
-      { name: 'Stem Cell & Regenerative Medicine' },
+      { name: 'Health Screenings & Executive Checkups', builtSlug: 'health-screenings' },
+      { name: 'Anti-Aging & Longevity Medicine', builtSlug: 'anti-aging' },
+      { name: 'Stem Cell & Regenerative Medicine', builtSlug: 'stem-cell' },
       { name: 'Mental Health & Addiction Treatment' },
       { name: 'Physiotherapy, Rehab & Sports Medicine' },
       { name: 'Traditional Thai Medicine & Medical Spa' },

@@ -214,6 +214,180 @@ export const categories: TreatmentCategory[] = [
     ],
     storyMatch: 'IVF',
   },
+  {
+    slug: 'health-screenings',
+    name: 'Health Screenings & Checkup',
+    icon: '🩺',
+    priceFrom: '$120',
+    hero: {
+      headline: 'Health screenings & executive checkups in Thailand',
+      subcopy: 'Comprehensive, same-day diagnostic checkups at JCI-accredited hospitals — a thorough picture of your health, without the wait.',
+    },
+    intro:
+      'Thailand\'s leading hospitals run dedicated executive health-screening centres offering same-day, comprehensive diagnostic packages — blood panels, imaging, cardiac and cancer-marker screening — often completed in a single visit with results the same or next day. Popular with travellers combining a checkup with their trip, and increasingly with patients seeking a second opinion before major treatment decisions.',
+    reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'Basic Health Checkup', slug: 'basic-checkup', priceFrom: '$120', blurb: 'Blood panel, urinalysis, chest X-ray, physical exam.' },
+      { name: 'Executive Checkup', slug: 'executive-checkup', priceFrom: '$350', blurb: 'Extended panel with cardiac screening, ultrasound and consultation.' },
+      { name: 'Comprehensive Cancer Screening', slug: 'cancer-screening', priceFrom: '$800', blurb: 'Tumor markers, CT/MRI imaging and specialist review.' },
+    ],
+    priceTable: [
+      { name: 'Basic Health Checkup', th: 120, US: 500, UK: 350, AU: 450 },
+      { name: 'Executive Checkup', th: 350, US: 1500, UK: 1000, AU: 1400 },
+      { name: 'Comprehensive Cancer Screening', th: 800, US: 3500, UK: 2200, AU: 3000 },
+    ],
+    faqs: [
+      { q: 'How long does a checkup take?', a: 'Basic packages typically take half a day; executive and comprehensive packages usually take a full day, with results reviewed the same or next day.' },
+      { q: 'Do I need to fast beforehand?', a: 'Most blood-panel packages require 8–12 hours of fasting. Your coordinator will confirm exact prep instructions once your package is chosen.' },
+      { q: 'Can I get my results explained by a doctor?', a: 'Yes — every package includes a consultation with a physician to review your results and flag anything that needs follow-up.' },
+    ],
+    storyMatch: '___none___',
+  },
+  {
+    slug: 'stem-cell',
+    name: 'Stem Cell & Regenerative Medicine',
+    icon: '🧬',
+    priceFrom: '$2,500',
+    hero: {
+      headline: 'Stem cell & regenerative medicine in Thailand',
+      subcopy: 'Regenerative therapies for joint, orthopedic and anti-aging applications, delivered under strict clinical protocols at accredited facilities.',
+    },
+    intro:
+      'Thailand hosts a small number of specialized centres offering regenerative medicine — stem cell therapy, PRP (platelet-rich plasma) and related treatments — most often for joint and orthopedic regeneration, with some facilities also offering bone marrow transplant programmes. This is a developing field; Unwello only lists facilities with clear clinical protocols and JCI accreditation, and recommends a thorough consultation before committing to any regenerative treatment.',
+    reviewer: { name: 'Dr. Somchai Rojanasin', credentials: 'MD, Regenerative Medicine', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'PRP Joint Therapy', slug: 'prp-joint', priceFrom: '$2,500', blurb: 'Platelet-rich plasma injections for joint and tendon repair.' },
+      { name: 'Stem Cell Therapy', slug: 'stem-cell-therapy', priceFrom: '$6,000', blurb: 'Regenerative stem cell treatment for orthopedic and degenerative conditions.' },
+      { name: 'Bone Marrow Transplant', slug: 'bone-marrow-transplant', priceFrom: '$35,000', blurb: 'Autologous or allogeneic transplant for hematologic conditions.' },
+    ],
+    priceTable: [
+      { name: 'PRP Joint Therapy', th: 2500, US: 6000, UK: 4000, AU: 5500 },
+      { name: 'Stem Cell Therapy', th: 6000, US: 15000, UK: 10000, AU: 14000 },
+      { name: 'Bone Marrow Transplant', th: 35000, US: 200000, UK: 120000, AU: 180000 },
+    ],
+    faqs: [
+      { q: 'Is stem cell therapy proven to work?', a: 'Evidence varies by condition and treatment type. Your coordinator will connect you with the clinic\'s specialists to discuss realistic expectations for your specific case before booking.' },
+      { q: 'How is this regulated in Thailand?', a: 'Regenerative treatments at facilities we list operate under Thai FDA and Medical Council oversight. We only list JCI-accredited facilities with documented clinical protocols.' },
+      { q: 'How long is recovery?', a: 'PRP and joint therapies typically involve minimal downtime; bone marrow transplant requires an extended hospital stay and recovery period, planned in detail with your coordinator.' },
+    ],
+    storyMatch: '___none___',
+  },
+  {
+    slug: 'orthopedics',
+    name: 'Orthopedics',
+    icon: '🦴',
+    priceFrom: '$8,000',
+    hero: {
+      headline: 'Orthopedic surgery & joint replacement in Thailand',
+      subcopy: 'Hip, knee and joint replacement, spine surgery and sports medicine at hospitals performing thousands of procedures a year.',
+    },
+    intro:
+      'Thailand is a major destination for orthopedic care, with several hospitals specializing in high-volume joint replacement, spine surgery and sports medicine — some performing over 10,000 procedures. Robotic and computer-assisted joint replacement technology is widely available at accredited hospitals, at a fraction of Western prices.',
+    reviewer: { name: 'Dr. Krit Sirikul', credentials: 'MD, Orthopedic Surgery', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'Total Knee Replacement', slug: 'knee-replacement', priceFrom: '$12,000', blurb: 'Full knee joint replacement, including robotic-assisted options.' },
+      { name: 'Total Hip Replacement', slug: 'hip-replacement', priceFrom: '$13,500', blurb: 'Full hip joint replacement with modern implant options.' },
+      { name: 'Spine Surgery', slug: 'spine-surgery', priceFrom: '$8,000', blurb: 'Disc decompression, fusion and minimally invasive spine procedures.' },
+    ],
+    priceTable: [
+      { name: 'Total Knee Replacement', th: 12000, US: 35000, UK: 15000, AU: 25000 },
+      { name: 'Total Hip Replacement', th: 13500, US: 38000, UK: 16000, AU: 27000 },
+      { name: 'Spine Surgery (fusion)', th: 8000, US: 30000, UK: 14000, AU: 22000 },
+    ],
+    faqs: [
+      { q: 'How long is the hospital stay?', a: 'Joint replacement typically requires 3–5 nights in hospital, followed by physiotherapy; most patients plan 2–3 weeks in Thailand in total.' },
+      { q: 'What implants are used?', a: 'Hospitals we list use internationally recognized implant brands — your surgeon will discuss options and any cost differences during consultation.' },
+      { q: 'Is rehab included?', a: 'Initial physiotherapy is typically included in the hospital stay; your coordinator can help arrange extended rehab if needed before you fly home.' },
+    ],
+    storyMatch: '___none___',
+  },
+  {
+    slug: 'cardiology',
+    name: 'Cardiology',
+    icon: '❤️',
+    priceFrom: '$15,000',
+    hero: {
+      headline: 'Cardiology & cardiac surgery in Thailand',
+      subcopy: 'Cardiac catheterization, bypass surgery and stroke care at hospitals with dedicated heart centres and 24/7 cardiac units.',
+    },
+    intro:
+      'Several of Thailand\'s largest hospital groups operate dedicated heart centres with 24/7 cardiac catheterization, disease-specific JCI certifications (such as Acute Coronary Syndrome and Primary Stroke), and experienced cardiac surgery teams — at a fraction of the cost of comparable care in the US, UK or Australia.',
+    reviewer: { name: 'Dr. Somchai Rojanasin', credentials: 'MD, Cardiology', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'Cardiac Catheterization', slug: 'catheterization', priceFrom: '$15,000', blurb: 'Diagnostic and interventional coronary catheterization.' },
+      { name: 'Coronary Bypass Surgery', slug: 'bypass-surgery', priceFrom: '$28,000', blurb: 'CABG surgery for coronary artery disease.' },
+      { name: 'Valve Replacement', slug: 'valve-replacement', priceFrom: '$32,000', blurb: 'Heart valve repair or replacement, including minimally invasive options.' },
+    ],
+    priceTable: [
+      { name: 'Cardiac Catheterization', th: 15000, US: 35000, UK: 20000, AU: 30000 },
+      { name: 'Coronary Bypass Surgery', th: 28000, US: 120000, UK: 60000, AU: 90000 },
+      { name: 'Valve Replacement', th: 32000, US: 150000, UK: 75000, AU: 110000 },
+    ],
+    faqs: [
+      { q: 'Is emergency cardiac care available?', a: 'The hospitals we list with dedicated heart centres operate 24/7 cardiac units — but Unwello is built for planned treatment, not emergencies. For a medical emergency, contact local emergency services directly.' },
+      { q: 'What certifications should I look for?', a: 'Look for JCI Clinical Care Program Certifications in areas like Acute Coronary Syndrome or Primary Stroke — these indicate disease-specific quality standards beyond general hospital accreditation.' },
+      { q: 'How long do I need to stay in Thailand?', a: 'Diagnostic catheterization may only need a few days; bypass or valve surgery typically requires 2–3 weeks including recovery before your surgeon clears you to fly.' },
+    ],
+    storyMatch: '___none___',
+  },
+  {
+    slug: 'eye-care',
+    name: 'Eye Care (Ophthalmology)',
+    icon: '👁️',
+    priceFrom: '$1,200',
+    hero: {
+      headline: 'Eye care & ophthalmology in Thailand',
+      subcopy: 'LASIK, cataract surgery and specialist ophthalmology care at accredited hospitals and dedicated eye centres.',
+    },
+    intro:
+      'Thailand\'s ophthalmology centres offer LASIK and other refractive surgery, cataract surgery, and general eye care using modern diagnostic and surgical technology, at a fraction of prices in the US, UK or Australia — with several hospitals holding disease-specific certifications for cataract surgery.',
+    reviewer: { name: 'Dr. Nichakan Boon', credentials: 'MD, Ophthalmology', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'LASIK', slug: 'lasik', priceFrom: '$1,200', blurb: 'Laser vision correction for short/long-sightedness and astigmatism.' },
+      { name: 'Cataract Surgery', slug: 'cataract-surgery', priceFrom: '$1,800', blurb: 'Lens replacement surgery, including premium intraocular lens options.' },
+      { name: 'Retinal Treatment', slug: 'retinal-treatment', priceFrom: '$2,000', blurb: 'Diagnosis and treatment for retinal conditions.' },
+    ],
+    priceTable: [
+      { name: 'LASIK (both eyes)', th: 1200, US: 4000, UK: 3000, AU: 3800 },
+      { name: 'Cataract Surgery (per eye)', th: 1800, US: 5000, UK: 3200, AU: 4500 },
+      { name: 'Retinal Treatment', th: 2000, US: 6000, UK: 4000, AU: 5500 },
+    ],
+    faqs: [
+      { q: 'How long does LASIK recovery take?', a: 'Most patients see clearly within a day or two, with a follow-up check before flying home — plan for a few days in Thailand around the procedure.' },
+      { q: 'Am I a candidate for LASIK?', a: 'Candidacy depends on your prescription and corneal thickness. An in-person or remote pre-assessment with the clinic will confirm before you travel.' },
+      { q: 'Is cataract surgery done on both eyes at once?', a: 'Usually one eye at a time, a few days to weeks apart, to let the first eye heal and confirm results before the second procedure.' },
+    ],
+    storyMatch: '___none___',
+  },
+  {
+    slug: 'anti-aging',
+    name: 'Anti-Aging & Longevity',
+    icon: '🌿',
+    priceFrom: '$300',
+    hero: {
+      headline: 'Anti-aging & longevity medicine in Thailand',
+      subcopy: 'Genomic screening, hormone therapy and preventive longevity programmes at specialized wellness centres.',
+    },
+    intro:
+      'A small number of Thai hospitals have built dedicated anti-aging and longevity programmes — combining genomic medicine, hormone and nutrient therapy, and preventive screening — aimed at healthy patients wanting to proactively manage long-term health rather than treat an existing condition.',
+    reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine', date: 'Reviewed June 2026' },
+    procedures: [
+      { name: 'Longevity Screening Programme', slug: 'longevity-screening', priceFrom: '$300', blurb: 'Genomic and biomarker screening for a personalized longevity plan.' },
+      { name: 'Hormone Therapy', slug: 'hormone-therapy', priceFrom: '$500', blurb: 'Hormone assessment and replacement therapy under physician supervision.' },
+      { name: 'IV Nutrient Therapy', slug: 'iv-nutrient-therapy', priceFrom: '$150', blurb: 'Vitamin and nutrient infusions for wellness and recovery.' },
+    ],
+    priceTable: [
+      { name: 'Longevity Screening Programme', th: 300, US: 1200, UK: 900, AU: 1100 },
+      { name: 'Hormone Therapy (initial course)', th: 500, US: 1800, UK: 1300, AU: 1600 },
+      { name: 'IV Nutrient Therapy (per session)', th: 150, US: 400, UK: 300, AU: 380 },
+    ],
+    faqs: [
+      { q: 'Is this evidence-based medicine?', a: 'Programmes vary — some elements (e.g. biomarker screening) are well-established, others (e.g. some hormone or IV protocols) are less rigorously studied. Discuss the evidence for any specific programme with the clinic\'s physician before booking.' },
+      { q: 'Do I need this done in person?', a: 'Initial screening and follow-up consultations are done in person; some result reviews can be done remotely with your coordinator\'s help.' },
+      { q: 'Is this a one-time visit or ongoing?', a: 'Most longevity programmes are designed as an initial assessment followed by an ongoing plan — your coordinator can help arrange remote follow-up after you return home.' },
+    ],
+    storyMatch: '___none___',
+  },
 ]
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug)
@@ -225,14 +399,14 @@ export const categoryBySlug = (slug: string) => categories.find((c) => c.slug ==
 export type MegaMenuItem = { name: string; icon: string; builtSlug?: string }
 
 export const megaMenuItems: MegaMenuItem[] = [
-  { name: 'Health Screenings & Checkup', icon: '🩺' },
+  { name: 'Health Screenings & Checkup', icon: '🩺', builtSlug: 'health-screenings' },
   { name: 'Dental Care', icon: '🦷', builtSlug: 'dental' },
   { name: 'Cosmetic & Plastic Surgery', icon: '✨', builtSlug: 'plastic-surgery' },
-  { name: 'Stem Cell & Regenerative Medicine', icon: '🧬' },
+  { name: 'Stem Cell & Regenerative Medicine', icon: '🧬', builtSlug: 'stem-cell' },
   { name: 'Fertility & IVF', icon: '🍼', builtSlug: 'fertility-ivf' },
-  { name: 'Orthopedics', icon: '🦴' },
-  { name: 'Cardiology', icon: '❤️' },
-  { name: 'Eye Care (Ophthalmology)', icon: '👁️' },
+  { name: 'Orthopedics', icon: '🦴', builtSlug: 'orthopedics' },
+  { name: 'Cardiology', icon: '❤️', builtSlug: 'cardiology' },
+  { name: 'Eye Care (Ophthalmology)', icon: '👁️', builtSlug: 'eye-care' },
   { name: 'Bariatric & Weight-Loss Surgery', icon: '⚖️', builtSlug: 'weight-loss' },
-  { name: 'Anti-Aging & Longevity', icon: '🌿' },
+  { name: 'Anti-Aging & Longevity', icon: '🌿', builtSlug: 'anti-aging' },
 ]

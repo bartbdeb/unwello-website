@@ -57,7 +57,11 @@ export const hospitals: Hospital[] = [
       "Spine Surgery",
       "Health Screenings & Checkups"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology",
+      "orthopedics",
+      "health-screenings"
+    ],
     "departments": "Bangkok Heart Hospital (ECMO, 24/7 cardiac catheterization); Bangkok Cancer Hospital Wattanosoth (TrueBeam radiotherapy, CyberKnife); Neuroscience Center; Orthopedic Center; Trauma Center; Digestive Disease Center; on-campus Bangkok International Hospital for neuro/ortho ('Brain X Bone'). JCI CCPC: Acute Coronary Syndrome, Lung Cancer, Orthogeriatric, Primary Stroke.",
     "languages": "25+ languages including English, Arabic, Chinese, Japanese, Korean, Russian; 200+ interpreters, 33+ international referral offices worldwide, Muslim prayer room",
     "otherAccreditations": [
@@ -86,7 +90,9 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [
       "Health Screenings & Executive Checkups"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "Dedicated health-screening/checkup ambulatory center; specific package details not published in sources reviewed.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -112,7 +118,12 @@ export const hospitals: Hospital[] = [
       "Eye Care (Ophthalmology)",
       "Dermatology"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology",
+      "orthopedics",
+      "eye-care",
+      "health-screenings"
+    ],
     "departments": "Departments include Cardiology Center, Orthopedics, Pediatrics, Gynecology, General Surgery, ENT, Ophthalmology, Skin & Aesthetics, Neurosurgery, Radiology, Psychology, Acupuncture, and a 3D Medical Printing Center.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -136,7 +147,10 @@ export const hospitals: Hospital[] = [
       "Cardiology",
       "Emergency & Trauma"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology",
+      "health-screenings"
+    ],
     "departments": "General medicine and surgery departments serving the Isaan (northeastern) region; part of the wider BDMS clinical network, so complex cases can be referred to Bangkok Hospital Bangkok or MedPark when needed.",
     "languages": "Not independently verified — regional BDMS hospitals typically offer English-speaking staff with limited additional-language coverage compared to Bangkok flagship sites. Confirm directly before publishing.",
     "otherAccreditations": [
@@ -164,7 +178,9 @@ export const hospitals: Hospital[] = [
       "Neurology"
     ],
     "specialties": [
-      "dental"
+      "dental",
+      "cardiology",
+      "eye-care"
     ],
     "departments": "19 specialties, 84 procedures; strongest reported specialties are Neurology, Dentistry, and Ophthalmology. Advanced tech includes digital X-ray PACS imaging and drug-dispensing robots. Cardiac and paralysis (stroke) treatment are noted strengths.",
     "languages": "English confirmed core; French, Spanish, Japanese, Chinese, Myanmar (Burmese), Korean, and German reported via professional interpreter team",
@@ -229,7 +245,9 @@ export const hospitals: Hospital[] = [
       "dental",
       "plastic-surgery",
       "rhinoplasty",
-      "fertility-ivf"
+      "fertility-ivf",
+      "orthopedics",
+      "eye-care"
     ],
     "departments": "25+ departments and centers including the Bangkok International Fertility Centre, Breast Health Centre, Cardiometabolic Centre, Dermatology & Beauty Centre, Digestive Care Centre, ENT Centre, Gynaecology Centre, Paediatrics Centre, Shoulder & Joint Centre, Spine Centre, and a dedicated Glaucoma Clinic with a 40+ group annual screening program.",
     "languages": "English and Thai confirmed as core; broader European (Norwegian, French, German, Spanish, Italian, Danish, Swedish) and Asian (Cantonese, Mandarin, Vietnamese, Japanese) interpretation reported by some sources but not independently confirmed as currently active — verify before publishing",
@@ -274,7 +292,12 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "plastic-surgery",
       "rhinoplasty",
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics",
+      "eye-care",
+      "health-screenings",
+      "anti-aging"
     ],
     "departments": "47 specialty centers and clinics spanning 115+ specialties/subspecialties. Highlights: Heart Center (24-hour emergency cardiac intervention, 90-minute door-to-balloon time, CardioInsight arrhythmia diagnostics — only operational unit in Asia Pacific), Horizon Regional Cancer Center (IBM Watson for Oncology, 30 oncology specialists, haploidentical bone marrow transplant for pediatric thalassemia), Orthopedic Center (MAKOplasty robotic joint replacement, 1-3 day recovery), Spine Institute (12,000+ cases/year), Fertility Center (IVF/ICSI/egg freezing — surrogacy not offered), Bumrungrad Center for Genomic Medicine, and ReLEx SMILE laser eye surgery (only hospital in Thailand to offer it). JCI CCPC since 2006-2010 for heart disease, stroke, kidney disease, and diabetes.",
     "languages": "30+ languages including English, Arabic, Chinese (Mandarin & Cantonese), Japanese, Korean, Russian, French, German, Spanish, Hindi, Bengali, Bahasa Indonesia, Vietnamese, Khmer; 150-200+ interpreters, 23 international referral offices worldwide",
@@ -317,7 +340,11 @@ export const hospitals: Hospital[] = [
       "plastic-surgery",
       "rhinoplasty",
       "fertility-ivf",
-      "weight-loss"
+      "weight-loss",
+      "cardiology",
+      "orthopedics",
+      "eye-care",
+      "health-screenings"
     ],
     "departments": "23+ specialty centers including Cardiology, Orthopedics, Ophthalmology, Oncology, Gynecology/Obstetrics, Colorectal Disease (da Vinci robot-assisted colorectal surgery), Neurosurgery, Pediatrics, ENT, Nephrology, Psychiatry. Known procedures: sleeve gastrectomy (bariatric), spinal surgery, fertility care, senior vision correction, cosmetic surgery, and dental work.",
     "languages": "10+ languages actively supported, including English, German, French, Italian, Spanish, Dutch, Swedish, Finnish, Norwegian, Danish, Russian, Chinese, Japanese, Korean, Arabic, and Tagalog via multilingual coordinators",
@@ -356,7 +383,10 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "dental",
       "plastic-surgery",
-      "rhinoplasty"
+      "rhinoplasty",
+      "cardiology",
+      "eye-care",
+      "health-screenings"
     ],
     "departments": "Cardiac Program, Spine Centre, Gastrointestinal-Liver Centre, Check-up Programs, Aesthetic Centre, 24-hour Eye Centre, and Dental Centre. JCI CCPC: Senile Cataract Surgery (2025).",
     "languages": "Not specified in sources reviewed — verify directly",
@@ -420,7 +450,9 @@ export const hospitals: Hospital[] = [
       "plastic-surgery",
       "rhinoplasty",
       "fertility-ivf",
-      "weight-loss"
+      "weight-loss",
+      "cardiology",
+      "orthopedics"
     ],
     "departments": "21 specialized clinics and centers, anchored by a Heart Center affiliated with Oregon Health & Science University and Nagoya University for cardiac care and rehabilitation. Procedures include hip replacement, ACL/PCL/MCL/LCL reconstruction, coronary bypass (CABG), angioplasty, sleeve gastrectomy, and cosmetic procedures (breast augmentation, tummy tuck, blepharoplasty, rhinoplasty).",
     "languages": "English, Mandarin, Japanese, Korean, Burmese, French with dedicated International Medical Services coordinators, plus 24 additional languages available by phone around the clock",
@@ -448,7 +480,10 @@ export const hospitals: Hospital[] = [
       "Oncology",
       "Health Screenings & Checkups"
     ],
-    "specialties": [],
+    "specialties": [
+      "orthopedics",
+      "health-screenings"
+    ],
     "departments": "30+ centers covering specialties from orthopedics to cancer care. Technology includes ECG, FibroScan (liver assessment), and CAD/CAM dental/prosthetic systems.",
     "languages": "Interpreters available in 7 languages: Arabic, English, Burmese, Cambodian, Filipino, Bengali, and Chinese",
     "otherAccreditations": [
@@ -538,7 +573,11 @@ export const hospitals: Hospital[] = [
       "Health Screenings & Checkups"
     ],
     "specialties": [
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics",
+      "eye-care",
+      "health-screenings"
     ],
     "departments": "30+ specialized departments, including advanced infertility treatment (ICSI - Intra-Cytoplasmic Sperm Injection), focused shockwave therapy for erectile dysfunction, pelvic muscle electromagnetic therapy, and a Sky ICU air-ambulance transfer capability for critical cases.",
     "languages": "English and Thai confirmed; broader multilingual interpreter support available on request but not independently documented at the same depth as Bangkok's flagship campuses — verify current coverage before publishing specific language claims",
@@ -593,7 +632,9 @@ export const hospitals: Hospital[] = [
       "Orthopedics",
       "General / Multi-specialty"
     ],
-    "specialties": [],
+    "specialties": [
+      "orthopedics"
+    ],
     "departments": "Orthopedic Center specializing in minimally invasive and laparoscopic hip and knee replacement surgery. Diagnostic technology includes digital X-ray and 128-slice CT scanning.",
     "languages": "Not specified for this specific branch — verify directly",
     "otherAccreditations": [
@@ -628,7 +669,9 @@ export const hospitals: Hospital[] = [
     ],
     "specialties": [
       "plastic-surgery",
-      "rhinoplasty"
+      "rhinoplasty",
+      "cardiology",
+      "health-screenings"
     ],
     "departments": "30 specialized centers including the region's only Heart Center with Bangkok-flagship-level cardiac technology, Brain and Neuro-Science Center, Emergency Medical Services Center, Dermatology and Cosmetic Surgery Center, and Minimally Invasive Spine Surgery Center. JCI CCPC: Acute Coronary Syndrome (2018).",
     "languages": "20+ languages supported through the BDMS international patient network",
@@ -687,7 +730,10 @@ export const hospitals: Hospital[] = [
       "dental",
       "plastic-surgery",
       "rhinoplasty",
-      "weight-loss"
+      "weight-loss",
+      "cardiology",
+      "orthopedics",
+      "eye-care"
     ],
     "departments": "Comprehensive range including cardiac surgery, cosmetic surgery, general surgery, orthopaedic surgery, eye surgery, dental treatment, cancer treatment, gynaecology, and obesity (bariatric) surgery.",
     "languages": "Not specified in sources reviewed — verify directly",
@@ -721,7 +767,8 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "dental",
       "fertility-ivf",
-      "weight-loss"
+      "weight-loss",
+      "orthopedics"
     ],
     "departments": "Known as 'The King of Bones' — 10,000+ joint replacement surgeries performed. Centers include Orthopedics & Joint Replacement, Spine Center, Fertility Center (IVF/ICSI), Kidney Transplant Center, Dental Center. JCI CCPC: Infertility (2019), Lumbar Decompression and Fixation (2017) — first hospital in the world to receive Hepatitis B CCPC and first in Southeast Asia for Lumbar Decompression and Fixation CCPC.",
     "languages": "Translation services in 20+ languages via dedicated coordinators",
@@ -759,7 +806,10 @@ export const hospitals: Hospital[] = [
       "plastic-surgery",
       "rhinoplasty",
       "fertility-ivf",
-      "weight-loss"
+      "weight-loss",
+      "cardiology",
+      "orthopedics",
+      "eye-care"
     ],
     "departments": "20+ specialized medical centers including Heart Center, Bone and Joint Institute, Eye and LASIK Center, Fertility Centre, Oncology Center, Robotic Center, Rehabilitation Center, Diabetic Foot Center, Colorectal Surgery Center, NICU, and a Chinese Medicine Center.",
     "languages": "English, Japanese, Arabic, Chinese, Khmer, Malayalam, Bengali, Mandarin, Vietnamese, Russian, and Myanmar reported; patients from 40+ countries served",
@@ -902,7 +952,9 @@ export const hospitals: Hospital[] = [
     ],
     "specialties": [
       "plastic-surgery",
-      "rhinoplasty"
+      "rhinoplasty",
+      "orthopedics",
+      "stem-cell"
     ],
     "departments": "20 specialties and centers of excellence, notably: bone marrow transplant, robotic spinal surgery, total joint replacement, kidney transplant, plastic surgery, skin & laser treatment, spine scoliosis surgery, and hand & shoulder surgery. Also covers breast cancer/surgery, digestive & liver disease, nephrology, OB-GYN, neurology, ophthalmology, ENT, and diabetes care. JCI CCPC: Diabetes Mellitus (2023).",
     "languages": "Not specified — verify directly",
@@ -929,7 +981,10 @@ export const hospitals: Hospital[] = [
       "General / Multi-specialty",
       "Dermatology"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology",
+      "orthopedics"
+    ],
     "departments": "Multi-disciplinary services across cardiology, gastroenterology, orthopedic, gynecology and obstetrics, internal medicine, and dermatology, supported by internationally-aligned clinical standards.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -960,7 +1015,9 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "plastic-surgery",
       "rhinoplasty",
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "stem-cell"
     ],
     "departments": "Heart Center, Stroke Center, Advanced Surgery, Advanced Orthopedics, a dedicated Regenerative Medicine Center, Diabetic Foot Center, Aesthetic and Plastic Surgery Center, Obstetrics and Gynecology Center, Hemodialysis Center, IVF, Kidney Center, Diabetes/Thyroid/Endocrine Center, Medical Oncology Center, Advanced Pediatric Center, and a psychiatry clinic.",
     "languages": "Not specified in sources reviewed — verify directly",
@@ -985,7 +1042,9 @@ export const hospitals: Hospital[] = [
       "Health Screenings & Executive Checkups",
       "Oncology (Diagnostic Imaging)"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "Dedicated AI-assisted PET/CT diagnostic imaging center — a specialized ambulatory diagnostic facility rather than a treatment hospital, primarily relevant for cancer detection/staging imaging.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -1011,7 +1070,10 @@ export const hospitals: Hospital[] = [
       "Orthopedics",
       "Pediatrics"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology",
+      "orthopedics"
+    ],
     "departments": "Comprehensive range including general surgery, orthopedics, cardiology, neurology, oncology, and pediatrics. Also operates as a teaching hospital with internship, residency, and fellowship programs, and runs a dedicated research center for cancer, cardiology, and neurology.",
     "languages": "Translation services provided for patients who don't speak English or Thai; specific language list not detailed — verify directly",
     "otherAccreditations": [
@@ -1058,7 +1120,9 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [
       "Cardiology"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology"
+    ],
     "departments": "Dedicated tertiary-level cardiovascular disease center affiliated with Khon Kaen University's Faculty of Medicine, combining clinical care with active cardiovascular research. Mission includes expanding cardiac care services to the broader ASEAN region.",
     "languages": "Not specified in sources reviewed — as an academic/university hospital, English support level should be verified directly",
     "otherAccreditations": [
@@ -1096,7 +1160,10 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "plastic-surgery",
       "rhinoplasty",
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics",
+      "stem-cell"
     ],
     "departments": "35+ medical and surgical departments including Spine & Revision Spine Center, Bone and Joint Center, Liver & Digestive Institute, Heart Institute, Bone Marrow & Stem Cell Transplantation Center, Breast Center, Fertility Centre, Neurology Centre, Plastic & Aesthetic Surgery Institute, and Samitivej Srinakarin Children's Hospital — Thailand's first private children's hospital.",
     "languages": "Bilingual Thai/English core team; broader Samitivej Group multilingual resources (English, Japanese, Arabic, Mandarin) available through the group's international patient network",
@@ -1129,7 +1196,9 @@ export const hospitals: Hospital[] = [
       "Cardiology",
       "Neurology"
     ],
-    "specialties": [],
+    "specialties": [
+      "cardiology"
+    ],
     "departments": "Recognized for affordability combined with quality, particularly in gastroenterology, kidney care (dialysis and transplant), and diabetes management. JCI CCPC: Acute Myocardial Infarction (2016), Primary Stroke (2014). Modern facilities include a hybrid operating room.",
     "languages": "Multilingual staff for international visitors — specific language list not detailed, verify directly",
     "otherAccreditations": [],
@@ -1155,7 +1224,10 @@ export const hospitals: Hospital[] = [
       "Orthopedics",
       "Health Screenings & Executive Checkups"
     ],
-    "specialties": [],
+    "specialties": [
+      "orthopedics",
+      "health-screenings"
+    ],
     "departments": "Full-spectrum tertiary academic hospital care under Mahidol University. JCI CCPC: Hip Replacement (2021), Knee Replacement (2014).",
     "languages": "Not specified in sources reviewed — as an academic hospital, verify directly",
     "otherAccreditations": [],
@@ -1204,7 +1276,9 @@ export const hospitals: Hospital[] = [
     "specialties": [
       "plastic-surgery",
       "rhinoplasty",
-      "weight-loss"
+      "weight-loss",
+      "orthopedics",
+      "anti-aging"
     ],
     "departments": "236-bed, 18-story tertiary care facility. Notable service lines: Plastic Surgery and Weight Loss (Gastric Sleeve) Surgery, a dedicated Anti-Aging program with patient success stories and packages, and a Geriatric Center for aging-population care.",
     "languages": "English, Japanese, and Chinese confirmed for the International Healthcare Center; broader coverage not detailed",
@@ -1257,7 +1331,9 @@ export const hospitals: Hospital[] = [
       "Fertility & IVF"
     ],
     "specialties": [
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics"
     ],
     "departments": "500+ inpatient beds, 60+ medical departments/sub-specialties, 20+ operating theaters, 70+ ICU beds. Heart Center established in cooperation with Harvard Medical International, featuring a hybrid operating room. Note: the hospital's JCI Clinical Care Program Certification for Infertility was voluntarily withdrawn in 2022 — worth confirming current fertility program status before listing it under that category.",
     "languages": "Multilingual services and interpreters confirmed available; specific language list not detailed — verify directly",
@@ -1282,7 +1358,9 @@ export const hospitals: Hospital[] = [
       "Health Screenings & Executive Checkups",
       "Diagnostic Imaging"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "Dedicated ambulatory diagnostic imaging center. Specific imaging modalities and specialties not detailed in sources reviewed.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -1304,7 +1382,9 @@ export const hospitals: Hospital[] = [
       "Health Screenings & Executive Checkups",
       "Diagnostic Imaging"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "Dedicated ambulatory MRI diagnostic imaging center in Bangkok.",
     "languages": "Not specified — verify directly",
     "otherAccreditations": [],
@@ -1326,7 +1406,9 @@ export const hospitals: Hospital[] = [
       "General / Multi-specialty",
       "Health Screenings & Executive Checkups"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "Academic tertiary hospital affiliated with Mahidol University's Faculty of Medicine Ramathibodi Hospital, located in Samut Prakan. Part of a broader Ramathibodi medical campus that includes the Queen Sirikit Medical Center.",
     "languages": "Not specified in sources reviewed — as an academic hospital, verify directly",
     "otherAccreditations": [],
@@ -1379,7 +1461,8 @@ export const hospitals: Hospital[] = [
       "plastic-surgery",
       "rhinoplasty",
       "fertility-ivf",
-      "weight-loss"
+      "weight-loss",
+      "cardiology"
     ],
     "departments": "36 treatment centers; 18 board-certified plastic surgeons (all members of the Society of Plastic and Reconstructive Surgeons of Thailand) — the only private hospital in Thailand with a team this size dedicated to cosmetic/reconstructive surgery. Known internationally for gender-affirming surgery expertise (a famous early patient was Muay Thai boxer-turned-actress Nong Toom). Runs 'Operation Bright Smile,' providing 100+ free cleft lip/palate surgeries annually for children (1,115+ helped over 14+ years). Also operates a dedicated 'Dear Heart Center' for cardiovascular care.",
     "languages": "Interpreter/coordination services confirmed in English, Arabic, Chinese, Japanese, Korean, Vietnamese, Myanmar, Cambodian, Burmese, Khmer; some sources cite up to 16 languages available",
@@ -1433,7 +1516,9 @@ export const hospitals: Hospital[] = [
     ],
     "specialties": [
       "dental",
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics"
     ],
     "departments": "Kidney Disease and Transplantation Institute (special JCI accreditation + JCI CCPC for kidney transplant care since 2016) — 1,400+ kidney transplants performed over 33 years (1992-2025), Thailand's most active private-sector kidney transplant program. Also: Praram 9 Cardiovascular Institute, Oncocare Centre, Infertility Centre, Prenatal Diagnosis Centre, Orthopaedic Centre, Dental Clinic. First hospital in Thailand to introduce 640-slice CT scanning, 4D ultrasound, and advanced laparoscopic surgery systems; 3.0 Tesla MRI and PET-CT also on site.",
     "languages": "English, Chinese (Mandarin), Burmese, Japanese, Cambodian, and Arabic via in-house medical translators; dedicated PR9 Medical Travel Programme with a referral office in Dhaka, Bangladesh",
@@ -1527,7 +1612,9 @@ export const hospitals: Hospital[] = [
       "General / Multi-specialty",
       "Anti-Aging & Longevity Medicine"
     ],
-    "specialties": [],
+    "specialties": [
+      "anti-aging"
+    ],
     "departments": "60+ medical specialties across a 14-floor facility, including inpatient/outpatient care, checkups, emergency, ICU, laboratory, diagnostic radiology, surgery, delivery room, neonatal ICU, physical therapy, and hemodialysis. Currently developing what is described as the first dedicated Aesthetic Hospital wing in northeastern Thailand.",
     "languages": "Not specified in sources reviewed — verify directly",
     "otherAccreditations": [
@@ -1560,7 +1647,10 @@ export const hospitals: Hospital[] = [
       "Eye Care (Ophthalmology)"
     ],
     "specialties": [
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics",
+      "eye-care"
     ],
     "departments": "30+ medical specialties, including a Children's Hospital (NICU/PICU), Women's Health and Maternity Center (OB-GYN, IVF), Heart and Vascular Center, Orthopedics and Sports Medicine, oncology, gastroenterology and liver disease, neurology, and ophthalmology. Home to a specialized Japanese Medical Center for the local Japanese expatriate community.",
     "languages": "English, Japanese, Arabic, Mandarin with dedicated international patient coordinators and a specialized Japanese Medical Center",
@@ -1718,7 +1808,9 @@ export const hospitals: Hospital[] = [
       "Emergency & Trauma",
       "General / Multi-specialty"
     ],
-    "specialties": [],
+    "specialties": [
+      "health-screenings"
+    ],
     "departments": "General hospital and health-check facility located near Ao Nang and Krabi Airport, offering health check-ups, surgery, and emergency care — positioned for both local residents and medical/leisure tourists in the Krabi region.",
     "languages": "Not specified in sources reviewed — resort-area location suggests at least basic English support, verify directly",
     "otherAccreditations": [],
@@ -1757,7 +1849,12 @@ export const hospitals: Hospital[] = [
       "hair-transplant",
       "plastic-surgery",
       "rhinoplasty",
-      "fertility-ivf"
+      "fertility-ivf",
+      "cardiology",
+      "orthopedics",
+      "eye-care",
+      "health-screenings",
+      "stem-cell"
     ],
     "departments": "30+ specialties across the Heart & Vascular Institute, Neuroscience Institute, Cancer Institute (Elekta Versa HD, TrueBeam-class radiotherapy, PET-CT), Orthopedic & Sports Medicine (Mako robotic joint replacement), Women's Health & Fertility, Dental Center (CEREC digital lab, iTero scanner), and Hair Restoration Center. Thailand's first Hybrid Operating Room (256-slice CT + angiography); da Vinci Xi robotic surgery; Bone Marrow Transplantation Unit.",
     "languages": "English, Chinese, Japanese, Arabic as core languages; additional coverage reported up to 15+ languages including Burmese and Russian via international patient coordinators",
@@ -1790,7 +1887,9 @@ export const hospitals: Hospital[] = [
     ],
     "specialties": [
       "plastic-surgery",
-      "rhinoplasty"
+      "rhinoplasty",
+      "eye-care",
+      "health-screenings"
     ],
     "departments": "Home to the Phuket Plastic Surgery Institute (PPSI), one of Southeast Asia's leading cosmetic surgery centers (breast augmentation, facelifts, body contouring). 30+ medical and surgical specialties across 18 dedicated centers, with an 11-bed ICU and CAMTS-accredited emergency medical services.",
     "languages": "9 languages via dedicated international coordinators, including Russian-speaking medical coordinators",
