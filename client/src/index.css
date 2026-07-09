@@ -1,0 +1,34 @@
+/* Global reset & base — ported from the design file (Unwello.dc.html) */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  background: #F4F7FF;
+  color: #16214A;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: #2B50E4; text-decoration: none; }
+a:hover { color: #1B3AB8; }
+::selection { background: #5B84FF; color: #16214A; }
+
+@keyframes uwFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes uwSlide { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@keyframes uwPop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes uwBlink { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+::-webkit-scrollbar { height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb { background: #D2DBF0; border-radius: 8px; }
+
+input, textarea, button { font-family: inherit; }
+
+.uw-show-mobile { display: none; }
+
+/* Responsive: collapse the multi-column grids on small screens */
+@media (max-width: 900px) {
+  .uw-grid-2, .uw-grid-3, .uw-grid-4 { grid-template-columns: 1fr !important; }
+  .uw-hero { grid-template-columns: 1fr !important; }
+  .uw-hide-mobile { display: none !important; }
+  .uw-savings { grid-template-columns: 1fr !important; }
+  .uw-clinics-layout { grid-template-columns: 1fr !important; }
+  .uw-show-mobile { display: flex !important; }
+}
