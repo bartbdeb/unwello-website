@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { css, eyebrow, h2Style } from '../ui'
+import { API_BASE } from '../apiBase'
 
 type ReviewsResponse =
   | { configured: false; message?: string }
@@ -25,7 +26,7 @@ export default function ReviewsSection({ name, city }: { name: string; city: str
   useEffect(() => {
     let cancelled = false
     setState({ status: 'loading' })
-    fetch(`/api/reviews?name=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}`)
+    fetch(`${API_BASE}/api/reviews?name=${encodeURIComponent(name)}&city=${encodeURIComponent(city)}`)
       .then((r) => r.json())
       .then((data) => { if (!cancelled) setState({ status: 'done', data }) })
       .catch(() => { if (!cancelled) setState({ status: 'error' }) })

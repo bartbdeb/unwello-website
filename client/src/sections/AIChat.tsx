@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { css, El } from '../ui'
 import { useApp } from '../context'
+import { API_BASE } from '../apiBase'
 
 type Msg = { role: 'user' | 'assistant'; content: string }
 
@@ -30,7 +31,7 @@ export default function AIChat() {
     setInput('')
     setLoading(true)
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         // Don't send the hard-coded greeting to the API.
