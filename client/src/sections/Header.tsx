@@ -51,6 +51,7 @@ export default function Header() {
   }
 
   return (
+    <>
     <header style={css(headerStyle)}>
       <div style={css('max-width:1240px; margin:0 auto; padding:0 32px; height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px;')}>
         <Link to="/" onClick={closeMobileMenu} style={css('display:flex; align-items:center; gap:11px; color:#16214A;')}>
@@ -134,9 +135,16 @@ export default function Header() {
           </button>
         </div>
       </div>
+    </header>
 
-      {/* Full-screen mobile nav panel */}
-      {mobileOpen && (
+    {/* Full-screen mobile nav panel — rendered as a header SIBLING, not a
+        child: <header> has backdrop-filter for the frosted-glass scroll
+        effect, and backdrop-filter (like transform/filter/perspective)
+        creates a new containing block for position:fixed descendants. Left
+        nested, this panel's "inset" would resolve against the 74px-tall
+        header box instead of the viewport, collapsing it to a sliver
+        instead of covering the screen. */}
+    {mobileOpen && (
         <div className="uw-show-mobile" style={css('position:fixed; inset:74px 0 0 0; background:#F4F7FF; z-index:49; overflow-y:auto; padding:8px 24px 32px; animation:uwFade .18s ease; flex-direction:column;')}>
           <button
             onClick={() => setMobileTreatmentsOpen((o) => !o)}
@@ -182,6 +190,6 @@ export default function Header() {
           </El>
         </div>
       )}
-    </header>
+    </>
   )
 }

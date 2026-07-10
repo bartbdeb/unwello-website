@@ -27,7 +27,7 @@ export default function App() {
   return (
     <AppContext.Provider value={{ openFunnel: funnel.openFunnel }}>
       <ScrollToTop />
-      <div style={css('width:100%; overflow-x:hidden; min-height:100vh; background:#F4F7FF;')}>
+      <div style={css('width:100%; min-height:100vh; background:#F4F7FF;')}>
         <Header />
 
         {/* Page content by route */}
