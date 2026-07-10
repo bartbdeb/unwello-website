@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { css, El, eyebrow, h2Style } from '../ui'
-import { categoryDirectory } from '../content/categoryDirectory'
+import { specialties, specialtyGroups } from '../content/specialties'
+import { categoryBySlug } from '../content/treatments'
 import { useApp } from '../context'
 
 export default function BrowseTreatments() {
@@ -22,26 +23,29 @@ export default function BrowseTreatments() {
       </p>
 
       <div style={css('display:flex; flex-direction:column; gap:40px;')}>
-        {categoryDirectory.map((group) => (
-          <div key={group.title}>
-            <h2 style={css(h2Style + ' font-size:22px; margin-bottom:16px;')}>{group.title}</h2>
+        {specialtyGroups.map((group) => (
+          <div key={group}>
+            <h2 style={css(h2Style + ' font-size:22px; margin-bottom:16px;')}>{group}</h2>
             <div className="uw-grid-3" style={css('display:grid; grid-template-columns:repeat(3,1fr); gap:12px;')}>
-              {group.items.map((item) => (
-                <El
-                  as="button"
-                  key={item.name}
-                  onClick={() => (item.builtSlug ? navigate(`/treatments/${item.builtSlug}`) : openFunnel(item.name))}
-                  style={css('display:flex; align-items:center; justify-content:space-between; gap:10px; text-align:left; border:1px solid #E1E8F7; background:#fff; border-radius:14px; padding:16px 18px; cursor:pointer; font-family:inherit; transition:transform .15s, box-shadow .15s;')}
-                  hover={css('transform:translateY(-2px); box-shadow:0 12px 26px rgba(35,51,47,.08); border:1px solid #D2DBF0;')}
-                >
-                  <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{item.name}</span>
-                  {item.builtSlug ? (
-                    <span style={css('flex:0 0 auto; font-size:11px; font-weight:800; color:#2E8B57; background:#EAF7EE; padding:4px 8px; border-radius:7px; white-space:nowrap;')}>Available now</span>
-                  ) : (
-                    <span style={css('flex:0 0 auto; font-size:12px; color:#B7C0DE;')}>›</span>
-                  )}
-                </El>
-              ))}
+              {specialties.filter((s) => s.group === group).map((s) => {
+                const hasPage = !!categoryBySlug(s.slug)
+                return (
+                  <El
+                    as="button"
+                    key={s.slug}
+                    onClick={() => (hasPage ? navigate(`/treatments/${s.slug}`) : openFunnel(s.name))}
+                    style={css('display:flex; align-items:center; justify-content:space-between; gap:10px; text-align:left; border:1px solid #E1E8F7; background:#fff; border-radius:14px; padding:16px 18px; cursor:pointer; font-family:inherit; transition:transform .15s, box-shadow .15s;')}
+                    hover={css('transform:translateY(-2px); box-shadow:0 12px 26px rgba(35,51,47,.08); border:1px solid #D2DBF0;')}
+                  >
+                    <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{s.name}</span>
+                    {hasPage ? (
+                      <span style={css('flex:0 0 auto; font-size:11px; font-weight:800; color:#2E8B57; background:#EAF7EE; padding:4px 8px; border-radius:7px; white-space:nowrap;')}>Available now</span>
+                    ) : (
+                      <span style={css('flex:0 0 auto; font-size:12px; color:#B7C0DE;')}>›</span>
+                    )}
+                  </El>
+                )
+              })}
             </div>
           </div>
         ))}

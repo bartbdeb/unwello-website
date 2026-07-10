@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { css, El, Placeholder, eyebrow, h2Style } from '../ui'
+import { css, El, eyebrow, h2Style } from '../ui'
 import { useApp } from '../context'
 import FaqAccordion from '../components/FaqAccordion'
 
@@ -13,9 +13,8 @@ const journey = [
 ]
 
 const team = [
-  { name: 'Nara', focus: 'Dental & aesthetic treatments', languages: ['EN', 'TH', 'DE'] },
-  { name: 'Preecha', focus: 'Fertility & general hospital care', languages: ['EN', 'TH', 'ZH'] },
-  { name: 'Ananya', focus: 'Plastic surgery & recovery planning', languages: ['EN', 'TH', 'RU'] },
+  { name: 'Bart de Bruin', focus: 'Medical Coordinator', languages: ['EN', 'NL'], photo: '/images/coordinators/bart-de-bruin.jpg' },
+  { name: 'Dorus van der Kooij', focus: 'Medical Coordinator', languages: ['EN', 'NL'], photo: '/images/coordinators/dorus-van-der-kooij.jpg' },
 ]
 
 const faqs = [
@@ -97,10 +96,10 @@ export default function HowItWorksPage() {
       <section style={css('max-width:1240px; margin:0 auto; padding:56px 32px;')}>
         <span style={css(eyebrow)}>Your coordinator</span>
         <h2 style={css(h2Style + ' margin-bottom:24px;')}>Meet the team</h2>
-        <div className="uw-grid-3" style={css('display:grid; grid-template-columns:repeat(3,1fr); gap:18px;')}>
+        <div className="uw-grid-2" style={css('display:grid; grid-template-columns:repeat(2,1fr); gap:18px;')}>
           {team.map((t) => (
             <div key={t.name} style={css('background:#fff; border:1px solid #E1E8F7; border-radius:18px; padding:22px; display:flex; gap:14px; align-items:flex-start;')}>
-              <Placeholder style="width:56px; height:56px; border-radius:50%; flex:0 0 auto;" />
+              <img src={t.photo} alt={t.name} style={css('width:56px; height:56px; border-radius:50%; flex:0 0 auto; object-fit:cover;')} />
               <div>
                 <div style={css('font-weight:800; font-size:16px; color:#16214A;')}>{t.name}</div>
                 <div style={css('font-size:13px; color:#7A85A0; margin:2px 0 8px;')}>{t.focus}</div>

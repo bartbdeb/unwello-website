@@ -24,11 +24,32 @@ input, textarea, button { font-family: inherit; }
 .uw-show-mobile { display: none; }
 
 /* Responsive: collapse the multi-column grids on small screens */
+@media (max-width: 1100px) {
+  .uw-grid-5 { grid-template-columns: repeat(3, 1fr) !important; }
+}
+
+/* Narrower than the general 900px breakpoint: the quote funnel modal is
+   capped at 560px wide even on tablets, so its paired-column layouts only
+   need to collapse on genuinely narrow phones, not iPad-width viewports. */
+@media (max-width: 420px) {
+  .uw-modal-grid { grid-template-columns: 1fr !important; }
+}
+
 @media (max-width: 900px) {
-  .uw-grid-2, .uw-grid-3, .uw-grid-4 { grid-template-columns: 1fr !important; }
+  .uw-grid-2, .uw-grid-3, .uw-grid-4, .uw-grid-5 { grid-template-columns: 1fr !important; }
   .uw-hero { grid-template-columns: 1fr !important; }
   .uw-hide-mobile { display: none !important; }
   .uw-savings { grid-template-columns: 1fr !important; }
   .uw-clinics-layout { grid-template-columns: 1fr !important; }
   .uw-show-mobile { display: flex !important; }
+
+  /* Move the "continue your quote" banner above the stacked WhatsApp/AI-chat
+     launcher buttons (bottom:26 and bottom:94, both right:26) so they don't
+     overlap on narrow screens. */
+  .uw-resume-banner { left: 16px !important; right: 16px !important; bottom: 166px !important; max-width: none !important; }
+
+  /* Sticky side panels only make sense next to content that scrolls past them
+     on wide screens — once the layout stacks to one column they'd otherwise
+     stay pinned mid-page as the user scrolls. */
+  .uw-sticky-desktop { position: static !important; top: auto !important; }
 }

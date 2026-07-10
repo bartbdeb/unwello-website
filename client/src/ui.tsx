@@ -21,7 +21,7 @@ export function css(str: string): React.CSSProperties {
 }
 
 type ElProps = {
-  as?: keyof JSX.IntrinsicElements
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>
   style?: React.CSSProperties
   hover?: React.CSSProperties
   children?: React.ReactNode

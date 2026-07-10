@@ -10,5 +10,11 @@ dist/
 # Raw source material already processed into client/src/content/hospitals.ts
 # and client/public/images/ — kept locally, not needed in the repo
 thailand_jci_hospital_database_*.xlsx
+~$thailand_jci_hospital_database_*.xlsx
 Hospital pictures/
 Procedure pictures/
+Medical Coordinator/
+News room pictures/
+
+# Build artifacts
+client/tsconfig.tsbuildinfo

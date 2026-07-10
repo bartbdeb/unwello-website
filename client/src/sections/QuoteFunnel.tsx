@@ -1,5 +1,5 @@
 import { css, El, Placeholder } from '../ui'
-import { treatmentOptions, whoForOptions, timingOptions, contactPrefOptions } from '../data'
+import { treatmentOptions, treatmentOtherOption, whoForOptions, timingOptions, contactPrefOptions } from '../data'
 import type { FunnelState } from '../useFunnel'
 
 const qTitle = 'font-size:21px; font-weight:800; letter-spacing:-.02em; color:#16214A; margin:0 0 6px;'
@@ -39,13 +39,23 @@ export default function QuoteFunnel({ funnel }: { funnel: FunnelState }) {
             <div style={css('animation:uwSlide .22s ease;')}>
               <h3 style={css(qTitle)}>What would you like to do?</h3>
               <p style={css(qSub)}>Pick the treatment you're considering.</p>
-              <div style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
+              <div className="uw-modal-grid" style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
                 {treatmentOptions.map((o) => (
                   <El as="button" key={o.label} onClick={() => select('treatment', o.label)} style={css(optCard)} hover={css(optHover)}>
                     <span style={css('font-size:20px;')}>{o.icon}</span>
                     <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{o.label}</span>
                   </El>
                 ))}
+                <El
+                  as="button"
+                  key={treatmentOtherOption.label}
+                  onClick={() => select('treatment', treatmentOtherOption.label)}
+                  style={css(optCard + ' grid-column:1 / -1; flex-direction:row; align-items:center; justify-content:center; border-style:dashed; color:#5A6580;')}
+                  hover={css(optHover)}
+                >
+                  <span style={css('font-size:18px;')}>{treatmentOtherOption.icon}</span>
+                  <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{treatmentOtherOption.label}</span>
+                </El>
               </div>
             </div>
           )}
@@ -86,7 +96,7 @@ export default function QuoteFunnel({ funnel }: { funnel: FunnelState }) {
             <div style={css('animation:uwSlide .22s ease;')}>
               <h3 style={css(qTitle)}>How should we reach you?</h3>
               <p style={css(qSub)}>Your coordinator will use your preferred channel.</p>
-              <div style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
+              <div className="uw-modal-grid" style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
                 {contactPrefOptions.map((o) => (
                   <El as="button" key={o.label} onClick={() => select('contactPref', o.label)} style={css(optCard)} hover={css(optHover)}>
                     <span style={css('font-size:20px;')}>{o.icon}</span>
@@ -94,6 +104,17 @@ export default function QuoteFunnel({ funnel }: { funnel: FunnelState }) {
                   </El>
                 ))}
               </div>
+              {/* Placeholder UI only — no booking API yet, so this doesn't submit anything. */}
+              <El
+                as="button"
+                type="button"
+                style={css('margin-top:14px; width:100%; display:flex; align-items:center; justify-content:center; gap:10px; background:#F4F7FF; border:1px dashed #B7C6F2; color:#2B50E4; padding:14px 16px; border-radius:14px; font-weight:700; font-size:14.5px; cursor:pointer; font-family:inherit;')}
+                hover={css('background:#ECF1FD; border:1px dashed #2B50E4;')}
+              >
+                <span style={css('font-size:18px;')}>📅</span>
+                Make an Appointment
+                <span style={css('margin-left:4px; font-size:10.5px; font-weight:700; color:#8B95AD; background:#E1E8F7; padding:2px 8px; border-radius:100px; text-transform:uppercase; letter-spacing:.04em;')}>Coming soon</span>
+              </El>
             </div>
           )}
 
@@ -102,7 +123,7 @@ export default function QuoteFunnel({ funnel }: { funnel: FunnelState }) {
               <h3 style={css(qTitle)}>Where should we send your quote?</h3>
               <p style={css(qSub)}>Free and non-binding. Your data is processed under GDPR & Thai PDPA.</p>
               <div style={css('display:flex; flex-direction:column; gap:12px;')}>
-                <div style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
+                <div className="uw-modal-grid" style={css('display:grid; grid-template-columns:1fr 1fr; gap:10px;')}>
                   <input value={f.first} onChange={(e) => setContact({ first: e.target.value })} placeholder="First name" style={css(inputStyle)} />
                   <input value={f.last} onChange={(e) => setContact({ last: e.target.value })} placeholder="Last name" style={css(inputStyle)} />
                 </div>

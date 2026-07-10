@@ -34,9 +34,9 @@ export default function ClinicCard({ h }: { h: Hospital }) {
       <div style={css('padding:17px 18px 18px;')}>
         <span style={css('font-weight:800; font-size:16.5px; color:#16214A; display:block; margin-bottom:3px;')}>{h.name}</span>
         <div style={css('font-size:13px; color:#8B95AD; margin-bottom:10px;')}>📍 {h.city} · JCI accredited since {jciYear(h.jciSince)}</div>
-        <div style={css('display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px;')}>
+        <div style={css('display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; max-height:82px; overflow:hidden;')}>
           {h.specialties.length > 0 ? (
-            h.specialties.map((s) => (
+            h.specialties.slice(0, 7).map((s) => (
               <span key={s} style={css('background:#ECF1FD; color:#2B50E4; font-size:11.5px; font-weight:700; padding:4px 9px; border-radius:7px;')}>{categoryBySlug(s)?.name ?? s}</span>
             ))
           ) : (

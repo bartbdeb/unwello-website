@@ -8,9 +8,14 @@ import { Footer } from './sections/Sections'
 import HomePage from './pages/HomePage'
 import BrowseTreatments from './pages/BrowseTreatments'
 import TreatmentCategory from './pages/TreatmentCategory'
+import ProcedureDetail from './pages/ProcedureDetail'
 import ClinicsListing from './pages/ClinicsListing'
 import ClinicProfile from './pages/ClinicProfile'
 import HowItWorksPage from './pages/HowItWorks'
+import Stories from './pages/Stories'
+import StoryDetail from './pages/StoryDetail'
+import News from './pages/News'
+import NewsArticle from './pages/NewsArticle'
 import QuoteFunnel from './sections/QuoteFunnel'
 import AIChat from './sections/AIChat'
 import ScrollToTop from './components/ScrollToTop'
@@ -30,9 +35,14 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/treatments" element={<BrowseTreatments />} />
           <Route path="/treatments/:slug" element={<TreatmentCategory />} />
+          <Route path="/treatments/:specialtySlug/:procedureSlug" element={<ProcedureDetail />} />
           <Route path="/clinics" element={<ClinicsListing />} />
           <Route path="/clinics/:slug" element={<ClinicProfile />} />
           <Route path="/how-it-works" element={<HowItWorksPage />} />
+          <Route path="/stories" element={<Stories />} />
+          <Route path="/stories/:slug" element={<StoryDetail />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:slug" element={<NewsArticle />} />
         </Routes>
 
         <Footer />
@@ -53,7 +63,7 @@ export default function App() {
 
         {/* Resume banner — shows when there's saved, unfinished funnel progress */}
         {funnel.hasSavedProgress && !funnel.open && (
-          <div style={css('position:fixed; bottom:26px; left:26px; background:#fff; border:1px solid #E1E8F7; border-radius:16px; box-shadow:0 16px 40px rgba(35,51,47,.18); padding:16px 18px; display:flex; align-items:center; gap:14px; z-index:39; max-width:340px; animation:uwFade .3s ease;')}>
+          <div className="uw-resume-banner" style={css('position:fixed; bottom:26px; left:26px; background:#fff; border:1px solid #E1E8F7; border-radius:16px; box-shadow:0 16px 40px rgba(35,51,47,.18); padding:16px 18px; display:flex; align-items:center; gap:14px; z-index:39; max-width:340px; animation:uwFade .3s ease;')}>
             <span style={css('font-size:22px;')}>📝</span>
             <div style={css('flex:1;')}>
               <div style={css('font-weight:700; font-size:14px; color:#16214A;')}>Continue your quote</div>

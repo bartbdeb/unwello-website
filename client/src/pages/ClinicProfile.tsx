@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { css, El, Placeholder, eyebrow, h2Style } from '../ui'
 import { hospitalBySlug } from '../content/hospitals'
 import { categoryBySlug } from '../content/treatments'
+import { specialtyBySlug } from '../content/specialties'
 import { useApp } from '../context'
 import FaqAccordion from '../components/FaqAccordion'
 import ReviewsSection from '../components/ReviewsSection'
@@ -76,8 +77,8 @@ export default function ClinicProfile() {
             )}
           </div>
 
-          {/* Sticky quote card */}
-          <div style={css('position:sticky; top:90px; background:#fff; border:1px solid #E1E8F7; border-radius:20px; padding:24px; box-shadow:0 14px 34px rgba(35,51,47,.08);')}>
+          {/* Sticky quote card (desktop only — see .uw-sticky-desktop) */}
+          <div className="uw-sticky-desktop" style={css('position:sticky; top:90px; background:#fff; border:1px solid #E1E8F7; border-radius:20px; padding:24px; box-shadow:0 14px 34px rgba(35,51,47,.08);')}>
             <div style={css('font-size:13px; font-weight:700; color:#2B50E4; letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px;')}>Get matched</div>
             <El
               as="button"
@@ -103,17 +104,18 @@ export default function ClinicProfile() {
       <section style={css('max-width:1240px; margin:0 auto; padding:20px 32px;')}>
         <span style={css(eyebrow)}>Specialties</span>
         <h2 style={css(h2Style + ' margin-bottom:16px;')}>What this facility treats</h2>
-        <div style={css('display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;')}>
-          {h.allCategoriesRaw.map((c) => (
-            <span key={c} style={css('background:#ECF1FD; color:#2B50E4; font-size:13px; font-weight:700; padding:7px 13px; border-radius:9px;')}>{c}</span>
-          ))}
+        <div style={css('display:flex; gap:8px; flex-wrap:wrap;')}>
+          {h.specialties.map((slug) => {
+            const spec = specialtyBySlug(slug)
+            const hasPage = !!categoryBySlug(slug)
+            const chip = css('background:#ECF1FD; color:#2B50E4; font-size:13px; font-weight:700; padding:7px 13px; border-radius:9px; display:inline-block;')
+            return hasPage ? (
+              <Link key={slug} to={`/treatments/${slug}`} style={chip}>{spec?.name ?? slug}</Link>
+            ) : (
+              <span key={slug} style={chip}>{spec?.name ?? slug}</span>
+            )
+          })}
         </div>
-        {h.departments && (
-          <>
-            <div style={css('font-size:13px; font-weight:700; color:#16214A; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px;')}>Departments & centers</div>
-            <p style={css('font-size:14px; line-height:1.65; color:#7A85A0; margin:0;')}>{h.departments}</p>
-          </>
-        )}
       </section>
 
       {/* ---- Accreditation & Certifications ---- */}

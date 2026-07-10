@@ -3,12 +3,24 @@ import { Link, useNavigate } from 'react-router-dom'
 import { css, El, Placeholder, eyebrow, h2Style } from '../ui'
 import {
   treatments, trustStats, steps, savingsBase, countryMeta, whyCards,
-  stories, coordPoints, guides, footerCols, WHATSAPP_NUMBER,
+  coordPoints, footerCols, WHATSAPP_NUMBER,
   type Country,
 } from '../data'
 import { hospitals, sortRecommended } from '../content/hospitals'
+import { patientStories } from '../content/stories'
+import { newsArticles } from '../content/news'
 import { useApp } from '../context'
 import ClinicCard from '../components/ClinicCard'
+
+const featuredStories = patientStories.filter((s) => s.featured)
+const featuredNews = newsArticles.filter((n) => n.featured)
+
+const footerLinkRoutes: Record<string, string> = {
+  'How it works': '/how-it-works',
+  'Patient stories': '/stories',
+  Guides: '/news',
+  'All clinics': '/clinics',
+}
 
 const featuredHospitals = sortRecommended(hospitals).slice(0, 8)
 
@@ -78,8 +90,8 @@ export function HowItWorks() {
         </div>
         <div className="uw-grid-4" style={css('display:grid; grid-template-columns:repeat(4,1fr); gap:22px;')}>
           {steps.map((st) => (
-            <div key={st.n} style={css('position:relative;')}>
-              <div style={css('width:52px; height:52px; border-radius:15px; background:rgba(91,132,255,.16); border:1px solid rgba(91,132,255,.4); color:#5B84FF; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:19px; margin-bottom:18px;')}>{st.n}</div>
+            <div key={st.n} style={css('position:relative; text-align:center;')}>
+              <div style={css('width:52px; height:52px; border-radius:15px; background:rgba(91,132,255,.16); border:1px solid rgba(91,132,255,.4); color:#5B84FF; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:19px; margin:0 auto 18px;')}>{st.n}</div>
               <h3 style={css('font-size:18px; font-weight:700; margin:0 0 8px;')}>{st.title}</h3>
               <p style={css('font-size:14px; line-height:1.6; color:#A6B0D0; margin:0;')}>{st.body}</p>
             </div>
@@ -158,20 +170,22 @@ export function Savings() {
             </div>
           </div>
           <div style={css('background:#fff; border:1px solid #E1E8F7; border-radius:20px; overflow:hidden; box-shadow:0 14px 34px rgba(35,51,47,.08);')}>
-            <div style={css('display:grid; grid-template-columns:1.5fr 1fr 1fr .8fr; padding:15px 22px; background:#16214A; color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.03em;')}>
-              <span>Procedure</span>
-              <span style={css('text-align:right;')}>Thailand</span>
-              <span style={css('text-align:right;')}>{meta.label}</span>
-              <span style={css('text-align:right;')}>Save</span>
-            </div>
-            {rows.map((r) => (
-              <div key={r.name} style={css('display:grid; grid-template-columns:1.5fr 1fr 1fr .8fr; padding:16px 22px; border-bottom:1px solid #ECF1FD; align-items:center;')}>
-                <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{r.name}</span>
-                <span style={css('text-align:right; font-weight:800; font-size:14.5px; color:#2B50E4;')}>{r.thPrice}</span>
-                <span style={css('text-align:right; font-size:14px; color:#8B95AD; text-decoration:line-through;')}>{r.homePrice}</span>
-                <span style={css('text-align:right; font-weight:800; font-size:13.5px; color:#16214A;')}><span style={css('background:#E7ECFF; color:#2B50E4; padding:3px 8px; border-radius:8px;')}>{r.savings}</span></span>
+            <div style={css('overflow-x:auto;')}>
+              <div style={css('display:grid; grid-template-columns:1.5fr 1fr 1fr .8fr; min-width:480px; padding:15px 22px; background:#16214A; color:#fff; font-size:12.5px; font-weight:700; letter-spacing:.03em;')}>
+                <span>Procedure</span>
+                <span style={css('text-align:right;')}>Thailand</span>
+                <span style={css('text-align:right;')}>{meta.label}</span>
+                <span style={css('text-align:right;')}>Save</span>
               </div>
-            ))}
+              {rows.map((r) => (
+                <div key={r.name} style={css('display:grid; grid-template-columns:1.5fr 1fr 1fr .8fr; min-width:480px; padding:16px 22px; border-bottom:1px solid #ECF1FD; align-items:center;')}>
+                  <span style={css('font-weight:700; font-size:14.5px; color:#16214A;')}>{r.name}</span>
+                  <span style={css('text-align:right; font-weight:800; font-size:14.5px; color:#2B50E4;')}>{r.thPrice}</span>
+                  <span style={css('text-align:right; font-size:14px; color:#8B95AD; text-decoration:line-through;')}>{r.homePrice}</span>
+                  <span style={css('text-align:right; font-weight:800; font-size:13.5px; color:#16214A;')}><span style={css('background:#E7ECFF; color:#2B50E4; padding:3px 8px; border-radius:8px;')}>{r.savings}</span></span>
+                </div>
+              ))}
+            </div>
             <div style={css('padding:14px 22px; font-size:12px; color:#8B95AD; text-align:center;')}>Indicative ranges · your personal quote is tailored to your case</div>
           </div>
         </div>
@@ -187,7 +201,7 @@ export function WhyThailand() {
         <span style={css(eyebrow)}>Why Thailand</span>
         <h2 style={css(h2Style)}>A place built for healing, not just treatment</h2>
       </div>
-      <div className="uw-grid-4" style={css('display:grid; grid-template-columns:repeat(4,1fr); gap:18px;')}>
+      <div className="uw-grid-5" style={css('display:grid; grid-template-columns:repeat(5,1fr); gap:18px;')}>
         {whyCards.map((w) => (
           <div key={w.title} style={css('background:#FFFFFF; border:1px solid #E1E8F7; border-radius:18px; padding:26px 22px;')}>
             <div style={css('width:48px; height:48px; border-radius:13px; background:#ECF1FD; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:16px;')}>{w.icon}</div>
@@ -209,11 +223,11 @@ export function Stories() {
             <span style={css('color:#5B84FF; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;')}>Patient stories</span>
             <h2 style={css('font-size:36px; font-weight:800; letter-spacing:-.025em; margin:10px 0 0;')}>Real journeys, real outcomes</h2>
           </div>
-          <a href="#" style={css('color:#5B84FF; font-weight:700; font-size:14.5px; white-space:nowrap;')}>All stories →</a>
+          <Link to="/stories" style={css('color:#5B84FF; font-weight:700; font-size:14.5px; white-space:nowrap;')}>All stories →</Link>
         </div>
         <div className="uw-grid-3" style={css('display:grid; grid-template-columns:repeat(3,1fr); gap:20px;')}>
-          {stories.map((s) => (
-            <div key={s.name} style={css('background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:20px; overflow:hidden;')}>
+          {featuredStories.map((s) => (
+            <Link key={s.slug} to={`/stories/${s.slug}`} style={css('display:block; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:20px; overflow:hidden; color:inherit;')}>
               <div style={css('position:relative;')}>
                 <Placeholder dark style="height:200px;" label={s.imgLabel} />
                 <span style={css('position:absolute; inset:0; display:flex; align-items:center; justify-content:center;')}>
@@ -230,7 +244,7 @@ export function Stories() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -259,9 +273,9 @@ export function Coordinator() {
           </El>
         </div>
         <div className="uw-hide-mobile" style={css('display:grid; grid-template-columns:1fr 1fr; gap:14px;')}>
-          <Placeholder style="aspect-ratio:1/1.2; border-radius:18px;" label="coordinator photo" />
+          <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
           <div style={css('display:flex; flex-direction:column; gap:14px; padding-top:28px;')}>
-            <Placeholder style="aspect-ratio:1/1; border-radius:18px;" label="team" />
+            <img src="/images/coordinators/team.jpg" alt="The Unwello medical coordination team" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
             <div style={css('background:#16214A; color:#fff; border-radius:18px; padding:20px; display:flex; flex-direction:column; justify-content:center; gap:4px;')}>
               <span style={css('font-size:28px; font-weight:800; letter-spacing:-.02em;')}>7 langs</span>
               <span style={css('font-size:13px; color:#A6B0D0;')}>EN · TH · AR · DE · ZH · RU · FR</span>
@@ -276,14 +290,14 @@ export function Coordinator() {
 export function Vetting() {
   return (
     <section style={css('max-width:1240px; margin:0 auto; padding:0 32px 64px;')}>
-      <div style={css('background:linear-gradient(120deg,#2B50E4,#1B3AB8); color:#fff; border-radius:26px; padding:44px; display:flex; align-items:center; justify-content:space-between; gap:40px; box-shadow:0 20px 50px rgba(43,80,228,.24); position:relative; overflow:hidden;')}>
+      <div style={css('background:linear-gradient(120deg,#2B50E4,#1B3AB8); color:#fff; border-radius:26px; padding:44px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; box-shadow:0 20px 50px rgba(43,80,228,.24); position:relative; overflow:hidden;')}>
         <div style={css('position:absolute; right:-40px; top:-40px; width:220px; height:220px; border-radius:50%; background:rgba(91,132,255,.18);')} />
         <div style={css('position:relative;')}>
           <span style={css('color:#BCCDFF; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;')}>Our vetting moat</span>
           <h2 style={css('font-size:34px; font-weight:800; letter-spacing:-.025em; margin:10px 0 10px; max-width:560px;')}>Only 8% of clinics we assess make it onto Unwello</h2>
           <p style={css('font-size:15.5px; line-height:1.6; color:#D3DEFF; margin:0; max-width:520px;')}>Accreditations, doctor credentials, outcome data, review volume, on-site visits and response times — scored and weighted. Nothing gets listed without passing.</p>
         </div>
-        <a href="#" className="uw-hide-mobile" style={css('background:#fff; color:#2B50E4; padding:15px 28px; border-radius:13px; font-weight:800; font-size:15px; white-space:nowrap; box-shadow:0 10px 24px rgba(0,0,0,.16);')}>See our methodology →</a>
+        <a href="#" style={css('position:relative; background:#fff; color:#2B50E4; padding:15px 28px; border-radius:13px; font-weight:800; font-size:15px; white-space:nowrap; box-shadow:0 10px 24px rgba(0,0,0,.16);')}>See our methodology →</a>
       </div>
     </section>
   )
@@ -297,16 +311,16 @@ export function Guides() {
           <span style={css(eyebrow)}>Guides & resources</span>
           <h2 style={css(h2Style)}>Plan your trip with confidence</h2>
         </div>
-        <a href="#" style={css('font-weight:700; font-size:14.5px; color:#2B50E4; white-space:nowrap;')}>All guides →</a>
+        <Link to="/news" style={css('font-weight:700; font-size:14.5px; color:#2B50E4; white-space:nowrap;')}>All guides →</Link>
       </div>
       <div className="uw-grid-3" style={css('display:grid; grid-template-columns:repeat(3,1fr); gap:20px;')}>
-        {guides.map((g) => (
-          <El as="a" key={g.title} href="#" style={css('border:1px solid #E1E8F7; background:#fff; border-radius:18px; overflow:hidden; display:block; transition:transform .18s, box-shadow .18s;')} hover={css('transform:translateY(-4px); box-shadow:0 18px 40px rgba(35,51,47,.1);')}>
-            <Placeholder style="height:158px;" label={g.imgLabel} />
+        {featuredNews.map((g) => (
+          <El as={Link} key={g.slug} to={`/news/${g.slug}`} style={css('border:1px solid #E1E8F7; background:#fff; border-radius:18px; overflow:hidden; display:block; transition:transform .18s, box-shadow .18s;')} hover={css('transform:translateY(-4px); box-shadow:0 18px 40px rgba(35,51,47,.1);')}>
+            <img src={g.image} alt={g.title} style={css('width:100%; height:158px; object-fit:cover; display:block;')} />
             <div style={css('padding:18px 20px 20px;')}>
               <span style={css('font-size:11.5px; font-weight:800; color:#2B50E4; letter-spacing:.06em; text-transform:uppercase;')}>{g.cat}</span>
               <h3 style={css('font-size:17px; font-weight:700; margin:8px 0 8px; color:#16214A; line-height:1.3;')}>{g.title}</h3>
-              <span style={css('font-size:13px; color:#8B95AD;')}>{g.read} · Medically reviewed</span>
+              <span style={css('font-size:13px; color:#8B95AD;')}>{g.read} · Updated {g.date} · 👁 {g.views.toLocaleString('en-US')}</span>
             </div>
           </El>
         ))}
@@ -355,9 +369,14 @@ export function Footer() {
             <div key={col.title}>
               <h4 style={css('color:#fff; font-size:13.5px; font-weight:700; letter-spacing:.04em; margin:0 0 15px; text-transform:uppercase;')}>{col.title}</h4>
               <div style={css('display:flex; flex-direction:column; gap:11px;')}>
-                {col.links.map((l) => (
-                  <El as="a" key={l} href="#" style={css('font-size:14px; color:#AEB8D6;')} hover={css('color:#5B84FF;')}>{l}</El>
-                ))}
+                {col.links.map((l) => {
+                  const route = footerLinkRoutes[l]
+                  return route ? (
+                    <Link key={l} to={route} style={css('font-size:14px; color:#AEB8D6;')}>{l}</Link>
+                  ) : (
+                    <El as="a" key={l} href="#" style={css('font-size:14px; color:#AEB8D6;')} hover={css('color:#5B84FF;')}>{l}</El>
+                  )
+                })}
               </div>
             </div>
           ))}

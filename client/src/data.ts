@@ -14,7 +14,10 @@ export type Treatment = {
 export const treatments: Treatment[] = [
   { name: 'Dental & Implants', slug: 'dental', icon: '🦷', price: '$680', blurb: 'Implants, veneers, crowns and full-mouth restoration.', imgLabel: 'dental clinic', image: '/images/treatments/dental.jpg' },
   { name: 'Hair Transplant', slug: 'hair-transplant', icon: '💇', price: '$2,400', blurb: 'FUE & DHI by high-volume specialist surgeons.', imgLabel: 'hair clinic', image: '/images/treatments/hair-transplant.jpg' },
-  { name: 'Rhinoplasty', slug: 'rhinoplasty', icon: '👃', price: '$3,300', blurb: 'Primary and revision nose reshaping.', imgLabel: 'aesthetic surgery', image: '/images/treatments/rhinoplasty.jpg' },
+  // Rhinoplasty is a procedure under the "Cosmetic & Plastic Surgery" specialty
+  // (not its own top-level specialty in the real taxonomy) — slug points to its
+  // nested procedure page.
+  { name: 'Rhinoplasty', slug: 'plastic-surgery/rhinoplasty', icon: '👃', price: '$3,300', blurb: 'Primary and revision nose reshaping.', imgLabel: 'aesthetic surgery', image: '/images/treatments/rhinoplasty.jpg' },
   { name: 'Plastic Surgery', slug: 'plastic-surgery', icon: '✨', price: '$3,900', blurb: 'Body contouring, facelift, breast surgery.', imgLabel: 'surgical suite', image: '/images/treatments/plastic-surgery.jpg' },
   { name: 'Weight Loss', slug: 'weight-loss', icon: '⚖️', price: '$8,500', blurb: 'Gastric sleeve, bypass and balloon procedures.', imgLabel: 'bariatric ward', image: '/images/treatments/weight-loss.jpg' },
   { name: 'Fertility / IVF', slug: 'fertility-ivf', icon: '🍼', price: '$4,100', blurb: 'IVF, ICSI and egg freezing at leading centres.', imgLabel: 'fertility centre', image: '/images/treatments/fertility-ivf.jpg' },
@@ -55,26 +58,19 @@ export const countryMeta: Record<Country, { symbol: string; label: string; pill:
 export const whyCards = [
   { icon: '🏥', title: 'JCI-grade hospitals', body: 'World-standard accreditation, modern facilities and international patient wings.' },
   { icon: '💷', title: 'Up to 70% savings', body: 'The same procedure and quality at a fraction of home-country prices.' },
+  { icon: '⚡', title: 'Zero waiting times', body: 'Skip the queues — get appointments and procedures scheduled in days, not months.' },
   { icon: '🗣️', title: 'English-speaking care', body: 'International coordinators and interpreters at every step.' },
   { icon: '🌴', title: 'A recovery destination', body: 'Recover somewhere restful — beaches, wellness and warm hospitality.' },
 ]
 
-export const stories = [
-  { name: 'Sarah', flag: '🇬🇧', procedure: 'Dental implants · Bangkok', quote: 'I saved over £4,000 and the care was better than at home. My coordinator felt like a friend.', imgLabel: 'patient story video' },
-  { name: 'Michael', flag: '🇦🇺', procedure: 'Hair transplant · Chiang Mai', quote: 'Everything was arranged before I landed. All I had to do was show up and heal.', imgLabel: 'patient story video' },
-  { name: 'Lena', flag: '🇩🇪', procedure: 'IVF · Pattaya', quote: 'After years of trying, this was the team that finally made us feel cared for.', imgLabel: 'patient story video' },
-]
+// Patient stories and news/guides content now live in content/stories.ts and
+// content/news.ts respectively (they power the full /stories and /news
+// sections, not just the homepage teasers) — import from there instead.
 
 export const coordPoints = [
   'One dedicated coordinator from first message to aftercare',
   'You never pay us — clinics do. Quotes are free and non-binding',
   'Reachable 24/7 by WhatsApp, phone or email',
-]
-
-export const guides = [
-  { cat: 'Costs', title: 'What does dental work really cost in Thailand?', read: '8 min read', imgLabel: 'guide cover' },
-  { cat: 'Travel', title: 'Thailand medical visa & entry: a 2026 guide', read: '6 min read', imgLabel: 'guide cover' },
-  { cat: 'Recovery', title: 'Best recovery hotels near Bangkok hospitals', read: '5 min read', imgLabel: 'guide cover' },
 ]
 
 export const footerCols = [
@@ -84,6 +80,8 @@ export const footerCols = [
 ]
 
 // ---- Funnel option sets ----
+// 10 standard treatments + a trailing "Others" catch-all (kept separate so it
+// can be styled/handled distinctly from the standard options).
 export const treatmentOptions = [
   { label: 'Dental', icon: '🦷' },
   { label: 'Hair transplant', icon: '💇' },
@@ -91,7 +89,12 @@ export const treatmentOptions = [
   { label: 'Plastic surgery', icon: '✨' },
   { label: 'Weight loss', icon: '⚖️' },
   { label: 'Fertility / IVF', icon: '🍼' },
+  { label: 'Health screenings', icon: '🩺' },
+  { label: 'Orthopedics', icon: '🦴' },
+  { label: 'Cardiology', icon: '❤️' },
+  { label: 'Eye care', icon: '👁️' },
 ]
+export const treatmentOtherOption = { label: 'Others', icon: '➕' }
 export const whoForOptions = [
   { label: 'Myself', icon: '🙂' },
   { label: 'Someone else', icon: '👥' },
