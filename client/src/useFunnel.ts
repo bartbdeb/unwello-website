@@ -91,7 +91,7 @@ export function useFunnel() {
 
     // WhatsApp handoff: if the user chose WhatsApp, open a pre-filled chat.
     if (ans.contactPref === 'WhatsApp') {
-      const msg = `Hi Unwello! I'm ${f.first}. I just requested a quote for ${ans.treatment || 'treatment'} in Thailand (${ans.timing || 'timing flexible'}).`
+      const msg = `Hi Hospigo! I'm ${f.first}. I just requested a quote for ${ans.treatment || 'treatment'} in Thailand (${ans.timing || 'timing flexible'}).`
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
       window.setTimeout(() => window.open(url, '_blank'), 400)
     }

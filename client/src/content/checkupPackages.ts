@@ -9,7 +9,7 @@
 // Source flagged some tier boundaries as "reconstructed from icon grid,
 // verify before publishing" (Bangkok Hospital Bangkok tiers 3–4, MedPark
 // Platinum tiers) — the numbers here are the source's own best reconstruction,
-// not independently re-verified by Unwello. Flag to a human reviewer before
+// not independently re-verified by Hospigo. Flag to a human reviewer before
 // treating these as final.
 
 export type CheckupPackage = {

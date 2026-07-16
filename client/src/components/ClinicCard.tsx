@@ -26,7 +26,7 @@ export default function ClinicCard({ h }: { h: Hospital }) {
         )}
         <div style={css('position:absolute; top:12px; left:12px; display:flex; gap:6px; flex-wrap:wrap; max-width:calc(100% - 24px);')}>
           {h.approved && (
-            <span style={css('background:#2E8B57; color:#fff; border-radius:8px; padding:4px 9px; font-size:11px; font-weight:800; letter-spacing:.02em;')}>✓ Unwello Approved</span>
+            <span style={css('background:#2E8B57; color:#fff; border-radius:8px; padding:4px 9px; font-size:11px; font-weight:800; letter-spacing:.02em;')}>✓ Hospigo Approved</span>
           )}
           <span style={css('background:rgba(255,255,255,.94); border-radius:8px; padding:4px 9px; font-size:11px; font-weight:800; color:#2B50E4; letter-spacing:.02em;')}>JCI</span>
         </div>

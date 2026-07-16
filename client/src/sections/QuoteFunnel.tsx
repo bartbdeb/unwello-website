@@ -132,7 +132,7 @@ export default function QuoteFunnel({ funnel }: { funnel: FunnelState }) {
                 {formError && <span style={css('font-size:13px; color:#C25B4E; font-weight:600;')}>{formError}</span>}
                 <label style={css('display:flex; align-items:flex-start; gap:10px; font-size:12.5px; color:#5A6580; line-height:1.5; cursor:pointer;')}>
                   <input type="checkbox" checked={f.consent} onChange={(e) => setContact({ consent: e.target.checked })} style={css('margin-top:2px; width:16px; height:16px; accent-color:#2B50E4; flex:0 0 auto;')} />
-                  <span>I consent to Unwello processing my health data to prepare a quote, and to sharing it with vetted Thai providers for this purpose.</span>
+                  <span>I consent to Hospigo processing my health data to prepare a quote, and to sharing it with vetted Thai providers for this purpose.</span>
                 </label>
                 <El as="button" onClick={submit} style={css('background:linear-gradient(160deg,#3A63FF 0%,#2540D8 100%); color:#fff; border:none; padding:15px; border-radius:13px; font-weight:800; font-size:15.5px; cursor:pointer; box-shadow:0 8px 20px rgba(43,80,228,.24); margin-top:4px;')} hover={css('background:#1B3AB8;')}>
                   Send my inquiry

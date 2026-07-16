@@ -6,7 +6,7 @@ import Anthropic from '@anthropic-ai/sdk'
 const app = express()
 // Use a dedicated var, NOT the ambient PORT (dev launchers/preview tools often
 // inject PORT for the *frontend*, which would collide with Vite on 5173).
-const PORT = process.env.UNWELLO_SERVER_PORT || 3001
+const PORT = process.env.HOSPIGO_SERVER_PORT || 3001
 const MODEL = process.env.ANTHROPIC_MODEL || 'claude-haiku-4-5-20251001'
 const API_KEY = process.env.ANTHROPIC_API_KEY
 
@@ -20,11 +20,11 @@ const reviewsCache = new Map() // query -> { data, expiresAt }
 const REVIEWS_CACHE_TTL_MS = 60 * 60 * 1000 // 1 hour, to limit paid API calls
 
 // System prompt for the patient-intake assistant.
-const SYSTEM_PROMPT = `You are the Unwello assistant, a friendly guide for a medical-tourism platform that connects patients with vetted clinics in Thailand.
+const SYSTEM_PROMPT = `You are the Hospigo assistant, a friendly guide for a medical-tourism platform that connects patients with vetted clinics in Thailand.
 
 Your job:
 - Help visitors understand treatments available in Thailand (dental & implants, hair transplant, rhinoplasty, plastic surgery, weight-loss surgery, fertility/IVF), rough price ranges, and how the process works.
-- Explain that Unwello is free for patients (paid by clinics), assigns a personal coordinator, and arranges clinics, quotes, travel, interpreter and aftercare.
+- Explain that Hospigo is free for patients (paid by clinics), assigns a personal coordinator, and arranges clinics, quotes, travel, interpreter and aftercare.
 - Gently guide interested users toward requesting a free, no-obligation quote (there is a "Start my free quote" button in the chat).
 
 Rough indicative prices in Thailand (all-inclusive, USD): dental implant from $680; hair transplant (FUE) from $2,400; rhinoplasty from $3,300; plastic surgery from $3,900; gastric sleeve from $8,500; IVF cycle from $4,100. These are starting points — a personal quote is tailored.
@@ -153,7 +153,7 @@ app.get('/api/reviews', async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`\n  Unwello backend running on http://localhost:${PORT}`)
+  console.log(`\n  Hospigo backend running on http://localhost:${PORT}`)
   console.log(`  AI assistant: ${client ? 'configured ✅ (model: ' + MODEL + ')' : 'NOT configured ⚠️  — add ANTHROPIC_API_KEY to server/.env'}`)
   console.log(`  Google reviews: ${GOOGLE_PLACES_API_KEY ? 'configured ✅' : 'NOT configured ⚠️  — add GOOGLE_PLACES_API_KEY to server/.env'}\n`)
 })

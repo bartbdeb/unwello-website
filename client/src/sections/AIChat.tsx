@@ -8,7 +8,7 @@ type Msg = { role: 'user' | 'assistant'; content: string }
 const GREETING: Msg = {
   role: 'assistant',
   content:
-    "Hi! I'm Unwello's assistant 🌤️ I can help you explore treatments in Thailand, rough costs, and how the process works. What are you considering?",
+    "Hi! I'm Hospigo's assistant 🌤️ I can help you explore treatments in Thailand, rough costs, and how the process works. What are you considering?",
 }
 
 export default function AIChat() {
@@ -66,7 +66,7 @@ export default function AIChat() {
           <div style={css('background:linear-gradient(140deg,#1C2E7C 0%,#0F1B4A 100%); color:#fff; padding:16px 18px; display:flex; align-items:center; gap:11px;')}>
             <span style={css('width:36px; height:36px; border-radius:11px; background:rgba(91,132,255,.25); display:flex; align-items:center; justify-content:center; font-size:18px;')}>🤖</span>
             <div style={css('display:flex; flex-direction:column;')}>
-              <span style={css('font-weight:800; font-size:15px;')}>Unwello Assistant</span>
+              <span style={css('font-weight:800; font-size:15px;')}>Hospigo Assistant</span>
               <span style={css('font-size:12px; color:#A6B0D0;')}>AI intake · not medical advice</span>
             </div>
           </div>

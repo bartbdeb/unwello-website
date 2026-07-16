@@ -60,7 +60,7 @@ export default function ProcedureDetail() {
             </div>
             <h1 style={css('font-size:42px; line-height:1.06; letter-spacing:-.028em; font-weight:800; margin:0 0 16px; color:#16214A;')}>{proc.name} in Thailand</h1>
             <p style={css('font-size:17px; line-height:1.6; color:#5A6580; margin:0 0 26px;')}>
-              {proc.name} is one of the procedures available at Unwello-vetted, JCI-accredited {cat.name.toLowerCase()} facilities in Thailand. Share your case with a coordinator to get a personalized, all-inclusive quote — free and non-binding.
+              {proc.name} is one of the procedures available at Hospigo-vetted, JCI-accredited {cat.name.toLowerCase()} facilities in Thailand. Share your case with a coordinator to get a personalized, all-inclusive quote — free and non-binding.
             </p>
             <div style={css('display:flex; gap:12px; flex-wrap:wrap;')}>
               <El as="button" onClick={() => openFunnel(proc.name)} style={css('background:linear-gradient(160deg,#3A63FF 0%,#2540D8 100%); color:#fff; border:none; padding:15px 28px; border-radius:13px; font-weight:800; font-size:15.5px; cursor:pointer; box-shadow:0 10px 26px rgba(43,80,228,.26);')} hover={css('background:#1B3AB8;')}>Get your free quote</El>

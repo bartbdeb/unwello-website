@@ -63,7 +63,7 @@ export default function ClinicsListing() {
 
       <label style={css(checkRow)}>
         <input type="checkbox" checked={approvedOnly} onChange={(e) => setApprovedOnly(e.target.checked)} style={css('width:16px; height:16px; accent-color:#2B50E4;')} />
-        <strong>Unwello Approved only</strong>
+        <strong>Hospigo Approved only</strong>
       </label>
 
       <div>
@@ -107,7 +107,7 @@ export default function ClinicsListing() {
       <span style={css(eyebrow)}>JCI-accredited facilities</span>
       <h2 style={css(h2Style + ' margin-bottom:8px;')}>Browse all hospitals & clinics</h2>
       <p style={css('font-size:15.5px; color:#7A85A0; margin:0 0 26px; max-width:720px;')}>
-        Every facility below holds JCI accreditation. "Unwello Approved" facilities have been personally vetted by our team and are shown first — the rest is Thailand's full JCI-accredited directory, so you can see the whole landscape.
+        Every facility below holds JCI accreditation. "Hospigo Approved" facilities have been personally vetted by our team and are shown first — the rest is Thailand's full JCI-accredited directory, so you can see the whole landscape.
       </p>
 
       <button

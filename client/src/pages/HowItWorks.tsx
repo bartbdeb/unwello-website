@@ -18,7 +18,7 @@ const team = [
 ]
 
 const faqs = [
-  { q: 'Is Unwello really free for patients?', a: 'Yes. We\'re paid a referral fee by the clinic if you book — never by you. You pay the clinic directly for your treatment and any travel you arrange, at the price they quote.' },
+  { q: 'Is Hospigo really free for patients?', a: 'Yes. We\'re paid a referral fee by the clinic if you book — never by you. You pay the clinic directly for your treatment and any travel you arrange, at the price they quote.' },
   { q: 'How fast will a coordinator respond?', a: 'Most inquiries get a first reply within a few hours. Urgency you flag in the quote form (e.g. "as soon as possible") is used to prioritize faster follow-up.' },
   { q: 'Can I choose the clinic myself?', a: 'Yes. Your coordinator recommends vetted, JCI-accredited facilities that match your treatment, but the final choice is always yours — nothing is booked without your confirmation.' },
   { q: 'What if something goes wrong during my trip?', a: 'Your coordinator is reachable throughout your treatment and stays involved in aftercare — if an issue comes up with the clinic or your logistics, tell your coordinator first.' },
@@ -81,7 +81,7 @@ export default function HowItWorksPage() {
                 <span style={css('width:36px; height:36px; border-radius:11px; background:#ECF1FD; color:#2B50E4; display:flex; align-items:center; justify-content:center; font-size:18px;')}>💳</span>
                 <h3 style={css('font-size:18px; font-weight:800; margin:0; color:#16214A;')}>What you pay for</h3>
               </div>
-              <p style={css('font-size:14.5px; line-height:1.7; color:#3A4468; margin:0 0 10px;')}>You pay the clinic directly, at the price they quote you — never Unwello. That typically covers:</p>
+              <p style={css('font-size:14.5px; line-height:1.7; color:#3A4468; margin:0 0 10px;')}>You pay the clinic directly, at the price they quote you — never Hospigo. That typically covers:</p>
               <ul style={css('margin:0; padding-left:20px; font-size:14.5px; line-height:1.9; color:#3A4468;')}>
                 <li>Your treatment and any hospital stay</li>
                 <li>Travel: flights, hotel, local transfers (as agreed in your plan)</li>

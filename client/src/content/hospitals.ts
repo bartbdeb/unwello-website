@@ -3,7 +3,7 @@
 // Real, verifiable facility data only. No doctor names, prices, or patient
 // reviews are fabricated for these real, identifiable institutions.
 //
-// approved/certified = "Unwello Approved"/"Unwello Certified" columns (approved
+// approved/certified = "Hospigo Approved"/"Hospigo Certified" columns (approved
 // facilities shown first, ranked highest; certified is a separate, rarer flag).
 // fame = a curated 0-100 heuristic score (not from the sheet), derived from
 // keyword signals in the Notes/Source and description text. A rough proxy.

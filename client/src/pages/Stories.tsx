@@ -33,7 +33,7 @@ export default function Stories() {
           <div style={css('max-width:680px;')}>
             <span style={css(eyebrow)}>Patient stories</span>
             <h1 style={css('font-size:44px; line-height:1.08; letter-spacing:-.028em; font-weight:800; margin:12px 0 16px; color:#16214A;')}>Real journeys, real outcomes</h1>
-            <p style={css('font-size:17px; line-height:1.65; color:#5A6580; margin:0 0 26px;')}>Every story here is a real patient who travelled to Thailand through Unwello — their treatment, their coordinator, their own words.</p>
+            <p style={css('font-size:17px; line-height:1.65; color:#5A6580; margin:0 0 26px;')}>Every story here is a real patient who travelled to Thailand through Hospigo — their treatment, their coordinator, their own words.</p>
             <El as="button" onClick={() => openFunnel()} style={css('background:linear-gradient(160deg,#3A63FF 0%,#2540D8 100%); color:#fff; border:none; padding:15px 28px; border-radius:13px; font-weight:800; font-size:15.5px; cursor:pointer; box-shadow:0 10px 26px rgba(43,80,228,.26);')} hover={css('background:#1B3AB8;')}>Start your own story</El>
           </div>
         </div>

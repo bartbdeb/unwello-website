@@ -113,7 +113,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '8 min read',
     date: '3 June 2026',
     views: 6240,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Dr. Anong Pattanapong', credentials: 'DDS, Implantology' },
     categorySlug: 'dental',
     costTable: [
@@ -147,7 +147,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     faqs: [
       { q: 'Is the quoted price really the final price?', a: 'A properly itemized quote should hold unless your dentist finds something during the in-person exam that changes the treatment plan — for example, needing a bone graft before an implant can be placed. Ask upfront what happens to the price in that scenario.' },
       { q: 'How many trips does a full-mouth restoration need?', a: 'Typically two to three visits over several months, spaced around healing time. Your coordinator can sequence this around your own travel availability.' },
-      { q: 'Do Thai dental clinics use the same materials as Western clinics?', a: 'The JCI-accredited clinics Unwello lists use internationally recognized implant and material brands — the same ones used in the US, UK and Australia.' },
+      { q: 'Do Thai dental clinics use the same materials as Western clinics?', a: 'The JCI-accredited clinics Hospigo lists use internationally recognized implant and material brands — the same ones used in the US, UK and Australia.' },
     ],
     featured: true,
   },
@@ -161,7 +161,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '18 May 2026',
     views: 4890,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Somchai Trirat', credentials: 'Licensed Immigration Consultant' },
     sections: [
       {
@@ -202,7 +202,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '5 min read',
     date: '2 May 2026',
     views: 3150,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
     sections: [
       {
@@ -237,12 +237,12 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     cat: 'Safety & Accreditation',
     format: 'Explainer',
     title: 'What JCI accreditation actually means for patients',
-    dek: 'JCI is the gold standard in international hospital accreditation — what it verifies, what it doesn\'t, and why Unwello only lists JCI hospitals.',
-    excerpt: 'JCI is the gold standard in international hospital accreditation — here\'s what it verifies, what it doesn\'t, and why Unwello only lists JCI hospitals.',
+    dek: 'JCI is the gold standard in international hospital accreditation — what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
+    excerpt: 'JCI is the gold standard in international hospital accreditation — here\'s what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
     read: '7 min read',
     date: '14 April 2026',
     views: 2780,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine' },
     sections: [
       {
@@ -261,15 +261,15 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
       {
         heading: 'What it doesn\'t tell you',
         paragraphs: [
-          'What JCI accreditation doesn\'t tell you: it doesn\'t rate individual surgeons, guarantee a specific outcome, or cover pricing transparency. That\'s why Unwello combines JCI accreditation with our own additional vetting — doctor credentials, outcome data where available, and direct verification calls — before any clinic is listed.',
-          'In practice, this means every facility on Unwello has already cleared one of healthcare\'s most demanding external audits before our own team even begins reviewing it.',
+          'What JCI accreditation doesn\'t tell you: it doesn\'t rate individual surgeons, guarantee a specific outcome, or cover pricing transparency. That\'s why Hospigo combines JCI accreditation with our own additional vetting — doctor credentials, outcome data where available, and direct verification calls — before any clinic is listed.',
+          'In practice, this means every facility on Hospigo has already cleared one of healthcare\'s most demanding external audits before our own team even begins reviewing it.',
         ],
       },
     ],
     faqs: [
       { q: 'Is JCI accreditation the same as ISO 9001?', a: 'No — ISO 9001 certifies quality management processes generally, while JCI accreditation specifically audits clinical care standards, patient safety and hospital operations. JCI is the more clinically rigorous of the two.' },
       { q: 'How often is JCI accreditation renewed?', a: 'Every three years, via a full on-site re-survey — hospitals don\'t simply keep the badge indefinitely.' },
-      { q: 'Does every hospital on Unwello hold JCI accreditation?', a: 'Yes — it\'s the baseline requirement before Unwello\'s own additional vetting (doctor credentials, outcomes, direct verification) even begins.' },
+      { q: 'Does every hospital on Hospigo hold JCI accreditation?', a: 'Yes — it\'s the baseline requirement before Hospigo\'s own additional vetting (doctor credentials, outcomes, direct verification) even begins.' },
     ],
   },
   {
@@ -282,7 +282,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '29 March 2026',
     views: 2410,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
     sections: [
       {
@@ -302,7 +302,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
         heading: 'Questions worth asking before you commit',
         paragraphs: [
           'Questions worth asking any coordinator before you commit: Are you paid by the clinic or by me? It should always be the clinic — a free service to patients is a sign the coordinator\'s incentives are aligned with getting you good care, not upselling. What happens if my treatment plan changes once I\'m examined in person? And can you connect me directly with the treating doctor before I travel, not just a sales representative?',
-          'At Unwello, every patient is assigned one dedicated coordinator from their first enquiry through aftercare — free, because we\'re paid a referral fee by the clinic only if you book, never by you.',
+          'At Hospigo, every patient is assigned one dedicated coordinator from their first enquiry through aftercare — free, because we\'re paid a referral fee by the clinic only if you book, never by you.',
         ],
       },
     ],
@@ -322,7 +322,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '7 min read',
     date: '11 March 2026',
     views: 1930,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Somchai Trirat', credentials: 'Licensed Immigration Consultant' },
     sections: [
       {
@@ -361,7 +361,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '20 February 2026',
     views: 3560,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
     sections: [
       {
@@ -406,7 +406,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '9 min read',
     date: '6 February 2026',
     views: 2050,
-    author: 'Unwello Editorial Team',
+    author: 'Hospigo Editorial Team',
     reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine' },
     sections: [
       {
@@ -433,7 +433,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
         heading: 'Who\'s coordinating your care',
         paragraphs: [
           'Who is coordinating your care, and who pays them? A coordinator paid by the clinic only when you book — not by you, and not on commission per upsell — has aligned incentives. One who pressures you toward a specific, more expensive package is worth questioning.',
-          'Unwello\'s vetting process — JCI accreditation as a baseline, plus doctor credential checks, outcome data review and direct verification calls — is built to answer exactly these questions before a clinic is ever listed on our platform.',
+          'Hospigo\'s vetting process — JCI accreditation as a baseline, plus doctor credential checks, outcome data review and direct verification calls — is built to answer exactly these questions before a clinic is ever listed on our platform.',
         ],
       },
     ],

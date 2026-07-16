@@ -275,7 +275,7 @@ export function Coordinator() {
         <div className="uw-hide-mobile" style={css('display:grid; grid-template-columns:1fr 1fr; gap:14px;')}>
           <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
           <div style={css('display:flex; flex-direction:column; gap:14px; padding-top:28px;')}>
-            <img src="/images/coordinators/team.jpg" alt="The Unwello medical coordination team" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
+            <img src="/images/coordinators/team.jpg" alt="The Hospigo medical coordination team" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
             <div style={css('background:#16214A; color:#fff; border-radius:18px; padding:20px; display:flex; flex-direction:column; justify-content:center; gap:4px;')}>
               <span style={css('font-size:28px; font-weight:800; letter-spacing:-.02em;')}>7 langs</span>
               <span style={css('font-size:13px; color:#A6B0D0;')}>EN · TH · AR · DE · ZH · RU · FR</span>
@@ -294,7 +294,7 @@ export function Vetting() {
         <div style={css('position:absolute; right:-40px; top:-40px; width:220px; height:220px; border-radius:50%; background:rgba(91,132,255,.18);')} />
         <div style={css('position:relative;')}>
           <span style={css('color:#BCCDFF; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;')}>Our vetting moat</span>
-          <h2 style={css('font-size:34px; font-weight:800; letter-spacing:-.025em; margin:10px 0 10px; max-width:560px;')}>Only 8% of clinics we assess make it onto Unwello</h2>
+          <h2 style={css('font-size:34px; font-weight:800; letter-spacing:-.025em; margin:10px 0 10px; max-width:560px;')}>Only 8% of clinics we assess make it onto Hospigo</h2>
           <p style={css('font-size:15.5px; line-height:1.6; color:#D3DEFF; margin:0; max-width:520px;')}>Accreditations, doctor credentials, outcome data, review volume, on-site visits and response times — scored and weighted. Nothing gets listed without passing.</p>
         </div>
         <a href="#" style={css('position:relative; background:#fff; color:#2B50E4; padding:15px 28px; border-radius:13px; font-weight:800; font-size:15px; white-space:nowrap; box-shadow:0 10px 24px rgba(0,0,0,.16);')}>See our methodology →</a>
@@ -331,7 +331,7 @@ export function Guides() {
 
 export function FinalCTA() {
   const { openFunnel } = useApp()
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Unwello, I'd like help planning treatment in Thailand.")}`
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Hospigo, I'd like help planning treatment in Thailand.")}`
   return (
     <section style={css('background:#E9F0FF;')}>
       <div style={css('max-width:1240px; margin:0 auto; padding:70px 32px; text-align:center;')}>
@@ -356,7 +356,7 @@ export function Footer() {
           <div>
             <div style={css('display:flex; align-items:center; gap:11px; color:#fff; margin-bottom:16px;')}>
               <span style={css('width:32px; height:32px; border-radius:10px; background:linear-gradient(150deg,#2B50E4,#1B3AB8); display:flex; align-items:center; justify-content:center;')}><span style={css('width:14px; height:14px; border-radius:5px; background:#5B84FF;')} /></span>
-              <span style={css('font-weight:800; font-size:20px;')}>Unwello</span>
+              <span style={css('font-weight:800; font-size:20px;')}>Hospigo</span>
             </div>
             <p style={css('font-size:14px; line-height:1.6; margin:0 0 18px; max-width:280px;')}>A medical travel platform connecting patients with vetted clinics across Thailand. Free for patients — we're paid by clinics, not you.</p>
             <div style={css('display:flex; gap:8px;')}>
@@ -382,7 +382,7 @@ export function Footer() {
           ))}
         </div>
         <div style={css('display:flex; align-items:center; justify-content:space-between; padding-top:24px; gap:20px; flex-wrap:wrap;')}>
-          <span style={css('font-size:13px;')}>© 2026 Unwello. Facilitator, not a medical provider. Content is medically reviewed.</span>
+          <span style={css('font-size:13px;')}>© 2026 Hospigo. Facilitator, not a medical provider. Content is medically reviewed.</span>
           <div style={css('display:flex; gap:20px; font-size:13px;')}>
             <a href="#" style={css('color:#AEB8D6;')}>Privacy</a>
             <a href="#" style={css('color:#AEB8D6;')}>Terms</a>

@@ -30,8 +30,8 @@ export type Lead = FunnelAnswers &
     source: 'funnel' | 'ai-chat'
   }
 
-const PROGRESS_KEY = 'unwello_funnel_progress'
-const LEADS_KEY = 'unwello_leads'
+const PROGRESS_KEY = 'hospigo_funnel_progress'
+const LEADS_KEY = 'hospigo_leads'
 
 export const emptyAnswers: FunnelAnswers = { treatment: '', whoFor: '', timing: '', contactPref: '' }
 export const emptyContact: ContactDetails = { first: '', last: '', email: '', phone: '', consent: false }

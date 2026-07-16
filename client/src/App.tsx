@@ -22,7 +22,7 @@ import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   const funnel = useFunnel()
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Unwello, I'd like help planning treatment in Thailand.")}`
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Hospigo, I'd like help planning treatment in Thailand.")}`
 
   return (
     <AppContext.Provider value={{ openFunnel: funnel.openFunnel }}>

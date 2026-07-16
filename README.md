@@ -1,4 +1,4 @@
-# Unwello
+# Hospigo
 
 Thailand medical tourism platform. React + TypeScript frontend, small Express backend for AI (keeps API keys off the client). Saved data uses browser localStorage.
 
@@ -33,7 +33,7 @@ npm run dev
 The frontend proxies `/api/*` to the backend, so you only need to open the frontend URL.
 
 ## What's wired up
-- **Quote funnel** — 5-step modal; answers persist to localStorage (resume banner if you leave mid-way); submitted inquiries saved under `unwello_leads`.
+- **Quote funnel** — 5-step modal; answers persist to localStorage (resume banner if you leave mid-way); submitted inquiries saved under `hospigo_leads`.
 - **AI intake assistant** — floating chat widget → `/api/chat` → Anthropic. Can pre-fill and open the quote funnel.
 - **Savings comparison** — live country toggle (US/UK/AU).
 - **Treatment search** — autocomplete in the hero.

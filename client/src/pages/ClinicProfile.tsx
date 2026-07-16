@@ -11,8 +11,8 @@ import ReviewsSection from '../components/ReviewsSection'
 // doctors, patient reviews) isn't in the source data, so these explain the
 // vetting/quote process instead of making per-hospital claims.
 const GENERIC_FAQS = [
-  { q: 'What does JCI accreditation mean?', a: 'Joint Commission International accreditation is a globally recognized standard for patient safety and quality of care. Every facility listed on Unwello holds current JCI accreditation.' },
-  { q: 'What does "Unwello Approved" mean?', a: 'A small subset of JCI-accredited facilities that our team has additionally reviewed and prioritizes when matching patients. All other facilities shown are part of Thailand\'s full JCI-accredited directory.' },
+  { q: 'What does JCI accreditation mean?', a: 'Joint Commission International accreditation is a globally recognized standard for patient safety and quality of care. Every facility listed on Hospigo holds current JCI accreditation.' },
+  { q: 'What does "Hospigo Approved" mean?', a: 'A small subset of JCI-accredited facilities that our team has additionally reviewed and prioritizes when matching patients. All other facilities shown are part of Thailand\'s full JCI-accredited directory.' },
   { q: 'How do I get pricing and doctor details for this facility?', a: 'Request a free quote — your coordinator will confirm specialist availability, an itemized price, and package inclusions directly with the facility for your specific case.' },
   { q: 'Is this facility a good fit for my treatment?', a: 'Share your treatment and details in the free quote form. Your coordinator will confirm fit, or suggest a better-matched facility if this one doesn\'t specialize in what you need.' },
 ]
@@ -59,7 +59,7 @@ export default function ClinicProfile() {
           <div>
             <div style={css('display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px;')}>
               {h.approved && (
-                <span style={css('background:#2E8B57; color:#fff; font-size:12px; font-weight:800; padding:5px 11px; border-radius:8px; letter-spacing:.02em;')}>✓ Unwello Approved</span>
+                <span style={css('background:#2E8B57; color:#fff; font-size:12px; font-weight:800; padding:5px 11px; border-radius:8px; letter-spacing:.02em;')}>✓ Hospigo Approved</span>
               )}
               <span style={css('background:#E7ECFF; color:#2B50E4; font-size:12px; font-weight:800; padding:5px 11px; border-radius:8px; letter-spacing:.02em;')}>JCI Accredited</span>
               <span style={css('background:#F2F6FF; color:#5A6580; font-size:12px; font-weight:700; padding:5px 11px; border-radius:8px;')}>{h.jciProgramType}</span>

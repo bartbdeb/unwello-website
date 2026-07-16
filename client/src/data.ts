@@ -1,4 +1,4 @@
-// All site content, ported from the design file (Unwello.dc.html).
+// All site content, ported from the design file (Hospigo.dc.html).
 // Kept in one place so it can later be swapped for a CMS / API.
 
 export type Treatment = {

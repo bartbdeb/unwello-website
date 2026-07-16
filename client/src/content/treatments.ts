@@ -45,7 +45,7 @@ export const categories: TreatmentCategory[] = [
         'Implants, veneers, crowns and full-mouth restoration at JCI-accredited clinics — for a fraction of home-country prices, with a coordinator handling everything.',
     },
     intro:
-      'Thailand is one of the world’s leading destinations for dental care. International patients travel to Bangkok, Phuket and Chiang Mai for high-quality implants and cosmetic dentistry performed by internationally trained dentists, often saving 50–70% versus the US, UK or Australia. Every clinic on Unwello is vetted for accreditation, dentist credentials and patient outcomes.',
+      'Thailand is one of the world’s leading destinations for dental care. International patients travel to Bangkok, Phuket and Chiang Mai for high-quality implants and cosmetic dentistry performed by internationally trained dentists, often saving 50–70% versus the US, UK or Australia. Every clinic on Hospigo is vetted for accreditation, dentist credentials and patient outcomes.',
     reviewer: { name: 'Dr. Anong Pattanapong', credentials: 'DDS, Implantology', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'Single Dental Implant', th: 680, US: 4200, UK: 2600, AU: 4800 },
@@ -55,7 +55,7 @@ export const categories: TreatmentCategory[] = [
     ],
     faqs: [
       { q: 'How long do I need to stay in Thailand for implants?', a: 'Most implant treatments involve two visits: implant placement, then crown fitting after healing (3–6 months). Some clinics offer immediate-load implants that shorten this. Your coordinator plans the timeline around your trip.' },
-      { q: 'Are Thai dental clinics safe and accredited?', a: 'The clinics on Unwello hold international accreditations (JCI, ISO) and their dentists are internationally trained. We verify credentials and outcomes before listing any clinic.' },
+      { q: 'Are Thai dental clinics safe and accredited?', a: 'The clinics on Hospigo hold international accreditations (JCI, ISO) and their dentists are internationally trained. We verify credentials and outcomes before listing any clinic.' },
       { q: 'What does the all-inclusive price cover?', a: 'Quotes are transparent and typically bundle the procedure, materials, clinic fees and — where offered — hotel, airport transfers and interpreter. Your personal quote spells out exactly what’s included.' },
       { q: 'Will my dentist speak English?', a: 'Yes. All listed clinics provide English-speaking dentists, and interpreters are available for other languages.' },
     ],
@@ -71,7 +71,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'FUE and DHI hair restoration by high-volume specialist surgeons, with natural results and all-inclusive packages.',
     },
     intro:
-      'Thailand’s hair-restoration clinics perform thousands of FUE and DHI procedures each year, at prices well below Western clinics. Surgeons are experienced with high graft counts and a range of hair types. Every clinic on Unwello is vetted for technique, hygiene and results.',
+      'Thailand’s hair-restoration clinics perform thousands of FUE and DHI procedures each year, at prices well below Western clinics. Surgeons are experienced with high graft counts and a range of hair types. Every clinic on Hospigo is vetted for technique, hygiene and results.',
     reviewer: { name: 'Dr. Malee Thongchai', credentials: 'MD, Hair Restoration', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'FUE (up to 2,500 grafts)', th: 2400, US: 9000, UK: 6000, AU: 9000 },
@@ -95,7 +95,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Body contouring, facelifts, rhinoplasty and breast surgery by experienced surgeons in JCI-accredited hospitals.',
     },
     intro:
-      'From body contouring to facial rejuvenation, Thailand’s plastic-surgery hospitals combine international standards with significant savings. Unwello vets every surgeon and facility for safety, accreditation and outcomes.',
+      'From body contouring to facial rejuvenation, Thailand’s plastic-surgery hospitals combine international standards with significant savings. Hospigo vets every surgeon and facility for safety, accreditation and outcomes.',
     reviewer: { name: 'Dr. Krit Sirikul', credentials: 'MD, Plastic & Reconstructive Surgery', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'Breast Augmentation', th: 3900, US: 11000, UK: 8000, AU: 13000 },
@@ -120,7 +120,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Gastric sleeve, bypass and balloon procedures by bariatric specialists, with full pre- and post-op support.',
     },
     intro:
-      'Bariatric surgery in Thailand is performed by experienced specialists in accredited hospitals with dedicated international patient care. Unwello vets every bariatric programme for safety, surgeon experience and follow-up support.',
+      'Bariatric surgery in Thailand is performed by experienced specialists in accredited hospitals with dedicated international patient care. Hospigo vets every bariatric programme for safety, surgeon experience and follow-up support.',
     reviewer: { name: 'Dr. Somchai Rojanasin', credentials: 'MD, Bariatric Surgery', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'Gastric Sleeve', th: 8500, US: 19000, UK: 12000, AU: 20000 },
@@ -144,7 +144,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'IVF, ICSI and egg freezing at leading reproductive-medicine centres, with compassionate, discreet care.',
     },
     intro:
-      'Thailand’s fertility centres are among Asia’s most advanced, offering IVF, ICSI and egg freezing with high standards of care at accessible prices. Unwello vets each centre for lab quality, specialist experience and success-rate transparency.',
+      'Thailand’s fertility centres are among Asia’s most advanced, offering IVF, ICSI and egg freezing with high standards of care at accessible prices. Hospigo vets each centre for lab quality, specialist experience and success-rate transparency.',
     reviewer: { name: 'Dr. Ratana Chaiyaphon', credentials: 'MD, Reproductive Medicine', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'IVF Cycle', th: 4100, US: 15000, UK: 8000, AU: 11000 },
@@ -192,7 +192,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Regenerative therapies for joint, orthopedic and anti-aging applications, delivered under strict clinical protocols at accredited facilities.',
     },
     intro:
-      'Thailand hosts a small number of specialized centres offering regenerative medicine — stem cell therapy, PRP (platelet-rich plasma) and related treatments — most often for joint and orthopedic regeneration, with some facilities also offering bone marrow transplant programmes. This is a developing field; Unwello only lists facilities with clear clinical protocols and JCI accreditation, and recommends a thorough consultation before committing to any regenerative treatment.',
+      'Thailand hosts a small number of specialized centres offering regenerative medicine — stem cell therapy, PRP (platelet-rich plasma) and related treatments — most often for joint and orthopedic regeneration, with some facilities also offering bone marrow transplant programmes. This is a developing field; Hospigo only lists facilities with clear clinical protocols and JCI accreditation, and recommends a thorough consultation before committing to any regenerative treatment.',
     reviewer: { name: 'Dr. Somchai Rojanasin', credentials: 'MD, Regenerative Medicine', date: 'Reviewed June 2026' },
     priceTable: [
       { name: 'PRP Joint Therapy', th: 2500, US: 6000, UK: 4000, AU: 5500 },
@@ -248,7 +248,7 @@ export const categories: TreatmentCategory[] = [
       { name: 'Heart Valve Repair/Replacement', th: 32000, US: 150000, UK: 75000, AU: 110000 },
     ],
     faqs: [
-      { q: 'Is emergency cardiac care available?', a: 'The hospitals we list with dedicated heart centres operate 24/7 cardiac units — but Unwello is built for planned treatment, not emergencies. For a medical emergency, contact local emergency services directly.' },
+      { q: 'Is emergency cardiac care available?', a: 'The hospitals we list with dedicated heart centres operate 24/7 cardiac units — but Hospigo is built for planned treatment, not emergencies. For a medical emergency, contact local emergency services directly.' },
       { q: 'What certifications should I look for?', a: 'Look for JCI Clinical Care Program Certifications in areas like Acute Coronary Syndrome or Primary Stroke — these indicate disease-specific quality standards beyond general hospital accreditation.' },
       { q: 'How long do I need to stay in Thailand?', a: 'Diagnostic catheterization may only need a few days; bypass or valve surgery typically requires 2–3 weeks including recovery before your surgeon clears you to fly.' },
     ],
@@ -312,7 +312,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Chemotherapy, radiation therapy and surgical oncology at JCI-accredited cancer centres, including proton therapy and CyberKnife at leading hospitals.',
     },
     intro:
-      'Thailand\'s largest hospital groups operate dedicated cancer centres combining surgical oncology, chemotherapy and advanced radiotherapy (including CyberKnife and proton therapy at select hospitals) with multidisciplinary tumor boards. Unwello vets each centre for accreditation, technology and disease-specific certifications.',
+      'Thailand\'s largest hospital groups operate dedicated cancer centres combining surgical oncology, chemotherapy and advanced radiotherapy (including CyberKnife and proton therapy at select hospitals) with multidisciplinary tumor boards. Hospigo vets each centre for accreditation, technology and disease-specific certifications.',
     reviewer: { name: 'Dr. Piyawan Suksai', credentials: 'MD, Medical Oncology', date: 'Reviewed July 2026' },
     priceTable: [
       { name: 'Chemotherapy (per cycle)', th: 3000, US: 12000, UK: 7000, AU: 9000 },
@@ -344,7 +344,7 @@ export const categories: TreatmentCategory[] = [
       { name: 'Deep Brain Stimulation', th: 25000, US: 100000, UK: 55000, AU: 75000 },
     ],
     faqs: [
-      { q: 'Is Thailand suitable for stroke emergencies?', a: 'Unwello is built for planned treatment, not emergencies — for an acute stroke, contact local emergency services immediately. JCI Primary Stroke-certified hospitals are relevant for patients researching stroke-ready facilities for future reference.' },
+      { q: 'Is Thailand suitable for stroke emergencies?', a: 'Hospigo is built for planned treatment, not emergencies — for an acute stroke, contact local emergency services immediately. JCI Primary Stroke-certified hospitals are relevant for patients researching stroke-ready facilities for future reference.' },
       { q: 'What imaging is used for diagnosis?', a: 'Listed hospitals use modern MRI, CT and specialized neuro-imaging; your coordinator can arrange for existing scans to be reviewed before you travel.' },
       { q: 'How long is recovery after neurosurgery?', a: 'This varies widely by procedure and condition — your neurosurgeon will discuss an expected hospital stay and recovery timeline specific to your case.' },
     ],
@@ -360,7 +360,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Living-donor kidney and liver transplant programmes at hospitals with established transplant teams and post-transplant care.',
     },
     intro:
-      'A small number of Thai hospitals operate dedicated transplant programmes for kidney and liver transplantation, along with post-transplant immunosuppression management. Organ transplantation involves significant legal, ethical and medical requirements — Thai law restricts living organ donation to specific eligible donor relationships, and Unwello only lists hospitals operating within these regulatory frameworks.',
+      'A small number of Thai hospitals operate dedicated transplant programmes for kidney and liver transplantation, along with post-transplant immunosuppression management. Organ transplantation involves significant legal, ethical and medical requirements — Thai law restricts living organ donation to specific eligible donor relationships, and Hospigo only lists hospitals operating within these regulatory frameworks.',
     reviewer: { name: 'Dr. Wichai Boonprasert', credentials: 'MD, Transplant Surgery', date: 'Reviewed July 2026' },
     priceTable: [
       { name: 'Kidney Transplant (Living Donor)', th: 40000, US: 150000, UK: 80000, AU: 120000 },
@@ -504,7 +504,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'One of the world\'s most established destinations for gender-affirming surgery, with decades of surgical experience and dedicated, respectful care teams.',
     },
     intro:
-      'Thailand has one of the longest track records globally in gender-affirming surgery, with surgeons who have performed thousands of procedures and hospitals experienced in providing discreet, dignified care alongside hormone therapy management. Unwello vets every facility for surgical experience, accreditation and patient-centred care standards.',
+      'Thailand has one of the longest track records globally in gender-affirming surgery, with surgeons who have performed thousands of procedures and hospitals experienced in providing discreet, dignified care alongside hormone therapy management. Hospigo vets every facility for surgical experience, accreditation and patient-centred care standards.',
     reviewer: { name: 'Dr. Kittipong Ruangrit', credentials: 'MD, Gender-Affirming Surgery', date: 'Reviewed July 2026' },
     priceTable: [
       { name: 'Top Surgery', th: 4500, US: 12000, UK: 8000, AU: 10000 },
@@ -600,7 +600,7 @@ export const categories: TreatmentCategory[] = [
       subcopy: 'Post-surgical rehabilitation, sports injury treatment and neurological rehab, often combined with recovery from another procedure.',
     },
     intro:
-      'Thailand\'s physiotherapy and sports medicine centres support recovery after surgery, sports injuries and neurological conditions — many patients combine a rehab programme with recovery from orthopedic or spine surgery booked through Unwello.',
+      'Thailand\'s physiotherapy and sports medicine centres support recovery after surgery, sports injuries and neurological conditions — many patients combine a rehab programme with recovery from orthopedic or spine surgery booked through Hospigo.',
     reviewer: { name: 'Dr. Somsak Intharathep', credentials: 'MD, Physical Medicine & Rehabilitation', date: 'Reviewed July 2026' },
     priceTable: [
       { name: 'Post-Surgical Physiotherapy (per session)', th: 50, US: 150, UK: 100, AU: 130 },
@@ -608,7 +608,7 @@ export const categories: TreatmentCategory[] = [
       { name: 'Neurological Rehabilitation (per week)', th: 600, US: 1800, UK: 1200, AU: 1500 },
     ],
     faqs: [
-      { q: 'Can I combine this with surgery booked through Unwello?', a: 'Yes — this is common. Your coordinator can build a combined recovery plan alongside orthopedic, spine or sports-injury surgery.' },
+      { q: 'Can I combine this with surgery booked through Hospigo?', a: 'Yes — this is common. Your coordinator can build a combined recovery plan alongside orthopedic, spine or sports-injury surgery.' },
       { q: 'How many sessions will I need?', a: 'This depends on your condition and goals — your physiotherapist will build a personalized plan after an initial assessment.' },
       { q: 'Can I continue rehab remotely after I go home?', a: 'Many programmes provide a home exercise plan and can coordinate with a physiotherapist in your home country for continuity.' },
     ],

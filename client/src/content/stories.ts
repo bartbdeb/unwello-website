@@ -31,10 +31,10 @@ export const patientStories: PatientStory[] = [
     imgLabel: 'patient story video',
     summary: 'A UK teacher replaces three missing teeth with implants for a fraction of her home quote — and comes home with a new travel habit.',
     body: [
-      "I'd been putting off dental implants for two years because the quote from my local dentist in Leeds was just impossible — over £6,000 for three implants. A friend who'd had veneers done in Bangkok suggested I look into it, and that's how I found Unwello.",
+      "I'd been putting off dental implants for two years because the quote from my local dentist in Leeds was just impossible — over £6,000 for three implants. A friend who'd had veneers done in Bangkok suggested I look into it, and that's how I found Hospigo.",
       'What surprised me most wasn\'t the price — it was how little I had to figure out myself. My coordinator, Nara, asked for my X-rays and a call with my UK dentist\'s notes, then came back within a day with two clinic options and transparent, all-inclusive quotes. No back-and-forth, no hidden fees.',
       'I flew out for eight days. The clinic in Bangkok felt more like a boutique hotel than a dental surgery — private rooms, English-speaking staff, and a dentist who spent forty minutes on my first consultation alone. The implant placement itself was straightforward, and Nara had already arranged my hotel two minutes from the clinic.',
-      "The final crowns went on five months later during a second, shorter trip. Total cost including flights and hotel: under £2,000. I've since recommended Unwello to three people at work.",
+      "The final crowns went on five months later during a second, shorter trip. Total cost including flights and hotel: under £2,000. I've since recommended Hospigo to three people at work.",
     ],
     results: 'Three dental implants with crowns, completed across two visits, at roughly a third of the UK quote.',
     treatedAt: 'Bangkok Hospital Bangkok',
@@ -51,7 +51,7 @@ export const patientStories: PatientStory[] = [
     imgLabel: 'patient story video',
     summary: 'An Australian engineer combines a 3,000-graft FUE procedure with a week of recovery in northern Thailand.',
     body: [
-      "I'd researched hair transplants for about a year before actually booking anything — mostly because every clinic I found in Australia wanted $15,000+ and a six-month wait. Unwello's coordinator matched me with a specialist clinic in Chiang Mai within two days of my enquiry.",
+      "I'd researched hair transplants for about a year before actually booking anything — mostly because every clinic I found in Australia wanted $15,000+ and a six-month wait. Hospigo's coordinator matched me with a specialist clinic in Chiang Mai within two days of my enquiry.",
       'The whole process — consultation, graft-count estimate from photos, pricing, and a provisional date — was handled over WhatsApp and email before I ever left home. My coordinator flagged that Chiang Mai\'s slower pace and cooler climate would suit the recovery period better than Bangkok, which turned out to be great advice.',
       'The procedure itself took a full day — just under 3,000 grafts using FUE. The surgical team was clearly high-volume; everything felt practiced and calm. I stayed for a week afterward, mostly resting at a hotel the coordinator had pre-booked, with a short check-up before flying home.',
       "Ten months on, the results have exceeded what I expected from the before/after photos I was shown. The whole trip, flights included, cost less than a third of the Australian quotes I'd collected.",
@@ -71,7 +71,7 @@ export const patientStories: PatientStory[] = [
     imgLabel: 'patient story video',
     summary: 'A German couple travel to Pattaya for their third IVF cycle after two unsuccessful rounds at home — and this time, it worked.',
     body: [
-      'My husband and I had gone through two rounds of IVF in Germany without success, and the cost — plus the emotional toll of feeling like a number in a busy clinic — had worn us both down. A friend from an online fertility forum mentioned Thailand, and Unwello came up in my research as a way to compare clinics without doing all the vetting myself.',
+      'My husband and I had gone through two rounds of IVF in Germany without success, and the cost — plus the emotional toll of feeling like a number in a busy clinic — had worn us both down. A friend from an online fertility forum mentioned Thailand, and Hospigo came up in my research as a way to compare clinics without doing all the vetting myself.',
       'What stood out immediately was how thorough the intake was. Our coordinator asked for our full treatment history and previous cycle notes, and connected us with a fertility centre in Pattaya that specialises in cases with a prior failed cycle. We had a video consultation with the embryologist before we even booked flights.',
       'We spent just over three weeks in Thailand for the stimulation, retrieval and transfer. The clinic\'s lab is genuinely impressive — better equipment than anything we\'d seen at home — and the doctor explained every step and every number in a way our previous clinic never had time for.',
       "We found out we were pregnant two weeks after flying home. Our coordinator still checks in occasionally, even now, just to see how things are going.",
@@ -91,7 +91,7 @@ export const patientStories: PatientStory[] = [
     imgLabel: 'patient story video',
     summary: 'A retired US postal worker gets a robotic-assisted total knee replacement for a fraction of his American out-of-pocket estimate.',
     body: [
-      "My knee had gotten bad enough that stairs were a two-handed operation. My US surgeon quoted me around $35,000 out of pocket after insurance, with a three-month wait for a surgery slot. That's when my daughter found Unwello while researching options abroad.",
+      "My knee had gotten bad enough that stairs were a two-handed operation. My US surgeon quoted me around $35,000 out of pocket after insurance, with a three-month wait for a surgery slot. That's when my daughter found Hospigo while researching options abroad.",
       'My coordinator walked me through what a robotic-assisted total knee replacement in Bangkok would involve, including realistic hospital-stay and recovery timelines. I had a video call with the orthopedic surgeon before committing, which put my mind at ease more than any brochure could.',
       'The hospital stay was five nights, with physiotherapy starting the day after surgery. The technology used — I was told it was the same robotic system some major US hospitals use — combined with a surgeon who told me he performs this procedure several times a week, made me feel like I was in exceptionally experienced hands.',
       'I flew home three weeks later, already off crutches. The total cost, including flights and my wife\'s hotel stay, came to well under half of my US quote.',
@@ -130,7 +130,7 @@ export const patientStories: PatientStory[] = [
     summary: 'A Singapore-based executive adds a same-day comprehensive health screening to a Bangkok business trip.',
     body: [
       "I travel to Bangkok for work a few times a year, and a colleague mentioned that a lot of the international hospitals there run same-day executive health screenings that are more thorough — and cheaper — than what's available back home. I figured I'd try it on my next trip.",
-      'Booking through Unwello meant I didn\'t have to research which package covered what myself — my coordinator matched the screening to my age, family history and the fact that I hadn\'t had a cardiac work-up in a few years, and had everything scheduled around my meetings.',
+      'Booking through Hospigo meant I didn\'t have to research which package covered what myself — my coordinator matched the screening to my age, family history and the fact that I hadn\'t had a cardiac work-up in a few years, and had everything scheduled around my meetings.',
       'The whole thing took about six hours: bloodwork, imaging, a cardiac stress test and a consultation with an internal medicine physician who actually sat down and went through every result with me, not just the summary page.',
       "The screening flagged an irregular marker that my regular checkups at home had never picked up, and I've since followed up with a specialist. It was a genuinely useful trip, not just a box-ticking exercise.",
     ],
@@ -168,7 +168,7 @@ export const patientStories: PatientStory[] = [
     summary: 'An Australian retiree has planned angioplasty and stenting at a JCI-certified heart centre after a cardiologist referral back home flagged a long public wait.',
     body: [
       "My GP flagged a coronary blockage during a routine check, and while it wasn't an emergency, my specialist made clear it needed addressing before it became one. The public wait for a non-urgent cardiac procedure back home stretched out further than I was comfortable with.",
-      'Unwello\'s coordinator connected me with a hospital that holds a specific disease-certification for cardiac care, and arranged for my Australian cardiologist\'s reports to be reviewed by the Thai cardiac team before I travelled, so there were no surprises on arrival.',
+      'Hospigo\'s coordinator connected me with a hospital that holds a specific disease-certification for cardiac care, and arranged for my Australian cardiologist\'s reports to be reviewed by the Thai cardiac team before I travelled, so there were no surprises on arrival.',
       'The angioplasty and stenting procedure went smoothly, with the same standard of monitoring and technology I\'d have expected at a major hospital at home. I stayed in Thailand for just under two weeks total, including a few days of planned rest before the flight home.',
       "My coordinator arranged for a full medical report to go straight to my cardiologist in Australia, so my ongoing care picked up exactly where the Thailand team left off.",
     ],

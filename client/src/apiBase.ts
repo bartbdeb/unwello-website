@@ -3,6 +3,6 @@
 // In production (e.g. Vercel), the frontend and backend are deployed
 // separately with no proxy, so this must point at the real backend URL —
 // set VITE_API_BASE_URL in the frontend host's environment variables to your
-// backend's deployed URL (e.g. https://unwello-website.onrender.com), with no
+// backend's deployed URL (e.g. https://hospigo-website.onrender.com), with no
 // trailing slash.
 export const API_BASE = import.meta.env.VITE_API_BASE_URL || ''

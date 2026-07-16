@@ -58,7 +58,7 @@ export default function Header() {
           <span style={css('width:34px; height:34px; border-radius:11px; background:linear-gradient(150deg,#2B50E4,#1B3AB8); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(43,80,228,.28);')}>
             <span style={css('width:15px; height:15px; border-radius:5px; background:#5B84FF; display:block;')} />
           </span>
-          <span style={css('font-weight:800; font-size:22px; letter-spacing:-.02em;')}>Unwello</span>
+          <span style={css('font-weight:800; font-size:22px; letter-spacing:-.02em;')}>Hospigo</span>
         </Link>
 
         <nav className="uw-hide-mobile" style={css('display:flex; align-items:center; gap:4px; font-size:14.5px; font-weight:500;')}>

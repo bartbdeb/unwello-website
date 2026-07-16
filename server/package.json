@@ -1,9 +1,9 @@
 {
-  "name": "unwello-server",
+  "name": "hospigo-server",
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Express backend for Unwello — keeps AI API keys off the client.",
+  "description": "Express backend for Hospigo — keeps AI API keys off the client.",
   "main": "index.js",
   "scripts": {
     "dev": "node --watch index.js",

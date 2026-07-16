@@ -68,7 +68,7 @@ export default function News() {
           <div style={css('display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap;')}>
             <div>
               <span style={css(eyebrow)}>News & guides</span>
-              <h1 style={css('font-size:38px; line-height:1.1; letter-spacing:-.026em; font-weight:800; margin:10px 0 8px; color:#16214A;')}>The Unwello Newsroom</h1>
+              <h1 style={css('font-size:38px; line-height:1.1; letter-spacing:-.026em; font-weight:800; margin:10px 0 8px; color:#16214A;')}>The Hospigo Newsroom</h1>
               <p style={css('font-size:15.5px; line-height:1.6; color:#5A6580; margin:0; max-width:520px;')}>Costs, visas, safety and recovery — practical, medically reviewed guides for every stage of planning treatment in Thailand.</p>
             </div>
             <div style={css('position:relative; width:100%; max-width:320px;')}>
