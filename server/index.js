@@ -1,4 +1,7 @@
 import 'dotenv/config'
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import express from 'express'
 import cors from 'cors'
 import Anthropic from '@anthropic-ai/sdk'
@@ -19,6 +22,44 @@ const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY
 const reviewsCache = new Map() // query -> { data, expiresAt }
 const REVIEWS_CACHE_TTL_MS = 60 * 60 * 1000 // 1 hour, to limit paid API calls
 
+// Real per-article view counts for the Newsroom. Seeded with the numbers the
+// site launched with (see client/src/content/news.ts) so existing articles
+// don't visibly drop to 0 the moment this went live — from here on every
+// number moves only because a real page load happened.
+// NOTE: persisted to a JSON file on local disk. Render's free tier does NOT
+// keep local disk across deploys/restarts, so counts will reset to the seed
+// values on redeploy until this is moved onto a real database or a Render
+// persistent disk is attached.
+const SEED_VIEWS = {
+  'dental-costs-thailand': 6240,
+  'thailand-medical-visa-guide-2026': 4890,
+  'best-recovery-hotels-bangkok': 3150,
+  'what-is-jci-accreditation': 2780,
+  'choosing-a-medical-coordinator': 2410,
+  'medical-tourism-insurance-thailand': 1930,
+  'bangkok-vs-phuket-vs-chiang-mai': 3560,
+  'medical-tourism-safety-checklist': 2050,
+}
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const VIEW_COUNTS_FILE = path.join(__dirname, 'data', 'view-counts.json')
+
+function loadViewCounts() {
+  try {
+    const raw = JSON.parse(fs.readFileSync(VIEW_COUNTS_FILE, 'utf-8'))
+    return { ...SEED_VIEWS, ...raw }
+  } catch {
+    return { ...SEED_VIEWS }
+  }
+}
+
+function saveViewCounts(counts) {
+  fs.mkdirSync(path.dirname(VIEW_COUNTS_FILE), { recursive: true })
+  fs.writeFileSync(VIEW_COUNTS_FILE, JSON.stringify(counts, null, 2))
+}
+
+const viewCounts = loadViewCounts()
+
 // System prompt for the patient-intake assistant.
 const SYSTEM_PROMPT = `You are the Hospigo assistant, a friendly guide for a medical-tourism platform that connects patients with vetted clinics in Thailand.
 
@@ -37,6 +78,17 @@ Rules:
 
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, aiConfigured: !!client, model: MODEL })
+})
+
+app.get('/api/views', (_req, res) => {
+  res.json(viewCounts)
+})
+
+app.post('/api/views/:slug', (req, res) => {
+  const { slug } = req.params
+  viewCounts[slug] = (viewCounts[slug] || 0) + 1
+  saveViewCounts(viewCounts)
+  res.json({ slug, views: viewCounts[slug] })
 })
 
 app.post('/api/chat', async (req, res) => {

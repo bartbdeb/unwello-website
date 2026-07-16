@@ -47,6 +47,7 @@ export const NEWS_CHAPTERS = [
   'Safety & Accreditation',
   'City Guides',
   'Planning Process',
+  'Insurance',
 ] as const
 
 export type NewsChapter = (typeof NEWS_CHAPTERS)[number]
@@ -61,8 +62,12 @@ const CHAPTER_IMAGE_FOLDER: Record<NewsChapter, string> = {
   'Safety & Accreditation': 'safety-accreditation',
   'City Guides': 'city-guides',
   'Planning Process': 'planning-process',
+  Insurance: 'insurance',
 }
 
+// No photos shot for this chapter yet — drop real images into
+// client/public/images/news/insurance/ and bump this count before the first
+// Insurance article ships (see imageForChapter above).
 const CHAPTER_IMAGE_COUNT: Record<NewsChapter, number> = {
   'Cost & Pricing': 13,
   'Travel & Visas': 12,
@@ -70,6 +75,7 @@ const CHAPTER_IMAGE_COUNT: Record<NewsChapter, number> = {
   'Safety & Accreditation': 4,
   'City Guides': 4,
   'Planning Process': 3,
+  Insurance: 1,
 }
 
 // Deterministic rotation: the Nth article ever written for a chapter gets

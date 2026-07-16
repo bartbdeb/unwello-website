@@ -18,3 +18,6 @@ News room pictures/
 
 # Build artifacts
 client/tsconfig.tsbuildinfo
+
+# Runtime state, not source — see server/index.js's SEED_VIEWS comment
+server/data/

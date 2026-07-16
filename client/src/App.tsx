@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 import { css, El } from './ui'
 import { AppContext } from './context'
+import { ViewsProvider } from './viewsContext'
+import { CookieConsentProvider, useCookieConsent } from './cookieConsent'
 import { useFunnel } from './useFunnel'
 import { WHATSAPP_NUMBER } from './data'
 import Header from './sections/Header'
@@ -16,16 +18,34 @@ import Stories from './pages/Stories'
 import StoryDetail from './pages/StoryDetail'
 import News from './pages/News'
 import NewsArticle from './pages/NewsArticle'
+import CookiePolicy from './pages/CookiePolicy'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import MedicalDisclaimer from './pages/MedicalDisclaimer'
 import QuoteFunnel from './sections/QuoteFunnel'
 import AIChat from './sections/AIChat'
 import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   const funnel = useFunnel()
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Hospigo, I'd like help planning treatment in Thailand.")}`
 
   return (
     <AppContext.Provider value={{ openFunnel: funnel.openFunnel }}>
+    <ViewsProvider>
+    <CookieConsentProvider>
+      <AppShell funnel={funnel} />
+    </CookieConsentProvider>
+    </ViewsProvider>
+    </AppContext.Provider>
+  )
+}
+
+function AppShell({ funnel }: { funnel: ReturnType<typeof useFunnel> }) {
+  const { showBanner } = useCookieConsent()
+  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Hospigo, I'd like help planning treatment in Thailand.")}`
+
+  return (
+    <>
       <ScrollToTop />
       <div style={css('width:100%; min-height:100vh; background:#F4F7FF;')}>
         <Header />
@@ -43,6 +63,10 @@ export default function App() {
           <Route path="/stories/:slug" element={<StoryDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsArticle />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
         </Routes>
 
         <Footer />
@@ -61,8 +85,10 @@ export default function App() {
         {/* AI intake assistant */}
         <AIChat />
 
-        {/* Resume banner — shows when there's saved, unfinished funnel progress */}
-        {funnel.hasSavedProgress && !funnel.open && (
+        {/* Resume banner — shows when there's saved, unfinished funnel progress.
+            Deferred while the cookie banner is up so the two bottom-left
+            cards don't stack on top of each other. */}
+        {funnel.hasSavedProgress && !funnel.open && !showBanner && (
           <div className="uw-resume-banner" style={css('position:fixed; bottom:26px; left:26px; background:#fff; border:1px solid #E1E8F7; border-radius:16px; box-shadow:0 16px 40px rgba(35,51,47,.18); padding:16px 18px; display:flex; align-items:center; gap:14px; z-index:39; max-width:340px; animation:uwFade .3s ease;')}>
             <span style={css('font-size:22px;')}>📝</span>
             <div style={css('flex:1;')}>
@@ -77,6 +103,6 @@ export default function App() {
         {/* Quote funnel modal */}
         <QuoteFunnel funnel={funnel} />
       </div>
-    </AppContext.Provider>
+    </>
   )
 }

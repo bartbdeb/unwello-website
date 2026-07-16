@@ -148,7 +148,7 @@ export default function Header() {
         <div className="uw-show-mobile" style={css('position:fixed; inset:74px 0 0 0; background:#F4F7FF; z-index:49; overflow-y:auto; padding:8px 24px 32px; animation:uwFade .18s ease; flex-direction:column;')}>
           <button
             onClick={() => setMobileTreatmentsOpen((o) => !o)}
-            style={css('width:100%; display:flex; align-items:center; justify-content:space-between; background:none; border:none; font-family:inherit; ' + mobileNavLink)}
+            style={css(mobileNavLink + ' width:100%; display:flex; align-items:center; justify-content:space-between; background:none; border:none; font-family:inherit; text-align:left;')}
           >
             Treatments
             <span style={css('display:inline-block; width:8px; height:8px; border-right:2px solid #8B95AD; border-bottom:2px solid #8B95AD; transition:transform .2s; transform:rotate(' + (mobileTreatmentsOpen ? '-135deg' : '45deg') + ');')} />

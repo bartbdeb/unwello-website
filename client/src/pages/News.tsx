@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { css, eyebrow } from '../ui'
 import { newsArticles, formatMeta, NEWS_CHAPTERS, type NewsArticle } from '../content/news'
+import { useViews } from '../viewsContext'
 
 function FormatPill({ a }: { a: NewsArticle }) {
   return (
@@ -12,9 +13,10 @@ function FormatPill({ a }: { a: NewsArticle }) {
 }
 
 function ViewCount({ a }: { a: NewsArticle }) {
+  const { viewsFor } = useViews()
   return (
     <span style={css('display:inline-flex; align-items:center; gap:4px;')}>
-      <span aria-hidden="true">👁</span> {a.views.toLocaleString('en-US')}
+      <span aria-hidden="true">👁</span> {viewsFor(a.slug, a.views).toLocaleString('en-US')}
     </span>
   )
 }

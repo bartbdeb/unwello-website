@@ -10,6 +10,7 @@ import { hospitals, sortRecommended } from '../content/hospitals'
 import { patientStories } from '../content/stories'
 import { newsArticles } from '../content/news'
 import { useApp } from '../context'
+import { useCookieConsent } from '../cookieConsent'
 import ClinicCard from '../components/ClinicCard'
 
 const featuredStories = patientStories.filter((s) => s.featured)
@@ -349,6 +350,7 @@ export function FinalCTA() {
 }
 
 export function Footer() {
+  const { openPreferences } = useCookieConsent()
   return (
     <footer style={css('background:linear-gradient(160deg,#16214A 0%,#0E1838 100%); color:#AEB8D6;')}>
       <div style={css('max-width:1240px; margin:0 auto; padding:56px 32px 32px;')}>
@@ -384,10 +386,11 @@ export function Footer() {
         <div style={css('display:flex; align-items:center; justify-content:space-between; padding-top:24px; gap:20px; flex-wrap:wrap;')}>
           <span style={css('font-size:13px;')}>© 2026 Hospigo. Facilitator, not a medical provider. Content is medically reviewed.</span>
           <div style={css('display:flex; gap:20px; font-size:13px;')}>
-            <a href="#" style={css('color:#AEB8D6;')}>Privacy</a>
-            <a href="#" style={css('color:#AEB8D6;')}>Terms</a>
-            <a href="#" style={css('color:#AEB8D6;')}>Medical Disclaimer</a>
-            <a href="#" style={css('color:#AEB8D6;')}>Cookies</a>
+            <Link to="/privacy" style={css('color:#AEB8D6;')}>Privacy</Link>
+            <Link to="/terms" style={css('color:#AEB8D6;')}>Terms</Link>
+            <Link to="/medical-disclaimer" style={css('color:#AEB8D6;')}>Medical Disclaimer</Link>
+            <Link to="/cookies" style={css('color:#AEB8D6;')}>Cookies</Link>
+            <button onClick={openPreferences} style={css('background:none; border:none; font-family:inherit; color:#AEB8D6; font-size:13px; cursor:pointer; padding:0;')}>Cookie preferences</button>
           </div>
         </div>
       </div>

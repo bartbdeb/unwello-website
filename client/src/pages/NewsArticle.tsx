@@ -1,9 +1,11 @@
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { css, El, eyebrow, h2Style } from '../ui'
 import { newsArticles, newsBySlug } from '../content/news'
 import { categoryBySlug, type PriceRow } from '../content/treatments'
 import { countryMeta, type Country } from '../data'
 import { useApp } from '../context'
+import { useViews } from '../viewsContext'
 import FaqAccordion from '../components/FaqAccordion'
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
@@ -11,7 +13,13 @@ const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').repla
 export default function NewsArticle() {
   const { slug = '' } = useParams()
   const { openFunnel } = useApp()
+  const { viewsFor, registerView } = useViews()
   const article = newsBySlug(slug)
+
+  useEffect(() => {
+    if (article) registerView(article.slug)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [article?.slug])
 
   if (!article) {
     return (
@@ -47,7 +55,7 @@ export default function NewsArticle() {
             <p style={css('font-size:16.5px; line-height:1.6; color:#5A6580; margin:0 0 18px;')}>{article.dek}</p>
             <div style={css('display:flex; align-items:center; gap:11px; font-size:13.5px; color:#8B95AD; flex-wrap:wrap;')}>
               <span style={css('width:34px; height:34px; border-radius:50%; background:#ECF1FD; display:flex; align-items:center; justify-content:center; font-size:15px;')}>✍️</span>
-              <span>{article.author} · Reviewed by <strong style={css('color:#16214A;')}>{article.reviewer.name}</strong>, {article.reviewer.credentials} · Updated {article.date} · {article.read} · 👁 {article.views.toLocaleString('en-US')}</span>
+              <span>{article.author} · Reviewed by <strong style={css('color:#16214A;')}>{article.reviewer.name}</strong>, {article.reviewer.credentials} · Updated {article.date} · {article.read} · 👁 {viewsFor(article.slug, article.views).toLocaleString('en-US')}</span>
             </div>
             {cat && (
               <Link to={`/treatments/${cat.slug}`} style={css('display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:#fff; border:1px solid #E1E8F7; padding:8px 14px 8px 8px; border-radius:100px; font-size:13px; font-weight:600; color:#3A4468;')}>
@@ -115,7 +123,7 @@ export default function NewsArticle() {
                 <Link key={a.slug} to={`/news/${a.slug}`} style={css('display:block; border:1px solid #E1E8F7; background:#fff; border-radius:16px; padding:18px; color:inherit;')}>
                   <span style={css('font-size:11px; font-weight:800; color:#2B50E4; letter-spacing:.06em; text-transform:uppercase;')}>{a.cat}</span>
                   <h3 style={css('font-size:15.5px; font-weight:700; margin:8px 0 6px; color:#16214A; line-height:1.3;')}>{a.title}</h3>
-                  <span style={css('font-size:12.5px; color:#8B95AD;')}>{a.read} · Updated {a.date} · 👁 {a.views.toLocaleString('en-US')}</span>
+                  <span style={css('font-size:12.5px; color:#8B95AD;')}>{a.read} · Updated {a.date} · 👁 {viewsFor(a.slug, a.views).toLocaleString('en-US')}</span>
                 </Link>
               ))}
             </div>
