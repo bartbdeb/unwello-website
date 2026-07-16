@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { css, El } from './ui'
-import { initAnalytics } from './analytics'
+import { initAnalytics, trackPageView } from './analytics'
 
 // Bump this if the cookie categories/policy change in a way that requires
 // re-prompting everyone (GDPR/PDPA: consent must stay specific to what it
@@ -65,7 +65,13 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
   const apply = (analytics: boolean) => {
     setConsent(storeConsent(analytics))
     setPreferencesOpen(false)
-    if (analytics) initAnalytics()
+    if (analytics) {
+      initAnalytics()
+      // ScrollToTop's page_view only fires on route *changes* — send one now
+      // for the page the visitor is already on, or accepting mid-session
+      // would silently miss it.
+      trackPageView(window.location.pathname)
+    }
   }
 
   const isFirstVisit = ready && consent === null
