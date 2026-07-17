@@ -3,6 +3,9 @@ import { css, El, eyebrow, h2Style } from '../ui'
 import { specialties, specialtyGroups } from '../content/specialties'
 import { categoryBySlug } from '../content/treatments'
 import { useApp } from '../context'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd } from '../seo'
 
 export default function BrowseTreatments() {
   const { openFunnel } = useApp()
@@ -10,6 +13,12 @@ export default function BrowseTreatments() {
 
   return (
     <section style={css('max-width:1240px; margin:0 auto; padding:40px 32px 64px;')}>
+      <Seo
+        title="Browse All Treatments in Thailand | Hospigo"
+        description="Explore treatment categories across Thailand's JCI-accredited hospitals — dental, cosmetic, fertility, orthopedics and more. Get a free personalized quote."
+        path="/treatments"
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'All Treatments', path: '/treatments' }])} />
       <div style={css('display:flex; align-items:center; gap:8px; font-size:13px; color:#8B95AD; margin-bottom:22px;')}>
         <Link to="/" style={css('color:#8B95AD;')}>Home</Link>
         <span>›</span>

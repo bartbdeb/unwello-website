@@ -3,6 +3,9 @@ import { css, El, Placeholder, eyebrow, h2Style } from '../ui'
 import { patientStories, storyBySlug } from '../content/stories'
 import { categoryBySlug } from '../content/treatments'
 import { useApp } from '../context'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, truncate } from '../seo'
 
 export default function StoryDetail() {
   const { slug = '' } = useParams()
@@ -24,6 +27,15 @@ export default function StoryDetail() {
 
   return (
     <>
+      <Seo title={`${story.name}'s ${story.procedure} Story | Hospigo`} description={truncate(story.summary, 158)} path={`/stories/${story.slug}`} />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Stories', path: '/stories' },
+          { name: `${story.name}'s story`, path: `/stories/${story.slug}` },
+        ])}
+      />
       {/* ---- Breadcrumb + hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

@@ -8,6 +8,9 @@ import { packagesByProcedure, hospitalCheckupNotes, type CheckupPackage } from '
 import { useApp } from '../context'
 import ClinicCard from '../components/ClinicCard'
 import FaqAccordion from '../components/FaqAccordion'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd, medicalProcedureJsonLd } from '../seo'
 
 export default function ProcedureDetail() {
   const { specialtySlug = '', procedureSlug = '' } = useParams()
@@ -37,9 +40,22 @@ export default function ProcedureDetail() {
 
   const siblingProcedures = proceduresBySpecialty(cat.slug).filter((p) => p.slug !== proc.slug)
   const catClinics = sortRecommended(hospitals.filter((h) => h.specialties.includes(cat.slug))).slice(0, 6)
+  const procDescription = `${proc.name} at JCI-accredited ${cat.name.toLowerCase()} facilities in Thailand. Compare vetted clinics and get a free, all-inclusive quote from a personal coordinator.`
 
   return (
     <>
+      <Seo title={`${proc.name} in Thailand | Hospigo`} description={procDescription} path={`/treatments/${cat.slug}/${proc.slug}`} />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Treatments', path: '/treatments' },
+          { name: cat.name, path: `/treatments/${cat.slug}` },
+          { name: proc.name, path: `/treatments/${cat.slug}/${proc.slug}` },
+        ])}
+      />
+      <JsonLd id="medical-procedure" data={medicalProcedureJsonLd(proc.name, procDescription)} />
+      {cat.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(cat.faqs)} />}
       {/* ---- Breadcrumb + hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

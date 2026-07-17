@@ -1,9 +1,13 @@
 import { useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { css, El, eyebrow, h2Style } from '../ui'
 import { hospitals, sortRecommended } from '../content/hospitals'
 import { categories } from '../content/treatments'
 import { useApp } from '../context'
 import ClinicCard from '../components/ClinicCard'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd } from '../seo'
 
 type SortKey = 'recommended' | 'established' | 'alphabetical'
 
@@ -104,8 +108,19 @@ export default function ClinicsListing() {
 
   return (
     <section style={css('max-width:1240px; margin:0 auto; padding:40px 32px 64px;')}>
+      <Seo
+        title="JCI-Accredited Hospitals & Clinics in Thailand | Hospigo"
+        description="Browse JCI-accredited hospitals and clinics across Thailand. Filter by specialty, city and accreditation — get matched with a free, personalized quote."
+        path="/clinics"
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Clinics', path: '/clinics' }])} />
+      <div style={css('display:flex; align-items:center; gap:8px; font-size:13px; color:#8B95AD; margin-bottom:18px;')}>
+        <Link to="/" style={css('color:#8B95AD;')}>Home</Link>
+        <span>›</span>
+        <span style={css('color:#16214A; font-weight:600;')}>Clinics</span>
+      </div>
       <span style={css(eyebrow)}>JCI-accredited facilities</span>
-      <h2 style={css(h2Style + ' margin-bottom:8px;')}>Browse all hospitals & clinics</h2>
+      <h1 style={css(h2Style + ' margin-bottom:8px;')}>Browse all hospitals & clinics</h1>
       <p style={css('font-size:15.5px; color:#7A85A0; margin:0 0 26px; max-width:720px;')}>
         Every facility below holds JCI accreditation. "Hospigo Approved" facilities have been personally vetted by our team and are shown first — the rest is Thailand's full JCI-accredited directory, so you can see the whole landscape.
       </p>

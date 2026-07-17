@@ -4,7 +4,12 @@ import LegalLayout, { legalH2, legalUl } from '../components/LegalLayout'
 
 export default function TermsOfService() {
   return (
-    <LegalLayout title="Terms of Service" lastUpdated="16 July 2026">
+    <LegalLayout
+      title="Terms of Service"
+      lastUpdated="16 July 2026"
+      description="The terms governing your use of hospigo.com, including the nature of our facilitation service and limitations of liability."
+      path="/terms"
+    >
       <p>
         These Terms of Service ("Terms") govern your use of hospigo.com and any related services (the "Site"), operated by <strong>Intermedi Pte. Ltd.</strong>, trading as <strong>Hospigo</strong> ("Hospigo," "we," "us," "our"), a company incorporated in Singapore (UEN 202623943K), registered office at 160 Robinson Road, #14-04 Singapore Business Federation Center, Singapore 068914.
       </p>

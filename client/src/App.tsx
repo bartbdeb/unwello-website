@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { css, El } from './ui'
 import { AppContext } from './context'
@@ -7,24 +8,29 @@ import { useFunnel } from './useFunnel'
 import { WHATSAPP_NUMBER } from './data'
 import Header from './sections/Header'
 import { Footer } from './sections/Sections'
-import HomePage from './pages/HomePage'
-import BrowseTreatments from './pages/BrowseTreatments'
-import TreatmentCategory from './pages/TreatmentCategory'
-import ProcedureDetail from './pages/ProcedureDetail'
-import ClinicsListing from './pages/ClinicsListing'
-import ClinicProfile from './pages/ClinicProfile'
-import HowItWorksPage from './pages/HowItWorks'
-import Stories from './pages/Stories'
-import StoryDetail from './pages/StoryDetail'
-import News from './pages/News'
-import NewsArticle from './pages/NewsArticle'
-import CookiePolicy from './pages/CookiePolicy'
-import PrivacyPolicy from './pages/PrivacyPolicy'
-import TermsOfService from './pages/TermsOfService'
-import MedicalDisclaimer from './pages/MedicalDisclaimer'
 import QuoteFunnel from './sections/QuoteFunnel'
 import AIChat from './sections/AIChat'
 import ScrollToTop from './components/ScrollToTop'
+
+// Route-level code splitting: each page (and the content data it pulls in —
+// hospitals.ts alone is 2000+ lines of real JCI data) becomes its own chunk,
+// so e.g. a visitor landing directly on a news article isn't also
+// downloading ClinicProfile/TreatmentCategory code they'll never use.
+const HomePage = lazy(() => import('./pages/HomePage'))
+const BrowseTreatments = lazy(() => import('./pages/BrowseTreatments'))
+const TreatmentCategory = lazy(() => import('./pages/TreatmentCategory'))
+const ProcedureDetail = lazy(() => import('./pages/ProcedureDetail'))
+const ClinicsListing = lazy(() => import('./pages/ClinicsListing'))
+const ClinicProfile = lazy(() => import('./pages/ClinicProfile'))
+const HowItWorksPage = lazy(() => import('./pages/HowItWorks'))
+const Stories = lazy(() => import('./pages/Stories'))
+const StoryDetail = lazy(() => import('./pages/StoryDetail'))
+const News = lazy(() => import('./pages/News'))
+const NewsArticle = lazy(() => import('./pages/NewsArticle'))
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const TermsOfService = lazy(() => import('./pages/TermsOfService'))
+const MedicalDisclaimer = lazy(() => import('./pages/MedicalDisclaimer'))
 
 export default function App() {
   const funnel = useFunnel()
@@ -51,23 +57,25 @@ function AppShell({ funnel }: { funnel: ReturnType<typeof useFunnel> }) {
         <Header />
 
         {/* Page content by route */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/treatments" element={<BrowseTreatments />} />
-          <Route path="/treatments/:slug" element={<TreatmentCategory />} />
-          <Route path="/treatments/:specialtySlug/:procedureSlug" element={<ProcedureDetail />} />
-          <Route path="/clinics" element={<ClinicsListing />} />
-          <Route path="/clinics/:slug" element={<ClinicProfile />} />
-          <Route path="/how-it-works" element={<HowItWorksPage />} />
-          <Route path="/stories" element={<Stories />} />
-          <Route path="/stories/:slug" element={<StoryDetail />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/news/:slug" element={<NewsArticle />} />
-          <Route path="/cookies" element={<CookiePolicy />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsOfService />} />
-          <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/treatments" element={<BrowseTreatments />} />
+            <Route path="/treatments/:slug" element={<TreatmentCategory />} />
+            <Route path="/treatments/:specialtySlug/:procedureSlug" element={<ProcedureDetail />} />
+            <Route path="/clinics" element={<ClinicsListing />} />
+            <Route path="/clinics/:slug" element={<ClinicProfile />} />
+            <Route path="/how-it-works" element={<HowItWorksPage />} />
+            <Route path="/stories" element={<Stories />} />
+            <Route path="/stories/:slug" element={<StoryDetail />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/news/:slug" element={<NewsArticle />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+          </Routes>
+        </Suspense>
 
         <Footer />
 

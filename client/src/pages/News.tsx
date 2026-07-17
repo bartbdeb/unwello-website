@@ -3,6 +3,9 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { css, eyebrow } from '../ui'
 import { newsArticles, formatMeta, NEWS_CHAPTERS, type NewsArticle } from '../content/news'
 import { useViews } from '../viewsContext'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd } from '../seo'
 
 function FormatPill({ a }: { a: NewsArticle }) {
   return (
@@ -59,6 +62,12 @@ export default function News() {
 
   return (
     <>
+      <Seo
+        title="Newsroom — Costs, Visas & Safety Guides | Hospigo"
+        description="Practical, medically reviewed guides on medical tourism in Thailand — costs, visas, safety, recovery and more."
+        path="/news"
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'News & Guides', path: '/news' }])} />
       {/* ---- Masthead ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 260px); border-bottom:1px solid #E1E8F7;')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:28px 32px 30px;')}>
@@ -103,7 +112,7 @@ export default function News() {
             <div style={css('display:flex; flex-direction:column; gap:0;')}>
               {secondary.map((a) => (
                 <Link key={a.slug} to={`/news/${a.slug}`} style={css('display:flex; gap:14px; padding:16px 4px; border-bottom:1px solid #E1E8F7; color:inherit;')}>
-                  <img src={a.image} alt={a.title} style={css('width:88px; height:66px; border-radius:11px; object-fit:cover; flex:0 0 auto;')} />
+                  <img src={a.image} alt={a.title} loading="lazy" style={css('width:88px; height:66px; border-radius:11px; object-fit:cover; flex:0 0 auto;')} />
                   <div style={css('min-width:0;')}>
                     <FormatPill a={a} />
                     <h4 style={css('font-size:14.5px; font-weight:700; margin:8px 0 6px; color:#16214A; line-height:1.35;')}>{a.title}</h4>
@@ -185,7 +194,7 @@ export default function News() {
 function ArticleCard({ a }: { a: NewsArticle }) {
   return (
     <Link to={`/news/${a.slug}`} style={css('display:block; border:1px solid #E1E8F7; background:#fff; border-radius:16px; overflow:hidden; color:inherit; transition:transform .18s, box-shadow .18s;')}>
-      <img src={a.image} alt={a.title} style={css('width:100%; height:148px; object-fit:cover; display:block;')} />
+      <img src={a.image} alt={a.title} loading="lazy" style={css('width:100%; height:148px; object-fit:cover; display:block;')} />
       <div style={css('padding:16px 18px 18px;')}>
         <FormatPill a={a} />
         <h3 style={css('font-size:15.5px; font-weight:700; margin:9px 0 8px; color:#16214A; line-height:1.32;')}>{a.title}</h3>

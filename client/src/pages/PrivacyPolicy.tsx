@@ -6,7 +6,12 @@ const tableRow = 'display:grid; grid-template-columns:1.4fr 1fr 1.2fr; gap:12px;
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout title="Privacy Policy" lastUpdated="16 July 2026">
+    <LegalLayout
+      title="Privacy Policy"
+      lastUpdated="16 July 2026"
+      description="How Hospigo collects, uses, and protects your personal data, including health-related information, under GDPR, PDPA and other applicable privacy laws."
+      path="/privacy"
+    >
       <p>Effective for: hospigo.com and all related subdomains and services (the "Site")</p>
 
       <h2 style={css(legalH2)}>1. Who we are</h2>

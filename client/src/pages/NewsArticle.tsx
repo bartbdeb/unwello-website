@@ -7,6 +7,9 @@ import { countryMeta, type Country } from '../data'
 import { useApp } from '../context'
 import { useViews } from '../viewsContext'
 import FaqAccordion from '../components/FaqAccordion'
+import Seo, { SITE_URL } from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd, truncate } from '../seo'
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
@@ -36,6 +39,22 @@ export default function NewsArticle() {
 
   return (
     <>
+      <Seo
+        title={`${article.title} | Hospigo`}
+        description={truncate(article.excerpt, 158)}
+        path={`/news/${article.slug}`}
+        image={SITE_URL + article.image}
+      />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'News & Guides', path: '/news' },
+          { name: article.cat, path: `/news?cat=${encodeURIComponent(article.cat)}` },
+          { name: article.title, path: `/news/${article.slug}` },
+        ])}
+      />
+      {article.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(article.faqs)} />}
       {/* ---- Breadcrumb + hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 40px;')}>

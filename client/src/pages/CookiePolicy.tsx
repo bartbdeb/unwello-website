@@ -9,7 +9,12 @@ export default function CookiePolicy() {
   const { openPreferences } = useCookieConsent()
 
   return (
-    <LegalLayout title="Cookie Policy" lastUpdated="16 July 2026">
+    <LegalLayout
+      title="Cookie Policy"
+      lastUpdated="16 July 2026"
+      description="How Hospigo uses cookies and similar technologies, what's optional, and how to manage your preferences at any time."
+      path="/cookies"
+    >
       <p>
         This policy explains what cookies and similar technologies (like browser local storage) Hospigo uses, why, and how you can control them. It should be read alongside our <Link to="/privacy" style={css('color:#2B50E4; font-weight:600;')}>Privacy Policy</Link>. Hospigo is committed to complying with Singapore's Personal Data Protection Act (PDPA), the EU/UK General Data Protection Regulation (GDPR), Canada's PIPEDA, and applicable US state privacy laws (such as the CCPA/CPRA).
       </p>

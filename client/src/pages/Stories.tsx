@@ -4,6 +4,9 @@ import { css, El, Placeholder, eyebrow, h2Style } from '../ui'
 import { patientStories } from '../content/stories'
 import { categoryBySlug } from '../content/treatments'
 import { useApp } from '../context'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd } from '../seo'
 
 export default function Stories() {
   const { openFunnel } = useApp()
@@ -22,6 +25,12 @@ export default function Stories() {
 
   return (
     <>
+      <Seo
+        title="Patient Stories — Medical Tourism in Thailand | Hospigo"
+        description="Real patients share their experience travelling to Thailand for dental, cosmetic, fertility and other treatments through Hospigo — real results, real savings."
+        path="/stories"
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'Stories', path: '/stories' }])} />
       {/* ---- Header ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

@@ -4,7 +4,12 @@ import LegalLayout, { legalH2 } from '../components/LegalLayout'
 
 export default function MedicalDisclaimer() {
   return (
-    <LegalLayout title="Medical Disclaimer" lastUpdated="16 July 2026">
+    <LegalLayout
+      title="Medical Disclaimer"
+      lastUpdated="16 July 2026"
+      description="Hospigo does not provide medical advice. Read our full disclaimer on the nature of our facilitation service and your responsibilities."
+      path="/medical-disclaimer"
+    >
       <p>This disclaimer applies to hospigo.com and all related services (the "Site"), operated by Intermedi Pte. Ltd., trading as Hospigo ("Hospigo," "we," "us," "our").</p>
 
       <h2 style={css(legalH2)}>Hospigo does not provide medical advice</h2>

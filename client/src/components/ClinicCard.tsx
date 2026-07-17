@@ -20,7 +20,7 @@ export default function ClinicCard({ h }: { h: Hospital }) {
     <div style={css('border:1px solid #E1E8F7; background:#FFFFFF; border-radius:20px; overflow:hidden; box-shadow:0 8px 22px rgba(35,51,47,.05);')}>
       <div style={css((h.imageFile ? '' : phBase) + 'height:150px; position:relative; overflow:hidden;')}>
         {h.imageFile ? (
-          <img src={h.imageFile} alt={h.name} style={css('width:100%; height:100%; object-fit:cover; display:block;')} />
+          <img src={h.imageFile} alt={h.name} loading="lazy" style={css('width:100%; height:100%; object-fit:cover; display:block;')} />
         ) : (
           <span style={css('font-family:ui-monospace,Menlo,monospace; font-size:11px; color:#98A2C4; background:rgba(255,255,255,.7); padding:4px 10px; border-radius:100px;')}>{h.jciProgramType.toLowerCase()}</span>
         )}

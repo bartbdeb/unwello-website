@@ -6,6 +6,9 @@ import { specialtyBySlug } from '../content/specialties'
 import { useApp } from '../context'
 import FaqAccordion from '../components/FaqAccordion'
 import ReviewsSection from '../components/ReviewsSection'
+import Seo, { SITE_URL } from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd, truncate } from '../seo'
 
 // Generic, non-hospital-specific FAQ — real per-facility content (pricing,
 // doctors, patient reviews) isn't in the source data, so these explain the
@@ -34,9 +37,28 @@ export default function ClinicProfile() {
 
   const preferredTreatment = h.specialties[0] ? categoryBySlug(h.specialties[0])?.name : undefined
   const jciYear = (h.jciSince.match(/\d{4}/) || [])[0] ?? h.jciSince
+  const clinicDescription =
+    h.description || h.notes
+      ? truncate(h.description || h.notes, 158)
+      : `${h.name} is a JCI-accredited facility in ${h.city}, Thailand${h.approved ? ', Hospigo Approved' : ''}. Get a free, all-inclusive quote from a personal coordinator.`
 
   return (
     <>
+      <Seo
+        title={`${h.name} — ${h.city}, Thailand | Hospigo`}
+        description={clinicDescription}
+        path={`/clinics/${h.slug}`}
+        image={h.imageFile ? SITE_URL + h.imageFile : undefined}
+      />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Clinics', path: '/clinics' },
+          { name: h.name, path: `/clinics/${h.slug}` },
+        ])}
+      />
+      <JsonLd id="faq" data={faqJsonLd(GENERIC_FAQS)} />
       {/* ---- Header ---- */}
       <section style={css('max-width:1240px; margin:0 auto; padding:24px 32px 0;')}>
         <div style={css('display:flex; align-items:center; gap:8px; font-size:13px; color:#8B95AD; margin-bottom:18px;')}>

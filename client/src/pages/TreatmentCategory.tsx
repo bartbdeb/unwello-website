@@ -10,6 +10,9 @@ import { countryMeta, type Country } from '../data'
 import { useApp } from '../context'
 import ClinicCard from '../components/ClinicCard'
 import FaqAccordion from '../components/FaqAccordion'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd } from '../seo'
 
 const CLINICS_VISIBLE = 6
 
@@ -38,6 +41,20 @@ export default function TreatmentCategory() {
 
   return (
     <>
+      <Seo
+        title={`${cat.name} in Thailand, from ${cat.priceFrom} | Hospigo`}
+        description={`Compare JCI-accredited ${cat.name.toLowerCase()} clinics in Thailand, from ${cat.priceFrom} all-inclusive — save up to 70% vs. home. Free coordinator, transparent quotes.`}
+        path={`/treatments/${cat.slug}`}
+      />
+      <JsonLd
+        id="breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Treatments', path: '/treatments' },
+          { name: cat.name, path: `/treatments/${cat.slug}` },
+        ])}
+      />
+      {cat.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(cat.faqs)} />}
       {/* ---- Sub-hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom'
 import { css, El, eyebrow, h2Style } from '../ui'
 import { useApp } from '../context'
 import FaqAccordion from '../components/FaqAccordion'
+import Seo from '../components/Seo'
+import JsonLd from '../components/JsonLd'
+import { breadcrumbJsonLd, faqJsonLd } from '../seo'
 
 const journey = [
   { n: '1', title: 'Tell us what you need', body: 'A 2-minute form — treatment, timing and how to reach you. No medical jargon required.' },
@@ -28,6 +31,13 @@ export default function HowItWorksPage() {
   const { openFunnel } = useApp()
   return (
     <>
+      <Seo
+        title="How Hospigo Works | Free Medical Travel Coordination"
+        description="See exactly how Hospigo works: tell us what you need, get matched with vetted Thai hospitals, and get a free coordinator who arranges your whole trip."
+        path="/how-it-works"
+      />
+      <JsonLd id="breadcrumb" data={breadcrumbJsonLd([{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works' }])} />
+      <JsonLd id="faq" data={faqJsonLd(faqs)} />
       {/* ---- Header ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 56px;')}>
@@ -99,7 +109,7 @@ export default function HowItWorksPage() {
         <div className="uw-grid-2" style={css('display:grid; grid-template-columns:repeat(2,1fr); gap:18px;')}>
           {team.map((t) => (
             <div key={t.name} style={css('background:#fff; border:1px solid #E1E8F7; border-radius:18px; padding:22px; display:flex; gap:14px; align-items:flex-start;')}>
-              <img src={t.photo} alt={t.name} style={css('width:56px; height:56px; border-radius:50%; flex:0 0 auto; object-fit:cover;')} />
+              <img src={t.photo} alt={t.name} loading="lazy" style={css('width:56px; height:56px; border-radius:50%; flex:0 0 auto; object-fit:cover;')} />
               <div>
                 <div style={css('font-weight:800; font-size:16px; color:#16214A;')}>{t.name}</div>
                 <div style={css('font-size:13px; color:#7A85A0; margin:2px 0 8px;')}>{t.focus}</div>

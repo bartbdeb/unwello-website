@@ -144,7 +144,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Aikchol Hospital, established in 1981, was the first private hospital in Chonburi province — its name combines the founder's name (Ekkapot) with the province name (Chonburi). Publicly listed on the Stock Exchange of Thailand since 1992, it operates alongside a sister facility, Aikchol 2 Hospital. The hospital covers a broad general and multi-specialty range including cardiology, orthopedics, pediatrics, gynecology, general surgery, ENT, ophthalmology, dermatology/aesthetics, neurosurgery, and a notable 3D Medical Printing Center for surgical planning. JCI accredited since 31 October 2015. As a regional Chonburi hospital rather than an international-patient-focused flagship, language support and procedure-level pricing were not found in public sources — recommend direct verification before publishing patient-facing claims.",
+    "description": "",
     "notes": "",
     "ihcoId": "60003926",
     "imageFile": "/images/hospitals/aikchol-hospital.jpeg"
@@ -448,7 +448,7 @@ export const hospitals: Hospital[] = [
       "ISO 9001:2000 (since 2001)"
     ],
     "languages": "Not specified in sources reviewed — verify directly",
-    "description": "Chaophya Hospital, operating since 1991 on a 5.5-acre campus on the west bank of the Chao Phraya River in Bangkok, is a JCI-accredited tertiary private hospital whose medical consultants are primarily drawn from Siriraj Hospital, Thailand's first and largest medical school. It maintains a Cardiac Program, Spine Centre, Gastrointestinal-Liver Centre, Aesthetic Centre, a 24-hour Eye Centre, and a Dental Centre, and holds a JCI Clinical Care Program Certification for Senile Cataract Surgery (2025) — a useful, specific credential for an eye care listing. For international patients, the hospital arranges accommodation through a partnership with a nearby condominium. Language support and detailed pricing were not found in the sources reviewed — recommend direct verification before publishing patient-facing details.",
+    "description": "",
     "notes": "",
     "ihcoId": "60000227",
     "imageFile": "/images/hospitals/chaophya-hospital.jpg"
@@ -725,7 +725,7 @@ export const hospitals: Hospital[] = [
       "and Thailand HA accreditations across its 15+ hospitals"
     ],
     "languages": "Not specified for this specific branch — verify directly",
-    "description": "Kasemrad Hospital Ramkhamhaeng is part of the Kasemrad Hospital Group, operated by Bangkok Chain Hospital Public Company Limited (BCH) — Thailand's second-largest hospital chain with 15+ hospitals nationwide and recent international expansion into Laos. JCI accredited since October 2023, this branch is particularly known for its Orthopedic Center, offering minimally invasive and laparoscopic hip and knee replacement surgery supported by digital X-ray and 128-slice CT diagnostic imaging. As part of a larger chain, this hospital benefits from group-wide quality systems and accreditation standards (DNV GL, JCI, Thailand HA), though branch-specific details on language support and broader specialty depth beyond orthopedics were limited in the sources reviewed. Best positioned on your platform as an Orthopedics-focused listing pending direct verification of other specialty offerings.",
+    "description": "",
     "notes": "",
     "ihcoId": "60010354",
     "imageFile": "/images/hospitals/kasemrad-hospital-ramkhamhaeng.png"
@@ -791,7 +791,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Natural Home holds a JCI Long Term Care Program accreditation (since November 2023) in Bangkok — one of only two long-term care facilities and the only one alongside Kluaynamthai2 Geriatric Hospital in this database with this specific JCI program type, distinct from general Hospital Program accreditation. Public information on the facility's specific services, capacity, and international patient support was very limited in the sources reviewed. Given the sensitivity and specialized nature of long-term/elder care services, we strongly recommend direct verification of care scope, staffing ratios, and medical oversight before featuring this facility, particularly if targeting international patients arranging long-term care for elderly family members.",
+    "description": "",
     "notes": "",
     "ihcoId": "60010190",
     "imageFile": "/images/hospitals/natural-home.jpg"
@@ -827,7 +827,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified in sources reviewed — verify directly",
-    "description": "Nonthavej Hospital, located in Bangkhen, Nonthaburi (Greater Bangkok), is a JCI-accredited private hospital (since June 2011) offering a genuinely broad service range for a mid-sized regional facility: cardiac surgery, cosmetic surgery, general surgery, orthopaedic surgery, eye surgery, dental treatment, cancer treatment, gynaecology, and bariatric/obesity surgery. This breadth suggests a general community-hospital model rather than a specialized international flagship. Detailed information on language support, specific specialty centers, and pricing was not found in the sources reviewed — recommend direct verification before publishing patient-facing details, particularly around international-patient services which are not well documented for this hospital compared to Bangkok's larger international-focused facilities.",
+    "description": "",
     "notes": "",
     "ihcoId": "60000157",
     "imageFile": "/images/hospitals/nonthavej-hospital.jpg"
@@ -968,7 +968,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Sikarin Hatyai Hospital, located in Hat Yai, Songkhla province (southern Thailand, near the Malaysian border), is JCI accredited since February 2015 and holds a JCI Clinical Care Program Certification specifically for Acute Ischemic Stroke management (2023) — a meaningful clinical credential suggesting above-average stroke care protocols for a regional hospital. It's part of the wider Sikarin hospital network (alongside Sikarin Hospital in Bangkok). Detailed information on broader specialty coverage, language support, and pricing for this specific branch was not found in the sources reviewed. Its location makes it a relevant option for patients in the far south of Thailand or arriving via Hat Yai International Airport, and its stroke-care certification is worth highlighting specifically if you list it.",
+    "description": "",
     "notes": "",
     "ihcoId": "60003265",
     "imageFile": "/images/hospitals/sikarin-hatyai-hospital.jpg"
@@ -988,7 +988,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Synphaet Theparak Hospital, JCI accredited since May 2021, is one of five hospitals in the Synphaet network serving the Samut Prakan/eastern Bangkok area, alongside Synphaet Hospital (Khan Na Yao), Synphaet Srinakarin, Synphaet Lamlukka, and Synphaet Seriruk. Public information specific to this branch's specialty centers and international patient services was limited in the sources reviewed — the Synphaet network's public-facing content is generally less internationally-oriented than BDMS or Samitivej facilities. Best treated as a regional/local-access listing pending direct verification.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008861",
     "imageFile": "/images/hospitals/synphaet-theparak-hospital.jpg"
@@ -1008,7 +1008,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "PRINC Hospital Suvarnabhumi, JCI accredited since March 2023, is located in Samut Prakan near Suvarnabhumi Airport and is part of the PRINC Healthcare hospital network. Its airport-adjacent location could make it a convenient option for patients with tight travel connections or emergency layover needs, but detailed public information on its specialty centers, technology, and international patient services was not found in the sources reviewed. Recommend direct verification before publishing detailed claims.",
+    "description": "",
     "notes": "",
     "ihcoId": "60009506",
     "imageFile": "/images/hospitals/princ-hospital-suvarnabhumi.jpg"
@@ -1028,7 +1028,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Pitsanuvej Hospital, JCI accredited since December 2012, serves Phitsanulok province in northern Thailand — a region with limited private hospital options compared to Bangkok, Chiang Mai, or Phuket. Detailed information on its specialty centers, international patient services, and language support was not found in the sources reviewed. This hospital is likely most relevant to your platform as a regional-access option for patients already in or near Phitsanulok rather than a primary international medical tourism destination — recommend direct verification if you plan to feature it prominently.",
+    "description": "",
     "notes": "",
     "ihcoId": "60000340",
     "imageFile": "/images/hospitals/pitsanuvej-hospital.webp"
@@ -1076,7 +1076,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Sukumvit Hospital, founded in 1977 on the historic Sukhumvit Road in Bangkok, is a JCI-accredited private hospital (since April 2015) offering a notably deep specialty list for a mid-sized facility — including bone marrow transplant, robotic spinal surgery, total joint replacement, kidney transplant, and hand & shoulder surgery, supported by a 128-slice CT scanner and a well-equipped rehabilitation center (hyperbaric chamber, TMS room, EMG acupuncture room). It holds a JCI Clinical Care Program Certification for Diabetes Mellitus management (2023). With roughly 243-280 inpatient beds and capacity for 2,000+ patients daily across 97 diagnostic rooms, it is a sizeable general hospital with genuine depth in orthopedics, spine, and transplant medicine. Language support and pricing were not detailed in the sources reviewed — recommend direct verification, but the clinical specialty depth alone makes this a candidate for your Orthopedics and Organ Transplant category listings.",
+    "description": "",
     "notes": "",
     "ihcoId": "60001796",
     "imageFile": "/images/hospitals/sukumvit-hospital.webp"
@@ -1108,7 +1108,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Synphaet Srinakarin Hospital, JCI accredited since April 2021, is part of the Synphaet Hospital network serving the Srinakarin/eastern Bangkok corridor. It provides integrated diagnostic, medical, and surgical services across cardiology, gastroenterology, orthopedics, gynecology and obstetrics, internal medicine, and dermatology. As with its sister Synphaet facilities, detailed information on international patient services, language support, and specific technology/pricing was limited in the sources reviewed. Best treated as a regional general-hospital listing pending direct verification of international-patient-specific services.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008863",
     "imageFile": "/images/hospitals/synphaet-srinakarin-hospital.jpg"
@@ -1184,7 +1184,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "UMC Digital AI PET/CT Center is a JCI-accredited Ambulatory Care Program facility in Bangkok (accredited September 2024), specializing in AI-assisted PET/CT diagnostic imaging — most commonly used for cancer detection, staging, and monitoring, as well as certain neurological and cardiac diagnostic applications. As a diagnostic-only center rather than a treatment hospital, it would function best on your platform as a referral/diagnostic partner listing (e.g., paired with an oncology treatment hospital) rather than a standalone treatment category listing. Detailed public information on pricing, languages, and referral pathways was not found in the sources reviewed — recommend direct verification.",
+    "description": "",
     "notes": "",
     "ihcoId": "60011060",
     "imageFile": "/images/hospitals/umc-digital-ai-petct-center.jpg"
@@ -1242,7 +1242,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly, though tourist-area location suggests at least basic English support",
-    "description": "Wattanapat Hospital Ao Nang, JCI accredited since October 2020, serves the Ao Nang/Krabi resort area in southern Thailand — a major beach tourism destination. Given its location in a heavily tourist-trafficked area, it likely handles a meaningful volume of travel-related injuries, general medical needs, and emergency care for visitors, though detailed specialty center information and language support were not found in the sources reviewed. This hospital is likely most useful on your platform as a regional safety-net / emergency-care listing for tourists in the Krabi/Ao Nang area rather than a planned medical tourism destination — recommend direct verification before publishing.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008352",
     "imageFile": "/images/hospitals/wattanapat-hospital-ao-nang.jpg"
@@ -1409,7 +1409,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Srisawan Hospital, JCI accredited since March 2014, serves Nakhon Sawan province in central Thailand. Detailed public information on its specialty centers, international patient services, and language support was not found in the sources reviewed. Likely best positioned as a regional-access listing for patients already in or near Nakhon Sawan rather than a primary international medical tourism destination — recommend direct verification before featuring prominently.",
+    "description": "",
     "notes": "",
     "ihcoId": "60001745",
     "imageFile": "/images/hospitals/srisawan-hospital.jpg"
@@ -1466,7 +1466,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Navamin 9 Hospital, JCI accredited since May 2013, is a general hospital in Bangkok. Detailed public information on its specialty centers, international patient services, and language support was not found in the sources reviewed — this facility has limited presence in medical tourism-focused directories compared to Bangkok's internationally-marketed hospitals. Recommend direct verification before featuring prominently on your platform.",
+    "description": "",
     "notes": "",
     "ihcoId": "60000392",
     "imageFile": "/images/hospitals/navamin-9-hospital.png"
@@ -1530,7 +1530,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Prachachuen Imaging Center is a JCI-accredited Ambulatory Care Program diagnostic imaging facility in Bangkok (accredited February 2022). As a diagnostic-only center, it would function best on your platform as a referral/diagnostic partner rather than a standalone treatment listing. Detailed information on imaging modalities offered, pricing, and international patient support was not found in the sources reviewed — recommend direct verification.",
+    "description": "",
     "notes": "",
     "ihcoId": "60009354",
     "imageFile": "/images/hospitals/prachachuen-imaging-center.jpg"
@@ -1554,7 +1554,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Rachvipa MRI Center is a JCI-accredited Ambulatory Care Program diagnostic imaging facility in Bangkok specializing in MRI imaging, accredited since March 2014 — making it one of the longer-standing ambulatory-only JCI accreditations in Thailand, predating several full hospitals in this database. As a diagnostic-only center, it fits best as a referral/diagnostic partner listing (paired with treatment-focused hospitals) rather than a standalone treatment category. Pricing and international patient support details were not found in sources reviewed — recommend direct verification.",
+    "description": "",
     "notes": "",
     "ihcoId": "60001687",
     "imageFile": "/images/hospitals/rachvipa-mri-center.jpg"
@@ -1578,7 +1578,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified in sources reviewed — as an academic hospital, verify directly",
-    "description": "Ramathibodi Chakri Naruebodindra Hospital, JCI accredited since October 2019, is an academic tertiary care hospital in Samut Prakan affiliated with Mahidol University's Faculty of Medicine Ramathibodi Hospital — one of Thailand's most prestigious medical schools and public teaching hospitals. As with other academic institutions in this database (Siriraj Piyamaharajkarun, Queen Sirikit Heart Center), it likely offers strong clinical quality and research-backed care at different pricing and service structures than private international hospitals, but detailed international-patient-facing information was not found in the sources reviewed. Recommend direct verification of international patient pathways before featuring prominently — academic hospitals in Thailand sometimes have less-developed medical tourism infrastructure despite excellent underlying clinical quality.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008031",
     "imageFile": "/images/hospitals/ramathibodi-chakri-naruebodindra-hospital.jpg"
@@ -1598,7 +1598,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Synphaet Hospital, JCI accredited since May 2010, is the founding/flagship facility of the Synphaet hospital network in Bangkok's Khan Na Yao district, with sister branches at Srinakarin, Theparak, Lamlukka, and Seriruk. It is described as a well-equipped facility handling a wide range of general medical needs. Detailed information on specific specialty centers, international patient services, and pricing was not found in the sources reviewed — the Synphaet network generally has less internationally-oriented public content than BDMS or Samitivej facilities. Recommend direct verification before featuring prominently for international patients.",
+    "description": "",
     "notes": "",
     "ihcoId": "60000050",
     "imageFile": "/images/hospitals/synphaet-hospital.webp"
@@ -1659,7 +1659,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Overbrook Hospital, JCI accredited since February 2018, is located in Chiang Rai province in far-northern Thailand. Detailed public information on its specialty centers, international patient services, and language support was not found in the sources reviewed. It is likely best positioned as a regional-access listing for patients already in or near Chiang Rai (a growing tourist destination in its own right) rather than a primary international medical tourism target — recommend direct verification before featuring prominently.",
+    "description": "",
     "notes": "",
     "ihcoId": "60005716",
     "imageFile": "/images/hospitals/overbrook-hospital.jpg"
@@ -1724,7 +1724,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Seriruk Hospital (formally Synphaet Seriruk Hospital) is part of the five-branch Synphaet hospital network in Bangkok, JCI accredited since May 2021 and successfully re-accredited for a second term in May 2024. It operates a Women's Health and Infertility Center and a Kidney Dialysis Center among its services. As with other Synphaet branches, detailed international-patient-facing information, language support, and pricing were not found in the sources reviewed. Given its fertility center, it's worth a secondary listing under Fertility & IVF pending direct verification of the program's scope and outcomes data.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008876",
     "imageFile": "/images/hospitals/seriruk-hospital.webp"
@@ -1744,7 +1744,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Synphaet Lamlukka Hospital, JCI accredited since April 2021, serves Pathum Thani province just north of Bangkok, as part of the Synphaet hospital network. Detailed public information on its specialty centers and international patient services was not found in the sources reviewed. Best treated as a regional/local-access listing pending direct verification.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008860",
     "imageFile": "/images/hospitals/synphaet-lamlukka-hospital.jpg"
@@ -1768,7 +1768,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Prime Fertility Center is a JCI-accredited Ambulatory Care Program fertility clinic in Bangkok, accredited since December 2019 — one of several single-specialty, JCI-accredited IVF centers in this database alongside Jetanin and Deep & Harmonicare. Detailed information on its specific services, success rates, laboratory technology, and language support was not found in the sources reviewed, in contrast to its two better-documented fertility-clinic peers. Recommend direct verification before featuring prominently — JCI accreditation for a fertility-specific ambulatory program is still a meaningful quality signal worth including in your Fertility category even with limited additional public detail.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008265",
     "imageFile": "/images/hospitals/prime-fertility-center.png"
@@ -1872,7 +1872,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "KNT Care@Home holds a JCI Home Care Program accreditation in Bangkok, accredited February 2025 — the only home-care-specific JCI Program Type facility in this entire database, and one of the most recently accredited facilities overall. Home care programs (in-home nursing, medical support, rehabilitation) are a distinct service category from hospital or ambulatory care, relevant primarily for patients requiring extended recovery support, elderly care, or chronic disease management outside a hospital setting. Public information on specific services, capacity, and international patient applicability was very limited in the sources reviewed. Given the sensitivity of home/elder care services, recommend direct verification of care scope and medical oversight before featuring this facility, particularly for international patients considering extended in-home recovery or elder care arrangements in Thailand.",
+    "description": "",
     "notes": "",
     "ihcoId": "60011078",
     "imageFile": "/images/hospitals/knt-care-home.jpg"
@@ -1896,7 +1896,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Kluaynamthai Hospital, JCI accredited since December 2015, is a general hospital in Bangkok and part of a small hospital group that also operates Kluaynamthai2 Geriatric Hospital (a dedicated long-term/elder care facility). Detailed public information on its specialty centers and international patient services was not found in the sources reviewed. Recommend direct verification before featuring prominently.",
+    "description": "",
     "notes": "",
     "ihcoId": "60003541",
     "imageFile": "/images/hospitals/kluaynamthai-hospital.jpg"
@@ -1920,7 +1920,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Mahachai Hospital Public Company Limited, JCI accredited since March 2014, serves Samut Sakhon province southwest of Bangkok. Notably, Mahachai Hospital PCL was a founding corporate partner in establishing MedPark Hospital (profiled elsewhere in this database as one of Bangkok's newest flagship international hospitals) — a connection worth knowing given MedPark's prominence, though it doesn't necessarily mean Mahachai itself offers the same specialty depth or international-patient infrastructure. Detailed public information specific to the Mahachai facility's specialty centers and language support was not found in the sources reviewed — recommend direct verification before featuring prominently.",
+    "description": "",
     "notes": "",
     "ihcoId": "60001726",
     "imageFile": "/images/hospitals/mahachai-hospital.jpg"
@@ -1949,7 +1949,7 @@ export const hospitals: Hospital[] = [
       "and Thailand HA accreditation across its network"
     ],
     "languages": "Not specified for this specific branch — verify directly",
-    "description": "Kasemrad International Hospital Rattanatibeth, a tertiary care hospital that began operations in February 1993, serves Nonthaburi province (Greater Bangkok) as part of the Kasemrad Hospital Group under Bangkok Chain Hospital Public Company Limited (BCH) — Thailand's second-largest private hospital chain with 15+ facilities nationwide and a newly opened international branch in Vientiane, Laos (accredited November 2025). It provides comprehensive, integrated healthcare — treatment, disease prevention, rehabilitation, and health promotion — across all specialties, backed by group-wide accreditation standards (DNV GL, JCI, Thailand HA). Branch-specific details on language support and specialty depth beyond the general description were not found in the sources reviewed — recommend direct verification, though the parent group's scale and accreditation consistency are a reasonable quality signal.",
+    "description": "",
     "notes": "",
     "ihcoId": "60008591",
     "imageFile": "/images/hospitals/kasemrad-international-hospital-rattanatibeth.jpg"
@@ -1993,7 +1993,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Kluaynamthai2 Geriatric Hospital, part of the Kluaynamthai hospital group in Bangkok, holds a JCI Long Term Care Program accreditation specifically for geriatric care, in place since November 2014 — making it one of the more established long-term-care-specific JCI accreditations in Thailand (alongside the more recently accredited Natural Home and KNT Care@Home). As a dedicated geriatric facility, it's a distinct offering from acute-care hospitals and fits specifically under an Elderly/Long-Term Care category rather than general medical tourism categories. Detailed information on capacity, specific services, and international patient/family services (e.g., for families arranging care for aging relatives) was not found in the sources reviewed — recommend direct verification, particularly given the sensitivity of eldercare arrangements for international families.",
+    "description": "",
     "notes": "",
     "ihcoId": "60002791",
     "imageFile": "/images/hospitals/kluaynamthai2-geriatric-hospital.jpg"
@@ -2017,7 +2017,7 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified in sources reviewed — resort-area location suggests at least basic English support, verify directly",
-    "description": "Krabi Nakharin International Hospital, JCI accredited since October 2015, is located near Ao Nang and Krabi Airport in southern Thailand's Krabi province — one of the country's major beach and island tourism destinations. It offers health check-ups, general surgery, and emergency care, serving both the local population and the significant tourist traffic through the Krabi/Ao Nang area (alongside Wattanapat Hospital Ao Nang, also in this database). Detailed information on specialty depth beyond general/emergency care and specific language support was not found in the sources reviewed. This hospital is best positioned as a regional health-screening and emergency-care listing for the Krabi tourist area rather than a planned international treatment destination — recommend direct verification before publishing detailed claims.",
+    "description": "",
     "notes": "",
     "ihcoId": "60002065",
     "imageFile": "/images/hospitals/krabi-nakharin-international-hospital.jpg"

@@ -63,7 +63,7 @@ export function Treatments() {
             hover={css('transform:translateY(-4px); box-shadow:0 20px 44px rgba(35,51,47,.12); border:1px solid #D2DBF0;')}
           >
             <div style={css('height:150px; position:relative; overflow:hidden;')}>
-              <img src={tr.image} alt={tr.name} style={css('width:100%; height:100%; object-fit:cover; display:block;')} />
+              <img src={tr.image} alt={tr.name} loading="lazy" style={css('width:100%; height:100%; object-fit:cover; display:block;')} />
               <span style={css('position:absolute; top:12px; left:12px; background:#fff; border-radius:100px; padding:5px 12px; font-size:12.5px; font-weight:700; color:#2B50E4; box-shadow:0 3px 10px rgba(35,51,47,.1);')}>from {tr.price}</span>
             </div>
             <div style={css('padding:16px 18px 18px;')}>
@@ -274,9 +274,9 @@ export function Coordinator() {
           </El>
         </div>
         <div className="uw-hide-mobile" style={css('display:grid; grid-template-columns:1fr 1fr; gap:14px;')}>
-          <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
+          <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" loading="lazy" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
           <div style={css('display:flex; flex-direction:column; gap:14px; padding-top:28px;')}>
-            <img src="/images/coordinators/team.jpg" alt="The Hospigo medical coordination team" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
+            <img src="/images/coordinators/team.jpg" alt="The Hospigo medical coordination team" loading="lazy" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
             <div style={css('background:#16214A; color:#fff; border-radius:18px; padding:20px; display:flex; flex-direction:column; justify-content:center; gap:4px;')}>
               <span style={css('font-size:28px; font-weight:800; letter-spacing:-.02em;')}>7 langs</span>
               <span style={css('font-size:13px; color:#A6B0D0;')}>EN · TH · AR · DE · ZH · RU · FR</span>
@@ -317,7 +317,7 @@ export function Guides() {
       <div className="uw-grid-3" style={css('display:grid; grid-template-columns:repeat(3,1fr); gap:20px;')}>
         {featuredNews.map((g) => (
           <El as={Link} key={g.slug} to={`/news/${g.slug}`} style={css('border:1px solid #E1E8F7; background:#fff; border-radius:18px; overflow:hidden; display:block; transition:transform .18s, box-shadow .18s;')} hover={css('transform:translateY(-4px); box-shadow:0 18px 40px rgba(35,51,47,.1);')}>
-            <img src={g.image} alt={g.title} style={css('width:100%; height:158px; object-fit:cover; display:block;')} />
+            <img src={g.image} alt={g.title} loading="lazy" style={css('width:100%; height:158px; object-fit:cover; display:block;')} />
             <div style={css('padding:18px 20px 20px;')}>
               <span style={css('font-size:11.5px; font-weight:800; color:#2B50E4; letter-spacing:.06em; text-transform:uppercase;')}>{g.cat}</span>
               <h3 style={css('font-size:17px; font-weight:700; margin:8px 0 8px; color:#16214A; line-height:1.3;')}>{g.title}</h3>
