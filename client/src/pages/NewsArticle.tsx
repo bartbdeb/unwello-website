@@ -9,7 +9,7 @@ import { useViews } from '../viewsContext'
 import FaqAccordion from '../components/FaqAccordion'
 import Seo, { SITE_URL } from '../components/Seo'
 import JsonLd from '../components/JsonLd'
-import { breadcrumbJsonLd, faqJsonLd, truncate } from '../seo'
+import { breadcrumbJsonLd, faqJsonLd, truncate, withDateModified } from '../seo'
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 
@@ -54,7 +54,7 @@ export default function NewsArticle() {
           { name: article.title, path: `/news/${article.slug}` },
         ])}
       />
-      {article.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(article.faqs)} />}
+      {article.faqs.length > 0 && <JsonLd id="faq" data={withDateModified(faqJsonLd(article.faqs), article.date)} />}
       {/* ---- Breadcrumb + hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 40px;')}>
@@ -102,7 +102,7 @@ export default function NewsArticle() {
             )}
           </nav>
 
-          <div>
+          <article>
             {article.sections.map((s, i) => (
               <div key={s.heading} id={slugify(s.heading)} style={css('scroll-margin-top:24px; margin-bottom:30px;')}>
                 <h2 style={css('font-size:22px; font-weight:800; margin:0 0 14px; color:#16214A; letter-spacing:-.01em;')}>{s.heading}</h2>
@@ -127,7 +127,7 @@ export default function NewsArticle() {
                 <FaqAccordion faqs={article.faqs} />
               </div>
             )}
-          </div>
+          </article>
         </div>
       </section>
 

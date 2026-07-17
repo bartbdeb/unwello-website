@@ -57,25 +57,27 @@ function AppShell({ funnel }: { funnel: ReturnType<typeof useFunnel> }) {
         <Header />
 
         {/* Page content by route */}
-        <Suspense fallback={null}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/treatments" element={<BrowseTreatments />} />
-            <Route path="/treatments/:slug" element={<TreatmentCategory />} />
-            <Route path="/treatments/:specialtySlug/:procedureSlug" element={<ProcedureDetail />} />
-            <Route path="/clinics" element={<ClinicsListing />} />
-            <Route path="/clinics/:slug" element={<ClinicProfile />} />
-            <Route path="/how-it-works" element={<HowItWorksPage />} />
-            <Route path="/stories" element={<Stories />} />
-            <Route path="/stories/:slug" element={<StoryDetail />} />
-            <Route path="/news" element={<News />} />
-            <Route path="/news/:slug" element={<NewsArticle />} />
-            <Route path="/cookies" element={<CookiePolicy />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/terms" element={<TermsOfService />} />
-            <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
-          </Routes>
-        </Suspense>
+        <main>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/treatments" element={<BrowseTreatments />} />
+              <Route path="/treatments/:slug" element={<TreatmentCategory />} />
+              <Route path="/treatments/:specialtySlug/:procedureSlug" element={<ProcedureDetail />} />
+              <Route path="/clinics" element={<ClinicsListing />} />
+              <Route path="/clinics/:slug" element={<ClinicProfile />} />
+              <Route path="/how-it-works" element={<HowItWorksPage />} />
+              <Route path="/stories" element={<Stories />} />
+              <Route path="/stories/:slug" element={<StoryDetail />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/news/:slug" element={<NewsArticle />} />
+              <Route path="/cookies" element={<CookiePolicy />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+            </Routes>
+          </Suspense>
+        </main>
 
         <Footer />
 

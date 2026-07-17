@@ -35,17 +35,40 @@ export function faqJsonLd(faqs: { q: string; a: string }[]) {
   }
 }
 
-// Hospigo is a facilitator, not a licensed provider — MedicalBusiness (not
-// Physician/MedicalClinic) keeps this schema consistent with the Terms of
-// Service / Medical Disclaimer language.
-export function medicalBusinessJsonLd() {
+// Hospigo is a facilitator, not a licensed provider — plain Organization
+// (never MedicalOrganization/MedicalClinic/Physician) keeps this schema
+// consistent with the Terms of Service / Medical Disclaimer language.
+// No `sameAs` yet — add real social profile URLs here once they exist;
+// fabricating placeholder links would misrepresent the business.
+export function organizationJsonLd() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'MedicalBusiness',
+    '@type': 'Organization',
     name: 'Hospigo',
     url: SITE_URL,
     description: 'Hospigo is a medical travel facilitation platform connecting patients with vetted, JCI-accredited hospitals and clinics in Thailand.',
-    areaServed: 'Thailand',
+  }
+}
+
+export function websiteJsonLd() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Hospigo',
+    url: SITE_URL,
+  }
+}
+
+// Describes the independent third-party hospital itself (name, city,
+// accreditation) — never Hospigo. Only fields backed by real data are set.
+export function hospitalJsonLd(h: { name: string; city: string; slug: string; imageFile: string | null }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Hospital',
+    name: h.name,
+    address: { '@type': 'PostalAddress', addressLocality: h.city, addressCountry: 'TH' },
+    url: `${SITE_URL}/clinics/${h.slug}`,
+    ...(h.imageFile ? { image: SITE_URL + h.imageFile } : {}),
   }
 }
 
@@ -58,4 +81,25 @@ export function medicalProcedureJsonLd(name: string, description: string) {
     name,
     description,
   }
+}
+
+const MONTHS: Record<string, string> = {
+  january: '01', february: '02', march: '03', april: '04', may: '05', june: '06',
+  july: '07', august: '08', september: '09', october: '10', november: '11', december: '12',
+}
+
+/** Parses loose real-content date strings ("Reviewed June 2026", "3 June 2026") into an ISO date for schema dateModified. Returns undefined if unparseable, rather than guessing. */
+export function parseDateToISO(text: string): string | undefined {
+  const m = text.match(/(\d{1,2}\s+)?([A-Za-z]+)\s+(\d{4})/)
+  if (!m) return undefined
+  const month = MONTHS[m[2].toLowerCase()]
+  if (!month) return undefined
+  const day = m[1] ? m[1].trim().padStart(2, '0') : '01'
+  return `${m[3]}-${month}-${day}`
+}
+
+/** Adds dateModified to a CreativeWork-derived schema block (e.g. FAQPage) when a real date is available — omits it rather than guessing. */
+export function withDateModified<T extends object>(schema: T, dateText: string): T & { dateModified?: string } {
+  const iso = parseDateToISO(dateText)
+  return iso ? { ...schema, dateModified: iso } : schema
 }

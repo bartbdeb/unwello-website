@@ -12,7 +12,7 @@ import ClinicCard from '../components/ClinicCard'
 import FaqAccordion from '../components/FaqAccordion'
 import Seo from '../components/Seo'
 import JsonLd from '../components/JsonLd'
-import { breadcrumbJsonLd, faqJsonLd } from '../seo'
+import { breadcrumbJsonLd, faqJsonLd, withDateModified } from '../seo'
 
 const CLINICS_VISIBLE = 6
 
@@ -54,7 +54,7 @@ export default function TreatmentCategory() {
           { name: cat.name, path: `/treatments/${cat.slug}` },
         ])}
       />
-      {cat.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(cat.faqs)} />}
+      {cat.faqs.length > 0 && <JsonLd id="faq" data={withDateModified(faqJsonLd(cat.faqs), cat.reviewer.date)} />}
       {/* ---- Sub-hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

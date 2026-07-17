@@ -10,7 +10,7 @@ import ClinicCard from '../components/ClinicCard'
 import FaqAccordion from '../components/FaqAccordion'
 import Seo from '../components/Seo'
 import JsonLd from '../components/JsonLd'
-import { breadcrumbJsonLd, faqJsonLd, medicalProcedureJsonLd } from '../seo'
+import { breadcrumbJsonLd, faqJsonLd, medicalProcedureJsonLd, withDateModified } from '../seo'
 
 export default function ProcedureDetail() {
   const { specialtySlug = '', procedureSlug = '' } = useParams()
@@ -55,7 +55,7 @@ export default function ProcedureDetail() {
         ])}
       />
       <JsonLd id="medical-procedure" data={medicalProcedureJsonLd(proc.name, procDescription)} />
-      {cat.faqs.length > 0 && <JsonLd id="faq" data={faqJsonLd(cat.faqs)} />}
+      {cat.faqs.length > 0 && <JsonLd id="faq" data={withDateModified(faqJsonLd(cat.faqs), cat.reviewer.date)} />}
       {/* ---- Breadcrumb + hero ---- */}
       <section style={css('background:linear-gradient(180deg,#E4EDFF 0px,#F4F7FF 400px);')}>
         <div style={css('max-width:1240px; margin:0 auto; padding:32px 32px 48px;')}>

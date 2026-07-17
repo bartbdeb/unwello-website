@@ -8,7 +8,7 @@ import FaqAccordion from '../components/FaqAccordion'
 import ReviewsSection from '../components/ReviewsSection'
 import Seo, { SITE_URL } from '../components/Seo'
 import JsonLd from '../components/JsonLd'
-import { breadcrumbJsonLd, faqJsonLd, truncate } from '../seo'
+import { breadcrumbJsonLd, faqJsonLd, hospitalJsonLd, truncate } from '../seo'
 
 // Generic, non-hospital-specific FAQ — real per-facility content (pricing,
 // doctors, patient reviews) isn't in the source data, so these explain the
@@ -59,6 +59,7 @@ export default function ClinicProfile() {
         ])}
       />
       <JsonLd id="faq" data={faqJsonLd(GENERIC_FAQS)} />
+      <JsonLd id="hospital" data={hospitalJsonLd(h)} />
       {/* ---- Header ---- */}
       <section style={css('max-width:1240px; margin:0 auto; padding:24px 32px 0;')}>
         <div style={css('display:flex; align-items:center; gap:8px; font-size:13px; color:#8B95AD; margin-bottom:18px;')}>
