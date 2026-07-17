@@ -75,7 +75,6 @@ export default function Hero() {
           <img
             src="/images/hero/lifestyle.jpg"
             alt="Patient and doctor in Thailand"
-            fetchPriority="high"
             style={css('width:100%; aspect-ratio:4/4.4; object-fit:cover; border-radius:24px; box-shadow:0 30px 70px rgba(35,51,47,.16); display:block;')}
           />
           <div style={css('position:absolute; bottom:22px; left:-26px; background:#fff; border:1px solid #E1E8F7; border-radius:16px; padding:14px 18px; box-shadow:0 16px 36px rgba(35,51,47,.14); display:flex; align-items:center; gap:12px; animation:uwFade .5s ease;')}>
