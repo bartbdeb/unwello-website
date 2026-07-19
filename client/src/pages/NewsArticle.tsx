@@ -74,7 +74,12 @@ export default function NewsArticle() {
             <p style={css('font-size:16.5px; line-height:1.6; color:#5A6580; margin:0 0 18px;')}>{article.dek}</p>
             <div style={css('display:flex; align-items:center; gap:11px; font-size:13.5px; color:#8B95AD; flex-wrap:wrap;')}>
               <span style={css('width:34px; height:34px; border-radius:50%; background:#ECF1FD; display:flex; align-items:center; justify-content:center; font-size:15px;')}>✍️</span>
-              <span>{article.author} · Reviewed by <strong style={css('color:#16214A;')}>{article.reviewer.name}</strong>, {article.reviewer.credentials} · Updated {article.date} · {article.read} · 👁 {viewsFor(article.slug, article.views).toLocaleString('en-US')}</span>
+              <span>
+                <Link to={`/coordinators/${article.authorSlug}`} style={css('color:#5A6580; font-weight:600;')}>{article.author}</Link>
+                {' '}· Reviewed by{' '}
+                <Link to={`/coordinators/${article.reviewer.slug}`} style={css('color:#16214A; font-weight:700;')}>{article.reviewer.name}</Link>
+                , {article.reviewer.credentials} · Updated {article.date} · {article.read} · 👁 {viewsFor(article.slug, article.views).toLocaleString('en-US')}
+              </span>
             </div>
             {cat && (
               <Link to={`/treatments/${cat.slug}`} style={css('display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:#fff; border:1px solid #E1E8F7; padding:8px 14px 8px 8px; border-radius:100px; font-size:13px; font-weight:600; color:#3A4468;')}>
@@ -120,6 +125,11 @@ export default function NewsArticle() {
               </div>
               <El as="button" onClick={() => openFunnel(cat?.name)} style={css('background:linear-gradient(160deg,#3A63FF 0%,#2540D8 100%); color:#fff; border:none; padding:13px 22px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer; white-space:nowrap;')} hover={css('background:#1B3AB8;')}>Talk to a coordinator</El>
             </div>
+
+            <p style={css('font-size:12.5px; line-height:1.6; color:#8B95AD; margin:0 0 4px;')}>
+              This article is for general information only and isn't medical advice. See our{' '}
+              <Link to="/medical-disclaimer" style={css('color:#5A6580; text-decoration:underline;')}>Medical Disclaimer</Link> for details.
+            </p>
 
             {article.faqs.length > 0 && (
               <div id="faqs" style={css('scroll-margin-top:24px; margin-top:36px;')}>
@@ -184,7 +194,7 @@ function CostTable({ rows }: { rows: PriceRow[] }) {
           </div>
         ))}
       </div>
-      <div style={css('padding:12px 20px; font-size:11.5px; color:#8B95AD; text-align:center;')}>Indicative ranges · your personal quote is tailored to your case</div>
+      <div style={css('padding:12px 20px; font-size:11.5px; color:#8B95AD; text-align:center;')}>Indicative ranges as of July 2026 · your personal quote is tailored to your case</div>
     </div>
   )
 }

@@ -31,6 +31,7 @@ const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
 const TermsOfService = lazy(() => import('./pages/TermsOfService'))
 const MedicalDisclaimer = lazy(() => import('./pages/MedicalDisclaimer'))
+const CoordinatorProfile = lazy(() => import('./pages/CoordinatorProfile'))
 
 export default function App() {
   const funnel = useFunnel()
@@ -75,6 +76,7 @@ function AppShell({ funnel }: { funnel: ReturnType<typeof useFunnel> }) {
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
               <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+              <Route path="/coordinators/:slug" element={<CoordinatorProfile />} />
             </Routes>
           </Suspense>
         </main>

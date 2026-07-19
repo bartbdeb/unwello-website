@@ -68,7 +68,7 @@ export const categories: TreatmentCategory[] = [
     priceFrom: '$2,400',
     hero: {
       headline: 'Hair transplants in Thailand',
-      subcopy: 'FUE and DHI hair restoration by high-volume specialist surgeons, with natural results and all-inclusive packages.',
+      subcopy: 'FUE and DHI hair restoration by high-volume specialist surgeons, with all-inclusive packages. Individual results vary by patient.',
     },
     intro:
       'Thailand’s hair-restoration clinics perform thousands of FUE and DHI procedures each year, at prices well below Western clinics. Surgeons are experienced with high graft counts and a range of hair types. Every clinic on Hospigo is vetted for technique, hygiene and results.',
@@ -92,7 +92,7 @@ export const categories: TreatmentCategory[] = [
     priceFrom: '$3,900',
     hero: {
       headline: 'Cosmetic & plastic surgery in Thailand',
-      subcopy: 'Body contouring, facelifts, rhinoplasty and breast surgery by experienced surgeons in JCI-accredited hospitals.',
+      subcopy: 'Body contouring, facelifts, rhinoplasty and breast surgery by experienced surgeons in JCI-accredited hospitals. Individual results vary by patient.',
     },
     intro:
       'From body contouring to facial rejuvenation, Thailand’s plastic-surgery hospitals combine international standards with significant savings. Hospigo vets every surgeon and facility for safety, accreditation and outcomes.',

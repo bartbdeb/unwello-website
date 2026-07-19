@@ -160,6 +160,10 @@ export default function ProcedureDetail() {
         <span style={css(eyebrow)}>Good to know</span>
         <h2 style={css(h2Style + ' margin-bottom:24px;')}>Frequently asked questions</h2>
         <FaqAccordion faqs={cat.faqs} />
+        <p style={css('font-size:12.5px; line-height:1.6; color:#8B95AD; margin:20px 0 0;')}>
+          This page is for general information only and isn't medical advice. See our{' '}
+          <Link to="/medical-disclaimer" style={css('color:#5A6580; text-decoration:underline;')}>Medical Disclaimer</Link> for details.
+        </p>
       </section>
 
       {/* ---- CTA ---- */}

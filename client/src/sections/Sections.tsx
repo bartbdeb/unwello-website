@@ -30,13 +30,23 @@ const arrowBtn = 'width:42px; height:42px; border-radius:12px; border:1px solid 
 export function TrustBar() {
   return (
     <section style={css('max-width:1240px; margin:0 auto; padding:8px 32px 24px;')}>
-      <div className="uw-grid-4" style={css('background:#FFFFFF; border:1px solid #E1E8F7; border-radius:20px; padding:26px 20px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; box-shadow:0 8px 24px rgba(35,51,47,.05);')}>
-        {trustStats.map((t) => (
-          <div key={t.label} style={css('display:flex; flex-direction:column; align-items:center; text-align:center; gap:4px; padding:0 8px;')}>
-            <span style={css('font-size:30px; font-weight:800; color:#2B50E4; letter-spacing:-.02em;')}>{t.value}</span>
-            <span style={css('font-size:13.5px; color:#5A6580; font-weight:500;')}>{t.label}</span>
-          </div>
-        ))}
+      <div className="uw-grid-4" style={css('display:grid; grid-template-columns:repeat(4,1fr); gap:14px;')}>
+        {trustStats.map((t) =>
+          t.kind === 'stat' ? (
+            <div key={t.label} style={css('background:linear-gradient(155deg,#2B50E4,#1B3AB8); border-radius:16px; padding:22px 20px; color:#fff; box-shadow:0 10px 26px rgba(43,80,228,.24);')}>
+              <div style={css('font-size:34px; font-weight:800; line-height:1.1; letter-spacing:-.02em;')}>{t.value}</div>
+              <div style={css('font-size:12.5px; opacity:.92; margin-top:8px; line-height:1.45;')}>{t.label}</div>
+              {t.source && <div style={css('font-size:10.5px; opacity:.7; margin-top:12px;')}>{t.source}</div>}
+            </div>
+          ) : (
+            <div key={t.heading} style={css('background:#fff; border:1px solid #E1E8F7; border-radius:16px; padding:22px 20px; box-shadow:0 8px 24px rgba(35,51,47,.05);')}>
+              <span style={css('width:38px; height:38px; border-radius:11px; background:#ECF1FD; color:#2B50E4; display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:14px;')}>{t.icon}</span>
+              <div style={css('font-size:14.5px; font-weight:700; color:#16214A; margin:0 0 6px; line-height:1.3;')}>{t.heading}</div>
+              <p style={css('font-size:12.5px; color:#5A6580; line-height:1.5; margin:0;')}>{t.body}</p>
+              {t.source && <div style={css('font-size:10.5px; color:#8B95AD; margin-top:10px;')}>{t.source}</div>}
+            </div>
+          ),
+        )}
       </div>
     </section>
   )
@@ -46,7 +56,7 @@ export function Treatments() {
   const navigate = useNavigate()
   return (
     <section style={css('max-width:1240px; margin:0 auto; padding:48px 32px;')}>
-      <div style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
+      <div className="uw-section-head" style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
         <div>
           <span style={css(eyebrow)}>Popular treatments</span>
           <h2 style={css(h2Style)}>What patients travel to Thailand for</h2>
@@ -113,7 +123,7 @@ export function Clinics() {
   const scrollBy = (dir: number) => track.current?.scrollBy({ left: dir * 360, behavior: 'smooth' })
   return (
     <section id="clinics" style={css('max-width:1240px; margin:0 auto; padding:60px 32px;')}>
-      <div style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
+      <div className="uw-section-head" style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
         <div>
           <span style={css(eyebrow)}>JCI-accredited facilities</span>
           <h2 style={css(h2Style)}>Featured hospitals & clinics</h2>
@@ -187,7 +197,7 @@ export function Savings() {
                 </div>
               ))}
             </div>
-            <div style={css('padding:14px 22px; font-size:12px; color:#8B95AD; text-align:center;')}>Indicative ranges · your personal quote is tailored to your case</div>
+            <div style={css('padding:14px 22px; font-size:12px; color:#8B95AD; text-align:center;')}>Indicative ranges as of July 2026 · your personal quote is tailored to your case</div>
           </div>
         </div>
       </div>
@@ -219,7 +229,7 @@ export function Stories() {
   return (
     <section id="stories" style={css('background:linear-gradient(140deg,#1C2E7C 0%,#0F1B4A 100%); color:#fff;')}>
       <div style={css('max-width:1240px; margin:0 auto; padding:64px 32px;')}>
-        <div style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:30px; gap:20px;')}>
+        <div className="uw-section-head" style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:30px; gap:20px;')}>
           <div>
             <span style={css('color:#5B84FF; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase;')}>Patient stories</span>
             <h2 style={css('font-size:36px; font-weight:800; letter-spacing:-.025em; margin:10px 0 0;')}>Real journeys, real outcomes</h2>
@@ -274,7 +284,9 @@ export function Coordinator() {
           </El>
         </div>
         <div className="uw-hide-mobile" style={css('display:grid; grid-template-columns:1fr 1fr; gap:14px;')}>
-          <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" loading="lazy" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
+          <Link to="/coordinators/dorus-van-der-kooij">
+            <img src="/images/coordinators/dorus-van-der-kooij.jpg" alt="Dorus van der Kooij, Medical Coordinator" loading="lazy" style={css('width:100%; aspect-ratio:1/1.2; border-radius:18px; object-fit:cover; display:block;')} />
+          </Link>
           <div style={css('display:flex; flex-direction:column; gap:14px; padding-top:28px;')}>
             <img src="/images/coordinators/team.jpg" alt="The Hospigo medical coordination team" loading="lazy" style={css('width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover; display:block;')} />
             <div style={css('background:#16214A; color:#fff; border-radius:18px; padding:20px; display:flex; flex-direction:column; justify-content:center; gap:4px;')}>
@@ -307,7 +319,7 @@ export function Vetting() {
 export function Guides() {
   return (
     <section id="guides" style={css('max-width:1240px; margin:0 auto; padding:0 32px 68px;')}>
-      <div style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
+      <div className="uw-section-head" style={css('display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:26px; gap:20px;')}>
         <div>
           <span style={css(eyebrow)}>Guides & resources</span>
           <h2 style={css(h2Style)}>Plan your trip with confidence</h2>

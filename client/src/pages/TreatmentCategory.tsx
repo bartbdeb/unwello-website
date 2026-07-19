@@ -160,7 +160,7 @@ export default function TreatmentCategory() {
                 )
               })}
             </div>
-            <div style={css('padding:14px 22px; font-size:12px; color:#8B95AD; text-align:center;')}>Indicative ranges · your personal quote is tailored to your case</div>
+            <div style={css('padding:14px 22px; font-size:12px; color:#8B95AD; text-align:center;')}>Indicative ranges as of July 2026 · your personal quote is tailored to your case</div>
           </div>
         </div>
       </section>
@@ -252,6 +252,10 @@ export default function TreatmentCategory() {
         <span style={css(eyebrow)}>Good to know</span>
         <h2 style={css(h2Style + ' margin-bottom:24px;')}>{cat.name} FAQs</h2>
         <FaqAccordion faqs={cat.faqs} />
+        <p style={css('font-size:12.5px; line-height:1.6; color:#8B95AD; margin:20px 0 0;')}>
+          This page is for general information only and isn't medical advice. See our{' '}
+          <Link to="/medical-disclaimer" style={css('color:#5A6580; text-decoration:underline;')}>Medical Disclaimer</Link> for details.
+        </p>
       </section>
 
       {/* ---- CTA banner ---- */}

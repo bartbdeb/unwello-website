@@ -59,4 +59,10 @@ input, textarea, button { font-family: inherit; }
      on wide screens — once the layout stacks to one column they'd otherwise
      stay pinned mid-page as the user scrolls. */
   .uw-sticky-desktop { position: static !important; top: auto !important; }
+
+  /* Section headers pair a title block with a "See all →" link using
+     justify-content:space-between and a nowrap link. On narrow screens the
+     link's fixed width squeezes the title into a sliver, wrapping it one
+     word per line. Stack them instead so the title gets the full row. */
+  .uw-section-head { flex-direction: column !important; align-items: flex-start !important; }
 }

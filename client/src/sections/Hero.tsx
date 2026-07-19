@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { css, El } from '../ui'
 import { treatments } from '../data'
+import { hospitals } from '../content/hospitals'
 import { useApp } from '../context'
 
 export default function Hero() {
@@ -18,7 +19,7 @@ export default function Hero() {
         <div>
           <div style={css('display:inline-flex; align-items:center; gap:9px; background:#FFFFFF; border:1px solid #E1E8F7; padding:7px 15px 7px 8px; border-radius:100px; font-size:13px; font-weight:600; color:#3A4468; box-shadow:0 2px 8px rgba(35,51,47,.05); margin-bottom:24px;')}>
             <span style={css('background:#E7ECFF; color:#2B50E4; padding:3px 9px; border-radius:100px; font-weight:700; font-size:12px;')}>JCI</span>
-            60+ internationally accredited hospitals
+            {hospitals.length} internationally accredited hospitals
           </div>
           <h1 style={css('font-size:57px; line-height:1.03; letter-spacing:-.028em; font-weight:800; margin:0 0 20px; color:#16214A;')}>
             World-class care in Thailand, for up to{' '}
@@ -68,7 +69,7 @@ export default function Hero() {
               </div>
             )}
           </div>
-          <p style={css('font-size:13px; color:#8B95AD; margin:14px 0 0;')}>No obligation · Reply within a few hours · 12,000+ patients guided</p>
+          <p style={css('font-size:13px; color:#8B95AD; margin:14px 0 0;')}>No obligation · Reply within a few hours · Free, always</p>
         </div>
 
         <div className="uw-hide-mobile" style={css('position:relative;')}>
@@ -78,10 +79,10 @@ export default function Hero() {
             style={css('width:100%; aspect-ratio:4/4.4; object-fit:cover; border-radius:24px; box-shadow:0 30px 70px rgba(35,51,47,.16); display:block;')}
           />
           <div style={css('position:absolute; bottom:22px; left:-26px; background:#fff; border:1px solid #E1E8F7; border-radius:16px; padding:14px 18px; box-shadow:0 16px 36px rgba(35,51,47,.14); display:flex; align-items:center; gap:12px; animation:uwFade .5s ease;')}>
-            <span style={css('width:42px; height:42px; border-radius:12px; background:linear-gradient(150deg,#2B50E4,#1B3AB8); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px;')}>4.9</span>
+            <span style={css('width:42px; height:42px; border-radius:12px; background:linear-gradient(150deg,#2B50E4,#1B3AB8); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px;')}>✓</span>
             <div style={css('display:flex; flex-direction:column;')}>
-              <span style={css('font-size:13px; color:#F6B33D; font-weight:700; letter-spacing:.04em;')}>★★★★★</span>
-              <span style={css('font-size:12.5px; color:#5A6580; font-weight:600;')}>3,400+ verified reviews</span>
+              <span style={css('font-size:13px; color:#16214A; font-weight:700;')}>JCI Accredited</span>
+              <span style={css('font-size:12.5px; color:#5A6580; font-weight:600;')}>Every listed hospital</span>
             </div>
           </div>
           <div style={css('position:absolute; top:24px; right:-22px; background:#16214A; color:#fff; border-radius:16px; padding:14px 18px; box-shadow:0 16px 36px rgba(35,51,47,.24); animation:uwFade .7s ease;')}>

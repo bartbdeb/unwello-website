@@ -13,6 +13,12 @@
 // allCategoriesRaw = the real specialty names (from the same map) for display.
 // imageFile = a real photo matched from the "Hospital pictures" folder by
 // normalized facility name; null where no matching picture was supplied.
+// mophApprovalStatus = Thai MOPH advertising-approval status for THIS entry's
+// specific claims (name, specialties, JCI date, doctor credentials, etc).
+// Defaults to "unconfirmed" for every entry — do not change to "confirmed"
+// without written sign-off from the Thai white-label partner on record. See
+// the content-compliance skill, section 2, for what this covers and why.
+export type MophApprovalStatus = 'unconfirmed' | 'partner-confirmed' | 'not-required'
 
 export type Hospital = {
   hospitalId: string
@@ -33,6 +39,7 @@ export type Hospital = {
   notes: string
   ihcoId: string
   imageFile: string | null
+  mophApprovalStatus: MophApprovalStatus
 }
 
 export const hospitals: Hospital[] = [
@@ -84,9 +91,10 @@ export const hospitals: Hospital[] = [
       "ELSO Award (first in Thailand)"
     ],
     "languages": "25+ languages including English, Arabic, Chinese, Japanese, Korean, Russian; 200+ interpreters, 33+ international referral offices worldwide, Muslim prayer room",
-    "description": "Bangkok Hospital (Bangkok Hospital Headquarters) is the flagship facility of Bangkok Dusit Medical Services (BDMS), Thailand's largest private hospital network. Founded in 1972 as one of the country's first private hospitals, it has grown into a major tertiary care campus on New Petchburi Road, combining the main hospital with specialized satellite institutions: Bangkok Heart Hospital, Bangkok Cancer Hospital Wattanosoth, and Bangkok International Hospital (dedicated brain and bone center). The campus holds six consecutive JCI accreditations and 10 JCI Clinical Care Program Certifications, including Acute Coronary Syndrome, Lung Cancer, Orthogeriatric care, and Primary Stroke, making it one of the most heavily disease-specific-certified hospitals in Thailand. Technology includes Da Vinci Xi robotic surgery, MAKOplasty robotic joint replacement, 256-slice CT, 3T MRI, and PET-CT. The hospital serves a very large international patient base supported by 200+ interpreters covering 25-30+ languages, 33+ international patient referral offices around the world, and direct billing arrangements with 100-200+ insurance providers. It is consistently ranked Thailand's #1 or top-5 hospital by Newsweek's World's Best Hospitals list. Given its scale and disease-specific certifications, it is best positioned on your platform as the anchor listing for high-acuity categories: cardiology, oncology, neurology/stroke, and complex orthopedics, while also supporting routine health screening packages.",
+    "description": "Bangkok Hospital (Bangkok Hospital Headquarters) is the flagship facility of Bangkok Dusit Medical Services (BDMS), Thailand's largest private hospital network. Founded in 1972 as one of the country's first private hospitals, it has grown into a major tertiary care campus on New Petchburi Road, combining the main hospital with specialized satellite institutions: Bangkok Heart Hospital, Bangkok Cancer Hospital Wattanosoth, and Bangkok International Hospital (dedicated brain and bone center). The campus holds six consecutive JCI accreditations and 10 JCI Clinical Care Program Certifications, including Acute Coronary Syndrome, Lung Cancer, Orthogeriatric care, and Primary Stroke, making it one of the most heavily disease-specific-certified hospitals in Thailand. Technology includes Da Vinci Xi robotic surgery, MAKOplasty robotic joint replacement, 256-slice CT, 3T MRI, and PET-CT. The hospital serves a very large international patient base supported by 200+ interpreters covering 25-30+ languages, 33+ international patient referral offices around the world, and direct billing arrangements with 100-200+ insurance providers. It is consistently ranked Thailand's #1 or top-5 hospital by Newsweek's World's Best Hospitals list.",
     "notes": "Flagship of BDMS, Thailand's largest private hospital network",
     "ihcoId": "60000567",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-bangkok.webp"
   },
   {
@@ -108,9 +116,10 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Addlife Total Check-Up Center is a JCI-accredited Ambulatory Care Program facility in Bangkok (accredited January 2021), specializing in health screening and executive check-up services rather than acute or surgical care. Public information on specific package pricing, specialty depth, and language support is limited compared to the major hospital groups. This makes it a reasonable candidate for a dedicated Health Screenings category listing, but we recommend a direct verification call before publishing package details, pricing, or language claims.",
+    "description": "Addlife Total Check-Up Center is a JCI-accredited Ambulatory Care Program facility in Bangkok (accredited January 2021), specializing in health screening and executive check-up services rather than acute or surgical care.",
     "notes": "",
     "ihcoId": "60008589",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/addlife-total-check-up-center.webp"
   },
   {
@@ -147,6 +156,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60003926",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/aikchol-hospital.jpeg"
   },
   {
@@ -171,10 +181,11 @@ export const hospitals: Hospital[] = [
     "otherAccreditations": [
       "HA (Thailand Ministry of Public Health)"
     ],
-    "languages": "Not independently verified — regional BDMS hospitals typically offer English-speaking staff with limited additional-language coverage compared to Bangkok flagship sites. Confirm directly before publishing.",
-    "description": "Bangkok Hospital Ratchasima is part of the Bangkok Dusit Medical Services (BDMS) network, serving Nakhon Ratchasima (Korat) and the wider northeastern Isaan region of Thailand. It received JCI Hospital Program accreditation on 31 August 2024, making it one of the more recently accredited facilities in the BDMS network, alongside Thailand Hospital Accreditation (HA) from the Ministry of Public Health. As a regional referral hospital rather than a flagship international campus, published detail on specific specialty centers, procedure pricing, and language support is limited compared to Bangkok Hospital's headquarters campus or its sister Phuket/Chiang Mai/Pattaya branches. For a medical tourism platform, this hospital is best positioned as a regional access point — useful for patients already traveling in or near Nakhon Ratchasima, or as part of a referral pathway into BDMS's larger Bangkok facilities for complex or specialized procedures. Before publishing pricing or language claims for this hospital specifically, we recommend a direct verification call with its International Patient / Marketing department, since — unlike Bangkok Hospital Bangkok, Phuket, or Chiang Mai — it does not appear to publish a dedicated international-patient-facing microsite with the same level of detail.",
+    "languages": "Not specified",
+    "description": "Bangkok Hospital Ratchasima is part of the Bangkok Dusit Medical Services (BDMS) network, serving Nakhon Ratchasima (Korat) and the wider northeastern Isaan region of Thailand. It received JCI Hospital Program accreditation on 31 August 2024, making it one of the more recently accredited facilities in the BDMS network, alongside Thailand Hospital Accreditation (HA) from the Ministry of Public Health. As a regional referral hospital rather than a flagship international campus, published detail on specific specialty centers, procedure pricing, and language support is limited compared to Bangkok Hospital's headquarters campus or its sister Phuket/Chiang Mai/Pattaya branches.",
     "notes": "",
     "ihcoId": "60007352",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-ratchasima.webp"
   },
   {
@@ -211,9 +222,10 @@ export const hospitals: Hospital[] = [
       "Prime Minister's Export Award"
     ],
     "languages": "English confirmed core; French, Spanish, Japanese, Chinese, Myanmar (Burmese), Korean, and German reported via professional interpreter team",
-    "description": "Chiangmai Ram Hospital, founded through a collaboration of Chiang Mai and Ramkhamhaeng Hospital physicians, became the first JCI-accredited hospital in Northern Thailand in November 2009 and remains one of only two JCI-accredited private hospitals in Chiang Mai (alongside Bangkok Hospital Chiang Mai). It is part of the Ramkhamhaeng Group, a hospital network separate from BDMS. The hospital operates 19 specialties and roughly 84 documented procedures, with particular strength in neurology, dentistry, and ophthalmology, alongside coronary disease and stroke treatment. It maintains a professional interpreter team covering German, French, English, Chinese, Japanese, Myanmar (Burmese), and Korean, and holds active partnerships with international assistance providers (International SOS, Asian Assistance, April Assistance) for coordinated international patient care and repatriation support. On your platform, this hospital is a strong secondary listing for Chiang Mai alongside Bangkok Hospital Chiang Mai, particularly for neurology, dental, and eye care categories.",
+    "description": "Chiangmai Ram Hospital, founded through a collaboration of Chiang Mai and Ramkhamhaeng Hospital physicians, became the first JCI-accredited hospital in Northern Thailand in November 2009 and remains one of only two JCI-accredited private hospitals in Chiang Mai (alongside Bangkok Hospital Chiang Mai). It is part of the Ramkhamhaeng Group, a hospital network separate from BDMS. The hospital operates 19 specialties and roughly 84 documented procedures, with particular strength in neurology, dentistry, and ophthalmology, alongside coronary disease and stroke treatment. It maintains a professional interpreter team covering German, French, English, Chinese, Japanese, Myanmar (Burmese), and Korean, and holds active partnerships with international assistance providers (International SOS, Asian Assistance, April Assistance) for coordinated international patient care and repatriation support.",
     "notes": "",
     "ihcoId": "60000020",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/chiangmai-ram-hospital.jpg"
   },
   {
@@ -238,9 +250,10 @@ export const hospitals: Hospital[] = [
       "among the first ambulatory facilities in Thailand to be JCI accredited"
     ],
     "languages": "Not specified in sources reviewed — verify directly",
-    "description": "Bangkok International Dental Center (BIDC) holds the distinction of being the first private dental center in the ASEAN Economic Community to achieve JCI accreditation, first certified in 2012 and re-accredited in 2015 and 2018 under progressively stricter JCI standards editions. As a specialist ambulatory dental facility rather than a general hospital, BIDC's clinical protocols are built on U.S.-based infection prevention and safety standards (CDC, AAMI, WHO, ADA), which is a genuine differentiator versus dental clinics operating without hospital-grade accreditation. The center is positioned as a leading dental implant center in Thailand's dental tourism market. Specific language support and pricing were not detailed in the sources reviewed — recommend verifying directly with the center before publishing on your platform, though its accreditation credentials alone make it a credible anchor listing for your Dental Care category.",
+    "description": "Bangkok International Dental Center (BIDC) holds the distinction of being the first private dental center in the ASEAN Economic Community to achieve JCI accreditation, first certified in 2012 and re-accredited in 2015 and 2018 under progressively stricter JCI standards editions. As a specialist ambulatory dental facility rather than a general hospital, BIDC's clinical protocols are built on U.S.-based infection prevention and safety standards (CDC, AAMI, WHO, ADA), which is a genuine differentiator versus dental clinics operating without hospital-grade accreditation. The center is positioned as a leading dental implant center in Thailand's dental tourism market.",
     "notes": "First private dental center in the ASEAN Economic Community to be JCI accredited",
     "ihcoId": "60000319",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-international-dental-center.jpg"
   },
   {
@@ -284,10 +297,11 @@ export const hospitals: Hospital[] = [
       "HA (Thailand MOPH)",
       "part of the BDMS network"
     ],
-    "languages": "English and Thai confirmed as core; broader European (Norwegian, French, German, Spanish, Italian, Danish, Swedish) and Asian (Cantonese, Mandarin, Vietnamese, Japanese) interpretation reported by some sources but not independently confirmed as currently active — verify before publishing",
-    "description": "BNH Hospital, founded in 1898 as the Bangkok Nursing Home to serve Bangkok's expatriate community, is one of Thailand's oldest private hospitals and is described by several sources as the first private international hospital in the country. Now a 95-120 bed facility on Convent Road in the Silom/Sathorn business district, BNH is affiliated with the BDMS network. It operates 25+ specialty departments including a well-regarded Bangkok International Fertility Centre, Breast Health Centre, Cardiometabolic Centre, Dermatology & Beauty Centre, and Shoulder & Joint Centre, and it is particularly noted in industry rankings for gynecology, midwifery, and IVF/fertility care. Reported language support is broad on paper (multiple European and Asian languages), though at least one detailed source lists only English and Thai as confirmed languages, and a recent patient review flagged communication difficulties during a maternity case — worth a direct check on current language staffing before publishing, especially for the maternity department specifically. Central Silom/Sathorn location makes it convenient for hotel-based recovery.",
+    "languages": "English and Thai confirmed as core support; ask your coordinator about availability of other languages for your visit.",
+    "description": "BNH Hospital, founded in 1898 as the Bangkok Nursing Home to serve Bangkok's expatriate community, is one of Thailand's oldest private hospitals and is described by several sources as the first private international hospital in the country. Now a 95-120 bed facility on Convent Road in the Silom/Sathorn business district, BNH is affiliated with the BDMS network. It operates 25+ specialty departments including a well-regarded Bangkok International Fertility Centre, Breast Health Centre, Cardiometabolic Centre, Dermatology & Beauty Centre, and Shoulder & Joint Centre, and it is particularly noted in industry rankings for gynecology, midwifery, and IVF/fertility care. Central Silom/Sathorn location makes it convenient for hotel-based recovery.",
     "notes": "Founded 1898, one of Thailand's oldest private hospitals",
     "ihcoId": "60000446",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bnh-hospital.jpg"
   },
   {
@@ -350,9 +364,10 @@ export const hospitals: Hospital[] = [
       "first hospital in Thailand to receive Hospital Accreditation (HA) and Advanced-HA"
     ],
     "languages": "30+ languages including English, Arabic, Chinese (Mandarin & Cantonese), Japanese, Korean, Russian, French, German, Spanish, Hindi, Bengali, Bahasa Indonesia, Vietnamese, Khmer; 150-200+ interpreters, 23 international referral offices worldwide",
-    "description": "Bumrungrad International Hospital, founded in 1980, is Southeast Asia's largest private hospital and was the first hospital in Asia to receive JCI accreditation (2002), now re-accredited seven consecutive times. The 580-bed campus (63 ICU beds) treats over 1.1 million patients annually — more than 500,000 of them international, from 190+ countries — across 47 specialty centers staffed by 1,200+ physicians, over 210 of whom hold international board certifications (US, UK, Australia, Japan, Germany). Standout capabilities include a Heart Center with door-to-balloon emergency cardiac intervention in 90 minutes, the Horizon Regional Cancer Center using IBM Watson for Oncology, MAKOplasty robotic joint replacement, a comprehensive Fertility Center (IVF/ICSI/egg freezing, though not surrogacy), and Thailand's only ReLEx SMILE laser eye surgery program. Bumrungrad is consistently ranked Thailand's #1 hospital by Newsweek and Statista and placed among the world's top 100. With 30+ languages supported by 150-200+ interpreters and 23 international referral offices, it has the deepest international patient infrastructure of any hospital in this database. Given its scale, reputation, and near-universal specialty coverage, Bumrungrad is a natural anchor listing across almost every category on your platform, particularly cardiology, oncology, orthopedics, fertility, and executive health screenings.",
+    "description": "Bumrungrad International Hospital, founded in 1980, is Southeast Asia's largest private hospital and was the first hospital in Asia to receive JCI accreditation (2002), now re-accredited seven consecutive times. The 580-bed campus (63 ICU beds) treats over 1.1 million patients annually — more than 500,000 of them international, from 190+ countries — across 47 specialty centers staffed by 1,200+ physicians, over 210 of whom hold international board certifications (US, UK, Australia, Japan, Germany). Standout capabilities include a Heart Center with door-to-balloon emergency cardiac intervention in 90 minutes, the Horizon Regional Cancer Center using IBM Watson for Oncology, MAKOplasty robotic joint replacement, a comprehensive Fertility Center (IVF/ICSI/egg freezing, though not surrogacy), and Thailand's only ReLEx SMILE laser eye surgery program. Bumrungrad is consistently ranked Thailand's #1 hospital by Newsweek and Statista and placed among the world's top 100. With 30+ languages supported by 150-200+ interpreters and 23 international referral offices, it has among the deepest international patient infrastructure of any hospital in Thailand.",
     "notes": "First JCI-accredited hospital in Asia (2002); 47 specialty centers, 1,200+ physicians",
     "ihcoId": "60000464",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bumrungrad-hospital.jpg"
   },
   {
@@ -408,9 +423,10 @@ export const hospitals: Hospital[] = [
       "15 laboratory-specific certificates"
     ],
     "languages": "10+ languages actively supported, including English, German, French, Italian, Spanish, Dutch, Swedish, Finnish, Norwegian, Danish, Russian, Chinese, Japanese, Korean, Arabic, and Tagalog via multilingual coordinators",
-    "description": "Bangkok Hospital Phuket, established in 1993, was Phuket's first hospital to receive JCI accreditation and is part of the Bangkok Dusit Medical Services (BDMS) network — Asia's largest private hospital group. With 200 inpatient beds and more than 23 specialty centers, it is one of the largest and most advanced medical facilities in southern Thailand, serving an estimated 80,000-90,000 international patients annually from Asia, Australia/Oceania, Europe, the Americas, the Middle East, and Russia/CIS countries. Specialties span cardiology, orthopedics, ophthalmology, oncology, gynecology/obstetrics, colorectal disease (including da Vinci robot-assisted surgery), neurosurgery, pediatrics, and a well-established cosmetic surgery service, alongside popular medical-tourism procedures such as sleeve gastrectomy, fertility care, spinal surgery, and vision correction for older patients. The hospital's International Patients Center provides interpreter services in 10+ languages, embassy and visa-extension documentation support, airport transfer coordination, and direct billing arrangements with major global insurers and TPAs. Its location combines convenient island access with resort-style recovery, making it especially attractive for patients who want to pair treatment with a holiday. Note: independent reviews on language support are mixed for some departments — verify current English-language staffing levels for the specific department/procedure before setting patient expectations on the platform.",
+    "description": "Bangkok Hospital Phuket, established in 1993, was Phuket's first hospital to receive JCI accreditation and is part of the Bangkok Dusit Medical Services (BDMS) network — Asia's largest private hospital group. With 200 inpatient beds and more than 23 specialty centers, it is one of the largest and most advanced medical facilities in southern Thailand, serving an estimated 80,000-90,000 international patients annually from Asia, Australia/Oceania, Europe, the Americas, the Middle East, and Russia/CIS countries. Specialties span cardiology, orthopedics, ophthalmology, oncology, gynecology/obstetrics, colorectal disease (including da Vinci robot-assisted surgery), neurosurgery, pediatrics, and a well-established cosmetic surgery service, alongside popular medical-tourism procedures such as sleeve gastrectomy, fertility care, spinal surgery, and vision correction for older patients. The hospital's International Patients Center provides interpreter services in 10+ languages, embassy and visa-extension documentation support, airport transfer coordination, and direct billing arrangements with major global insurers and TPAs. Its location combines convenient island access with resort-style recovery, making it especially attractive for patients who want to pair treatment with a holiday.",
     "notes": "",
     "ihcoId": "60000444",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-phuket.jpg"
   },
   {
@@ -451,6 +467,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60000227",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/chaophya-hospital.jpg"
   },
   {
@@ -480,10 +497,11 @@ export const hospitals: Hospital[] = [
       "CAP (College of American Pathologists)",
       "ISO 9001"
     ],
-    "languages": "Language assistance included as a standard service per patient package listings; specific language list not detailed — verify directly",
-    "description": "Deep & Harmonicare IVF Center (DHC) is one of a small number of assisted reproductive institutions worldwide to hold JCI accreditation, and one of the largest single-building IVF facilities in Thailand. Its laboratory — described by Thailand's Ministry of Public Health as a 'future central laboratory' model — was designed by an ESHRE-qualified specialist to meet U.S. standards for fertilization and embryo culture rooms, and includes an Embryoscope Plus and a ULPA air filtration system rated to filter 99.999% of particulates for embryo culture cleanliness. The center reports delivery success rates (tracking live births rather than just pregnancy rates) of 60-80% depending on individual patient factors, and its clinical team holds memberships in ESHRE, ASRM, and ASPIRE — the major European, American, and Asia-Pacific reproductive medicine societies. Located near Ramkhamhaeng Airport Rail Link station, about 20 minutes from Suvarnabhumi Airport. Given its JCI accreditation specifically for fertility services (a rarer credential than general hospital JCI accreditation), DHC is a strong, specific listing for your Fertility & IVF category.",
+    "languages": "Language assistance is included as a standard part of patient packages; ask your coordinator for specific language availability.",
+    "description": "Deep & Harmonicare IVF Center (DHC) is one of a small number of assisted reproductive institutions worldwide to hold JCI accreditation, and one of the largest single-building IVF facilities in Thailand. Its laboratory — described by Thailand's Ministry of Public Health as a 'future central laboratory' model — was designed by an ESHRE-qualified specialist to meet U.S. standards for fertilization and embryo culture rooms, and includes an Embryoscope Plus and a ULPA air filtration system rated to filter 99.999% of particulates for embryo culture cleanliness. Its clinical team holds memberships in ESHRE, ASRM, and ASPIRE — the major European, American, and Asia-Pacific reproductive medicine societies. Located near Ramkhamhaeng Airport Rail Link station, about 20 minutes from Suvarnabhumi Airport. Individual outcomes for fertility treatment vary by patient — ask your coordinator for the clinic's current, patient-specific figures.",
     "notes": "",
     "ihcoId": "60009051",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/deep-harmonicare-ivf-center-thailand.jpg"
   },
   {
@@ -527,6 +545,7 @@ export const hospitals: Hospital[] = [
     "description": "Bangkok Hospital Chiang Mai opened in 2014 as the 36th hospital in the Bangkok Dusit Medical Services (BDMS) network, bringing metropolitan-level tertiary care to northern Thailand. The 122-bed facility, located 15 minutes from Chiang Mai International Airport, operates 21 specialized clinics and centers and has held continuous JCI accreditation since 2015, most recently renewed through 2027 — one of only two JCI-accredited private hospitals in Chiang Mai. Its Heart Center holds an academic affiliation with Oregon Health & Science University and Nagoya University, supporting ongoing staff training in cardiac care. Beyond cardiology, the hospital covers orthopedics, oncology, bariatric surgery (notably sleeve gastrectomy), fertility and women's health, and cosmetic/reconstructive surgery, with a well-developed cosmetic surgery menu (breast augmentation, tummy tuck, eyelid surgery, rhinoplasty). The dedicated International Medical Services Department provides in-person translation in English, Mandarin, Japanese, Korean, Burmese, and French, with 24 additional languages available by phone 24/7 — a notably broad language offering for a hospital outside Bangkok. It is one of the few Thai hospitals to accept the U.S. Department of Defense's TRICARE Overseas Program and Foreign Medical Program directly, which is a strong differentiator for American military-affiliated patients. Northern Thailand's cultural draw (Lanna heritage, cooler climate, slower pace) makes this hospital a good fit for patients combining treatment with a wellness-oriented recovery trip.",
     "notes": "",
     "ihcoId": "60003747",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-chiang-mai.jpg"
   },
   {
@@ -562,6 +581,7 @@ export const hospitals: Hospital[] = [
     "description": "Bangpakok 9 International Hospital (BPK9), founded in 2003, is part of the BPK Hospital Group — an 8-hospital network founded in 1981 by Dr. Chareong Chandrakamol, which also includes Piyavate Hospital. Located on Rama 2 Road about 30 minutes from Suvarnabhumi Airport, BPK9 operates 30+ specialty centers spanning orthopedics through oncology, and holds triple accreditation — JCI, Thailand's Hospital Accreditation (HA), and Global Healthcare Accreditation (GHA) for international patient services, a relatively unusual combination that signals investment in both clinical quality and international-patient experience specifically. The hospital provides interpreter coverage in 7 languages: Arabic, English, Burmese, Cambodian, Filipino, Bengali, and Chinese — a language mix that reflects strong demand from Southeast Asian and Middle Eastern patient corridors specifically, useful to know if you're targeting those regions.",
     "notes": "",
     "ihcoId": "60000840",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangpakok-9-international-hospital.jpg"
   },
   {
@@ -582,6 +602,7 @@ export const hospitals: Hospital[] = [
     "description": "Chularat 3 Theparak Hospital, JCI accredited since April 2014, is part of the Chularat Hospital Group, a private hospital network serving the Samut Prakan/eastern Bangkok corridor near Suvarnabhumi Airport. Public information specific to this branch's specialty centers, technology, and international patient services was limited in the sources reviewed compared to Bangkok's flagship international hospitals. This hospital is likely best suited as a regional/local-access listing rather than a headline international category listing until further verification is done directly with the hospital.",
     "notes": "",
     "ihcoId": "60001851",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/chularat-3-theparak-hospital.webp"
   },
   {
@@ -613,9 +634,10 @@ export const hospitals: Hospital[] = [
       "Institute of Hospital Quality Improvement and Accreditation (HQIA)"
     ],
     "languages": "English and Thai confirmed",
-    "description": "Asia Cosmetic Hospital, founded in 2012, is a JCI-accredited facility in Bangkok specializing exclusively in cosmetic plastic surgery and bariatric (weight-loss) surgery. It reports a 0% post-surgery complication rate and has performed over 10,000 surgeries, treating roughly 2,500 patients annually across a 10-department structure that includes a dedicated International Marketing department. The hospital's principal surgeon, Dr. Tanongsak Panyawirunroj, is an active member of the International Society of Aesthetic Plastic Surgery (ISAPS) and the Royal College of Surgeons Thailand. It won 'Best Regional Hospital' from the Socrates committee in Oxford and was named Breast Augmentation Clinic of the Year and Face-Lifting Surgery Clinic of the Year — Asia-Pacific at the 2023 GlobalHealth Aesthetics Awards. The hospital also runs an ongoing CSR program (since 2013) offering free plastic surgery to people with disabilities. As a single-specialty cosmetic and bariatric surgery facility with strong award recognition, this is a solid secondary listing for your Cosmetic & Plastic Surgery and Bariatric categories, particularly for patients seeking a boutique, specialty-focused facility rather than a large general hospital.",
+    "description": "Asia Cosmetic Hospital, founded in 2012, is a JCI-accredited facility in Bangkok specializing exclusively in cosmetic plastic surgery and bariatric (weight-loss) surgery. It has performed over 10,000 surgeries, treating roughly 2,500 patients annually across a 10-department structure. The hospital's principal surgeon, Dr. Tanongsak Panyawirunroj, is an active member of the International Society of Aesthetic Plastic Surgery (ISAPS) and the Royal College of Surgeons Thailand. It won 'Best Regional Hospital' from the Socrates committee in Oxford and was named Breast Augmentation Clinic of the Year and Face-Lifting Surgery Clinic of the Year — Asia-Pacific at the 2023 GlobalHealth Aesthetics Awards. The hospital also runs an ongoing CSR program (since 2013) offering free plastic surgery to people with disabilities. As with any surgical procedure, individual outcomes and risks vary — your coordinator can connect you with the surgical team to discuss your specific case.",
     "notes": "",
     "ihcoId": "60004929",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/asia-cosmetic-hospital.jpg"
   },
   {
@@ -660,14 +682,13 @@ export const hospitals: Hospital[] = [
       "Health Screenings & Checkups"
     ],
     "otherAccreditations": [
-      "HA (Thailand MOPH) — typical of BDMS network hospitals",
-      "independent ISO certification not confirmed in public sources",
-      "verify directly"
+      "HA (Thailand MOPH)"
     ],
-    "languages": "English and Thai confirmed; broader multilingual interpreter support available on request but not independently documented at the same depth as Bangkok's flagship campuses — verify current coverage before publishing specific language claims",
-    "description": "Bangkok Hospital Hua Hin is part of the Bangkok Dusit Medical Services (BDMS) network, located on Phetkasem Road in central Hua Hin, roughly 10 minutes from Hua Hin Airport. It is the most recently JCI-accredited hospital in this dataset among the approved list, receiving its accreditation effective 1 March 2024. The hospital operates more than 30 specialized departments spanning cardiology, orthopedics, oncology, neurology, gastroenterology, urology, obstetrics and gynecology, pediatrics, ENT, and ophthalmology, supported by modern diagnostic imaging (MRI, CT) and a 24/7 emergency department with a Sky ICU capability for rapid critical-care transfers. It is particularly noted for advanced infertility treatments such as ICSI, alongside newer non-surgical offerings like focused shockwave therapy for erectile dysfunction and electromagnetic pelvic floor therapy. As a resort-town hospital, it caters heavily to the large expatriate and long-stay tourist population in Hua Hin, offering tailored medical-tourism packages that combine treatment with wellness/leisure stays, plus direct coordination with international insurers. Language support is confirmed for English and Thai; multilingual staffing beyond that is comparatively less documented than at Bangkok Hospital's larger campuses, so we recommend verifying current interpreter coverage before setting expectations for non-English-speaking patients on the platform.",
+    "languages": "English and Thai confirmed; ask your coordinator about interpreter availability for other languages.",
+    "description": "Bangkok Hospital Hua Hin is part of the Bangkok Dusit Medical Services (BDMS) network, located on Phetkasem Road in central Hua Hin, roughly 10 minutes from Hua Hin Airport. It received JCI accreditation effective 1 March 2024. The hospital operates more than 30 specialized departments spanning cardiology, orthopedics, oncology, neurology, gastroenterology, urology, obstetrics and gynecology, pediatrics, ENT, and ophthalmology, supported by modern diagnostic imaging (MRI, CT) and a 24/7 emergency department with a Sky ICU capability for rapid critical-care transfers. It is particularly noted for advanced infertility treatments such as ICSI, alongside newer non-surgical offerings like focused shockwave therapy for erectile dysfunction and electromagnetic pelvic floor therapy. As a resort-town hospital, it caters heavily to the large expatriate and long-stay tourist population in Hua Hin, offering tailored medical-tourism packages that combine treatment with wellness/leisure stays, plus direct coordination with international insurers. Language support is confirmed for English and Thai; multilingual staffing beyond that is comparatively less documented than at Bangkok Hospital's larger campuses.",
     "notes": "",
     "ihcoId": "60000202",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-hua-hin.jpg"
   },
   {
@@ -697,6 +718,7 @@ export const hospitals: Hospital[] = [
     "description": "Jetanin IVF Clinic, established in 1995 (originally as Yotse Clinic), is the only fertility clinic in Southeast Asia accredited by both JCI and Australia's RTAC — a combination that signals particularly rigorous laboratory and clinical governance for a single-specialty facility. It was the first center in the region to successfully treat male infertility using the TESE/ICSI method and holds a notable clinical distinction: a successful live birth following 10 years of frozen egg storage. The clinic operates dedicated embryo, genetics, and sperm laboratories, with all procedures performed by in-house specialists and double-witnessed at each lab step as a quality-control measure. Jetanin participates in annual External Quality Assessment with UK and European genomic quality networks. With 9 reproductive specialists and 20+ beds, it is a single-specialty facility rather than a full hospital — well suited as a high-credibility, specialist listing in your Fertility & IVF category, particularly for male-factor infertility cases where its TESE/ICSI track record is a genuine differentiator.",
     "notes": "",
     "ihcoId": "60004839",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/jetanin-ivf-clinic.webp"
   },
   {
@@ -728,6 +750,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60010354",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kasemrad-hospital-ramkhamhaeng.png"
   },
   {
@@ -767,9 +790,10 @@ export const hospitals: Hospital[] = [
       "Healthcare Asia 6-Star Award (2021)"
     ],
     "languages": "20+ languages supported through the BDMS international patient network",
-    "description": "Bangkok Hospital Pattaya, part of the Bangkok Dusit Medical Services (BDMS) network, is a 300-bed facility serving Thailand's eastern seaboard and Pattaya's large international tourist and expatriate population. First JCI-accredited in 2009 with subsequent re-accreditations in 2012, 2015, 2018, and 2022, the hospital holds a JCI Clinical Care Program Certification for Acute Coronary Syndrome management. It operates 30 specialized centers, most notably a Heart Center offering the same level of cardiac technology as Bangkok's flagship campus — a significant draw given the region otherwise lacks comparable cardiac capability — alongside a Brain and Neuro-Science Center, a dedicated Emergency Medical Services Center, a Dermatology and Cosmetic Surgery Center, and a Minimally Invasive Spine Surgery Center. Roughly 40% of the hospital's patients come from outside Thailand, drawn from 150+ countries, and the hospital offers services in 20+ languages through the wider BDMS international patient network. It has won the Prime Minister's Export Award and the Healthcare Asia 6-Star Award (2021) in recognition of its medical tourism services. On your platform, this hospital is a strong fit for cardiology and cosmetic/dermatology categories specifically for patients already staying in the Pattaya/Eastern Seaboard resort area, and for emergency/trauma coverage given its dedicated EMS center.",
+    "description": "Bangkok Hospital Pattaya, part of the Bangkok Dusit Medical Services (BDMS) network, is a 300-bed facility serving Thailand's eastern seaboard and Pattaya's large international tourist and expatriate population. First JCI-accredited in 2009 with subsequent re-accreditations in 2012, 2015, 2018, and 2022, the hospital holds a JCI Clinical Care Program Certification for Acute Coronary Syndrome management. It operates 30 specialized centers, most notably a Heart Center offering the same level of cardiac technology as Bangkok's flagship campus — a significant draw given the region otherwise lacks comparable cardiac capability — alongside a Brain and Neuro-Science Center, a dedicated Emergency Medical Services Center, a Dermatology and Cosmetic Surgery Center, and a Minimally Invasive Spine Surgery Center. Roughly 40% of the hospital's patients come from outside Thailand, drawn from 150+ countries, and the hospital offers services in 20+ languages through the wider BDMS international patient network. It has won the Prime Minister's Export Award and the Healthcare Asia 6-Star Award (2021) in recognition of its medical tourism services.",
     "notes": "",
     "ihcoId": "60000443",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-pattaya.webp"
   },
   {
@@ -794,6 +818,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60010190",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/natural-home.jpg"
   },
   {
@@ -830,6 +855,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60000157",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/nonthavej-hospital.jpg"
   },
   {
@@ -871,9 +897,10 @@ export const hospitals: Hospital[] = [
       "ISO 15189:2012"
     ],
     "languages": "Translation services in 20+ languages via dedicated coordinators",
-    "description": "Vejthani Hospital, established in 1994 in Bangkok's Bang Kapi district, is a 263-bed private tertiary hospital best known by its nickname 'The King of Bones' for its orthopedic specialization — having performed more than 10,000 joint replacement surgeries and serving 300,000+ patients from 100+ countries annually. It holds JCI accreditation current through 2028 along with several JCI Clinical Care Program Certifications, including Infertility (2019) and Lumbar Decompression and Fixation (2017); notably, Vejthani was the first hospital in the world to receive a JCI CCPC for Hepatitis B management and the first in Southeast Asia to receive one for Lumbar Decompression and Fixation, underscoring the depth of its clinical protocols beyond general accreditation. Beyond orthopedics and spine, the hospital operates a well-regarded Fertility Center offering IVF/ICSI, a Kidney Transplant program, and a Dental Center. International patients are supported by translation services covering 20+ languages. Given its concentrated clinical strength, Vejthani is best positioned on your platform as a primary listing for Orthopedics, Spine Surgery, and Fertility categories, where its certification depth gives it a genuine differentiation advantage over more generalist hospitals in the same price range.",
+    "description": "Vejthani Hospital, established in 1994 in Bangkok's Bang Kapi district, is a 263-bed private tertiary hospital best known by its nickname 'The King of Bones' for its orthopedic specialization — having performed more than 10,000 joint replacement surgeries and serving 300,000+ patients from 100+ countries annually. It holds JCI accreditation current through 2028 along with several JCI Clinical Care Program Certifications, including Infertility (2019) and Lumbar Decompression and Fixation (2017); notably, Vejthani was the first hospital in the world to receive a JCI CCPC for Hepatitis B management and the first in Southeast Asia to receive one for Lumbar Decompression and Fixation, underscoring the depth of its clinical protocols beyond general accreditation. Beyond orthopedics and spine, the hospital operates a well-regarded Fertility Center offering IVF/ICSI, a Kidney Transplant program, and a Dental Center. International patients are supported by translation services covering 20+ languages.",
     "notes": "Known as 'King of Bones'; 10,000+ joint replacements performed",
     "ihcoId": "60000776",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/vejthani-hospital.jpg"
   },
   {
@@ -920,9 +947,10 @@ export const hospitals: Hospital[] = [
       "ISO 9001:2008"
     ],
     "languages": "English, Japanese, Arabic, Chinese, Khmer, Malayalam, Bengali, Mandarin, Vietnamese, Russian, and Myanmar reported; patients from 40+ countries served",
-    "description": "Piyavate Hospital, operating since 1993, is a 150-bed JCI-accredited private hospital in Bangkok's Huai Khwang district, part of the BPK Hospital Group (which also owns Bangpakok 9). It positions itself as a referral center for complex cases, with 20+ specialized centers spanning cardiology, orthopedics/spine, fertility, oncology, minimally invasive and robotic surgery, and even a Chinese Medicine Center — an unusual inclusion that could differentiate it for patients interested in integrated Western/traditional care. Reported language coverage is unusually broad for a mid-sized hospital: English, Japanese, Arabic, Chinese, Khmer, Malayalam, Bengali, Mandarin, Vietnamese, Russian, and Myanmar, serving patients from 40+ countries. Given its Fertility Centre's strong reputation (cited in industry rankings as a leading IVF option) and broad specialty base, Piyavate is a solid secondary listing across cardiology, orthopedics, and fertility categories.",
+    "description": "Piyavate Hospital, operating since 1993, is a 150-bed JCI-accredited private hospital in Bangkok's Huai Khwang district, part of the BPK Hospital Group (which also owns Bangpakok 9). It positions itself as a referral center for complex cases, with 20+ specialized centers spanning cardiology, orthopedics/spine, fertility, oncology, minimally invasive and robotic surgery, and even a Chinese Medicine Center — an unusual inclusion that could differentiate it for patients interested in integrated Western/traditional care. Reported language coverage is unusually broad for a mid-sized hospital: English, Japanese, Arabic, Chinese, Khmer, Malayalam, Bengali, Mandarin, Vietnamese, Russian, and Myanmar, serving patients from 40+ countries.",
     "notes": "",
     "ihcoId": "60006071",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/piyavate-hospital.jpg"
   },
   {
@@ -943,6 +971,7 @@ export const hospitals: Hospital[] = [
     "description": "Ruamjairak Hospital received JCI Hospital Program accreditation on 20 December 2025, making it the most recently accredited facility in this entire database. As a result, public information — specialty centers, pricing, international patient services, language support — is essentially unavailable in the sources reviewed; the accreditation is too recent for third-party medical tourism directories, review platforms, or press coverage to have caught up. Recommend treating this as a facility to revisit for research once more public information becomes available, or contacting the hospital directly if you want to feature it now.",
     "notes": "",
     "ihcoId": "60011794",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/ruamjairak-hospital.webp"
   },
   {
@@ -971,6 +1000,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60003265",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/sikarin-hatyai-hospital.jpg"
   },
   {
@@ -991,6 +1021,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008861",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/synphaet-theparak-hospital.jpg"
   },
   {
@@ -1011,6 +1042,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60009506",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/princ-hospital-suvarnabhumi.jpg"
   },
   {
@@ -1031,6 +1063,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60000340",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/pitsanuvej-hospital.webp"
   },
   {
@@ -1079,6 +1112,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60001796",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/sukumvit-hospital.webp"
   },
   {
@@ -1111,6 +1145,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008863",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/synphaet-srinakarin-hospital.jpg"
   },
   {
@@ -1156,9 +1191,10 @@ export const hospitals: Hospital[] = [
       "Part of Bangkok Chain Hospital PCL (BCH) network"
     ],
     "languages": "Not specified in sources reviewed — verify directly",
-    "description": "The World Medical Hospital, operating since 2013 under Bangkok Chain Hospital PCL (BCH) in Nonthaburi province (Greater Bangkok), is a 160-bed facility notable for having a dedicated Regenerative Medicine Center alongside its Heart Center, Stroke Center, and standard surgical/orthopedic services — one of relatively few hospitals in this database explicitly branding a stem cell/regenerative medicine service line. It also runs a Medical Oncology Center, an Advanced Pediatric Center, IVF services, and a Diabetic Foot Center. JCI accredited since December 2014. As part of the BCH network (which also includes the Kasemrad hospital group), it benefits from group-wide quality systems. Given its explicit regenerative medicine positioning, this hospital is worth flagging specifically for your Stem Cell & Regenerative Medicine and Anti-Aging & Longevity categories — though we recommend verifying the actual regenerative medicine protocols and evidence base directly, since this field varies significantly in regulatory rigor between providers.",
+    "description": "The World Medical Hospital, operating since 2013 under Bangkok Chain Hospital PCL (BCH) in Nonthaburi province (Greater Bangkok), is a 160-bed facility notable for having a dedicated Regenerative Medicine Center alongside its Heart Center, Stroke Center, and standard surgical/orthopedic services — one of relatively few hospitals to explicitly brand a stem cell/regenerative medicine service line. It also runs a Medical Oncology Center, an Advanced Pediatric Center, IVF services, and a Diabetic Foot Center. JCI accredited since December 2014. As part of the BCH network (which also includes the Kasemrad hospital group), it benefits from group-wide quality systems.",
     "notes": "",
     "ihcoId": "60001260",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/the-world-medical-hospital.jpg"
   },
   {
@@ -1187,6 +1223,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60011060",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/umc-digital-ai-petct-center.jpg"
   },
   {
@@ -1221,10 +1258,11 @@ export const hospitals: Hospital[] = [
       "Thailand)",
       "royal permission to use the Garuda emblem (granted 2004) — the only private hospital in Thailand with this distinction"
     ],
-    "languages": "Translation services provided for patients who don't speak English or Thai; specific language list not detailed — verify directly",
+    "languages": "Translation services provided for patients who don't speak English or Thai; ask your coordinator for the specific language list.",
     "description": "Vichaiyut Hospital, founded in 1993 by Dr. Vichaiyut Chongcharoensukying in the Samsen Nai district of Phaya Thai, Bangkok, is a JCI-accredited teaching hospital with a notable distinction: it is the only private hospital in Thailand granted royal permission to use the Garuda emblem (a mark of official government/royal endorsement), awarded in 2004. Beyond routine care across general surgery, orthopedics, cardiology, neurology, oncology, and pediatrics, the hospital runs active medical education programs (internships, residencies, fellowships) and a dedicated research center focused on cancer, cardiology, and neurology, including participation in clinical trials. It has a dedicated International Medical Center offering language support, visa application assistance, and travel/accommodation coordination. As a teaching and research hospital with royal recognition, Vichaiyut carries a credibility signal distinct from purely commercial medical tourism hospitals — worth highlighting if you want to differentiate listings by institutional pedigree.",
     "notes": "",
     "ihcoId": "60010760",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/vichaiyut-hospital-and-vichaiyut-medical-center-hospital.jpg"
   },
   {
@@ -1245,6 +1283,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008352",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/wattanapat-hospital-ao-nang.jpg"
   },
   {
@@ -1271,9 +1310,10 @@ export const hospitals: Hospital[] = [
       "received an 'Outstanding Hospital' award for cardiac patient data management (April 2026)"
     ],
     "languages": "Not specified in sources reviewed — as an academic/university hospital, English support level should be verified directly",
-    "description": "Queen Sirikit Heart Center of the Northeast is a specialized academic cardiovascular hospital affiliated with Khon Kaen University's Faculty of Medicine — a public/academic institution rather than a private hospital, which is a distinct profile from most others in this database. It is Thailand's northeastern (Isaan) region's dedicated tertiary-level center for cardiovascular disease treatment and research, with an explicit mission to extend cardiac care services across the ASEAN region. The center received its second JCI re-accreditation (valid March 2024-2027) and holds Thailand's HA quality certification, and was recognized with an 'Outstanding Hospital' award for cardiac patient data management in April 2026. As a public academic center, pricing structures and international-patient-specific services likely differ meaningfully from private hospitals — recommend verifying the international patient pathway directly, as academic hospitals sometimes have less-developed international patient infrastructure despite excellent clinical quality. Worth featuring specifically for your Cardiology category, particularly for patients seeking academic-hospital-grade cardiac research and treatment outside Bangkok.",
+    "description": "Queen Sirikit Heart Center of the Northeast is a specialized academic cardiovascular hospital affiliated with Khon Kaen University's Faculty of Medicine — a public/academic institution rather than a private hospital. It is Thailand's northeastern (Isaan) region's dedicated tertiary-level center for cardiovascular disease treatment and research, with an explicit mission to extend cardiac care services across the ASEAN region. The center received its second JCI re-accreditation (valid March 2024-2027) and holds Thailand's HA quality certification, and was recognized with an 'Outstanding Hospital' award for cardiac patient data management in April 2026. As a public academic center, pricing structures and international-patient-specific services likely differ meaningfully from private hospitals.",
     "notes": "",
     "ihcoId": "60005681",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/queen-sirikit-heart-center-of-the-northeast.webp"
   },
   {
@@ -1321,9 +1361,10 @@ export const hospitals: Hospital[] = [
       "JCI Certificate of Distinction for Childhood Asthma Program (7 consecutive years through 2018)"
     ],
     "languages": "Bilingual Thai/English core team; broader Samitivej Group multilingual resources (English, Japanese, Arabic, Mandarin) available through the group's international patient network",
-    "description": "Samitivej Srinakarin Hospital, opened in 1979 in eastern Bangkok near Suvarnabhumi Airport, is a 400+ bed multispecialty tertiary hospital and a flagship of the Samitivej Hospital Group (part of BDMS). It has held continuous JCI accreditation since 2007/2008 and is certified by WHO, UNICEF, and Thailand's Ministry of Public Health as a Mother & Baby-Friendly Hospital. The hospital houses Samitivej Srinakarin Children's Hospital, Thailand's first private children's hospital, alongside 35+ specialty centers spanning cardiology (Heart Institute), oncology (Breast Center), orthopedics and spine (Bone and Joint Center, Spine & Revision Spine Center), fertility, gastroenterology/hepatology (Liver & Digestive Institute), neurology, plastic and aesthetic surgery, and a Bone Marrow & Stem Cell Transplantation Center. Facilities include a 40-bed Critical Care Complex, 12 operating theaters, and an Emergency Air Ambulance service reaching 30+ domestic airports. More than 530 specialist physicians support the hospital, many trained at institutions such as Johns Hopkins and Harvard. International patients receive dedicated support for visas, embassy liaison, interpretation, accommodation, and transportation. Given its pediatric heritage and Mother & Baby-Friendly status, this hospital is a strong anchor listing for your Fertility, Pediatrics, and Maternity/Obstetrics categories, while its Bone Marrow & Stem Cell Transplantation Center also supports Stem Cell & Regenerative Medicine listings.",
+    "description": "Samitivej Srinakarin Hospital, opened in 1979 in eastern Bangkok near Suvarnabhumi Airport, is a 400+ bed multispecialty tertiary hospital and a flagship of the Samitivej Hospital Group (part of BDMS). It has held continuous JCI accreditation since 2007/2008 and is certified by WHO, UNICEF, and Thailand's Ministry of Public Health as a Mother & Baby-Friendly Hospital. The hospital houses Samitivej Srinakarin Children's Hospital, Thailand's first private children's hospital, alongside 35+ specialty centers spanning cardiology (Heart Institute), oncology (Breast Center), orthopedics and spine (Bone and Joint Center, Spine & Revision Spine Center), fertility, gastroenterology/hepatology (Liver & Digestive Institute), neurology, plastic and aesthetic surgery, and a Bone Marrow & Stem Cell Transplantation Center. Facilities include a 40-bed Critical Care Complex, 12 operating theaters, and an Emergency Air Ambulance service reaching 30+ domestic airports. More than 530 specialist physicians support the hospital, many trained at institutions such as Johns Hopkins and Harvard. International patients receive dedicated support for visas, embassy liaison, interpretation, accommodation, and transportation.",
     "notes": "",
     "ihcoId": "60000570",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/samitivej-srinakarin-hospital.webp"
   },
   {
@@ -1357,10 +1398,11 @@ export const hospitals: Hospital[] = [
       "Endocrinology & Diabetes Care"
     ],
     "otherAccreditations": [],
-    "languages": "Multilingual staff for international visitors — specific language list not detailed, verify directly",
-    "description": "Sikarin Hospital, JCI accredited since November 2012, is positioned in industry comparisons as one of Bangkok's more affordable JCI-accredited hospitals without compromising on quality — a useful positioning if your platform wants a value-tier option alongside premium flagships like Bumrungrad or MedPark. It holds two JCI Clinical Care Program Certifications: Acute Myocardial Infarction (2016) and Primary Stroke (2014), and is particularly recognized for gastroenterology, kidney care (including dialysis and transplant), and diabetes management — chronic disease areas that are less commonly highlighted by cosmetic/surgical-focused hospitals. Modern facilities include a hybrid operating room and advanced imaging. Multilingual staff are confirmed to support international visitors, though a specific language list wasn't detailed in sources reviewed. This hospital is a good candidate for your Endocrinology & Diabetes Care and general chronic-care categories, and as a mid-price-point alternative within Cardiology.",
+    "languages": "Multilingual staff for international visitors; ask your coordinator for the specific language list.",
+    "description": "Sikarin Hospital, JCI accredited since November 2012, is regarded as one of Bangkok's more affordable JCI-accredited hospitals without compromising on quality. It holds two JCI Clinical Care Program Certifications: Acute Myocardial Infarction (2016) and Primary Stroke (2014), and is particularly recognized for gastroenterology, kidney care (including dialysis and transplant), and diabetes management — chronic disease areas that are less commonly highlighted by cosmetic/surgical-focused hospitals. Modern facilities include a hybrid operating room and advanced imaging. Multilingual staff are confirmed to support international visitors, though a specific language list wasn't detailed in sources reviewed.",
     "notes": "",
     "ihcoId": "60000181",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/sikarin-hospital.webp"
   },
   {
@@ -1389,9 +1431,10 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [],
     "languages": "Not specified in sources reviewed — as an academic hospital, verify directly",
-    "description": "Siriraj Piyamaharajkarun Hospital, located by the Chao Phraya River in Bangkok's Thonburi district, is a tertiary academic hospital affiliated with Mahidol University and holds the distinction of being the first JCI-accredited PUBLIC hospital in Thailand (accredited December 2013) — a meaningfully different institutional profile from the private hospitals that dominate this database. It holds JCI Clinical Care Program Certifications for both Hip Replacement (2021) and Knee Replacement (2014), giving it credible, specific orthopedic credentials. As with other academic/public hospitals, international patient services and pricing structures likely differ from private flagship hospitals — patient reviews describe it as blending Thai hospitality with international healthcare standards and offering affordable packages. Worth featuring for patients seeking academic-hospital-grade care (particularly orthopedic joint replacement) at a different price point than Bangkok's private international hospitals, though international-patient-specific services should be verified directly given its academic/public hospital structure.",
+    "description": "Siriraj Piyamaharajkarun Hospital, located by the Chao Phraya River in Bangkok's Thonburi district, is a tertiary academic hospital affiliated with Mahidol University and holds the distinction of being the first JCI-accredited PUBLIC hospital in Thailand (accredited December 2013) — a meaningfully different institutional profile from the private hospitals that make up most of Thailand's international healthcare sector. It holds JCI Clinical Care Program Certifications for both Hip Replacement (2021) and Knee Replacement (2014), giving it credible, specific orthopedic credentials. As with other academic/public hospitals, international patient services and pricing structures likely differ from private flagship hospitals — patient reviews describe it as blending Thai hospitality with international healthcare standards and offering affordable packages.",
     "notes": "First JCI-accredited PUBLIC hospital in Thailand (Mahidol University)",
     "ihcoId": "60001643",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/siriraj-piyamaharajkarun-hospital.jpg"
   },
   {
@@ -1412,6 +1455,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60001745",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/srisawan-hospital.jpg"
   },
   {
@@ -1446,9 +1490,10 @@ export const hospitals: Hospital[] = [
       "ISO"
     ],
     "languages": "English, Japanese, and Chinese confirmed for the International Healthcare Center; broader coverage not detailed",
-    "description": "ViMUT Hospital, established in May 2021 in Bangkok's business district, is a newer 236-bed, 18-story tertiary care facility affiliated with Pruksa Holding Public Company Limited, designed in accordance with JCI standards. It has developed a notably strong Anti-Aging and Longevity service line — with dedicated packages, patient-facing video content, and named programs — alongside Plastic Surgery, Bariatric (Gastric Sleeve) Surgery, and a Geriatric Center addressing Thailand's aging population. Its International Healthcare Center offers multilingual medical staff in at least English, Japanese, and Chinese. As one of the few hospitals in this database with an explicit, marketed Anti-Aging & Longevity Medicine service line, ViMUT is a strong candidate to anchor that specific category on your platform — worth verifying the clinical protocols and evidence base behind its longevity offerings directly, as this field varies in rigor across providers.",
+    "description": "ViMUT Hospital, established in May 2021 in Bangkok's business district, is a newer 236-bed, 18-story tertiary care facility affiliated with Pruksa Holding Public Company Limited, designed in accordance with JCI standards. It has developed a notably strong Anti-Aging and Longevity service line — with dedicated packages, patient-facing video content, and named programs — alongside Plastic Surgery, Bariatric (Gastric Sleeve) Surgery, and a Geriatric Center addressing Thailand's aging population. Its International Healthcare Center offers multilingual medical staff in at least English, Japanese, and Chinese. It is one of relatively few Thai hospitals with an explicit, marketed Anti-Aging & Longevity Medicine service line.",
     "notes": "",
     "ihcoId": "60010782",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/vimut-hospital.webp"
   },
   {
@@ -1469,6 +1514,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60000392",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/navamin-9-hospital.png"
   },
   {
@@ -1505,10 +1551,11 @@ export const hospitals: Hospital[] = [
     "otherAccreditations": [
       "Part of the Phyathai Hospital Group (founded 1976)"
     ],
-    "languages": "Multilingual services and interpreters confirmed available; specific language list not detailed — verify directly",
+    "languages": "Multilingual services and interpreters confirmed available; ask your coordinator for the specific language list.",
     "description": "Phyathai 2 Hospital, established in 1987 on Phaholyothin Road in Bangkok, is part of the Phyathai Hospital Group (founded 1976, also including Phyathai 1 and Phyathai 3). It is a large facility — 500+ beds, 60+ departments, 20+ operating theaters, and 70+ ICU beds — serving over 700,000 patients annually. Its Heart Center was established in cooperation with Harvard Medical International and includes a hybrid operating room for advanced cardiac procedures. One notable flag: JCI records show the hospital's Infertility Clinical Care Program Certification was voluntarily withdrawn in 2022 — this doesn't necessarily mean the fertility program closed, but it's worth confirming current status directly before featuring Phyathai 2 under your Fertility category, since a withdrawn certification is a detail patients researching credentials may notice. The hospital's International Relations Center provides airport transfer, accommodation, and visa assistance for international patients.",
     "notes": "",
     "ihcoId": "60002029",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/phyathai-2-hospital.webp"
   },
   {
@@ -1533,6 +1580,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60009354",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/prachachuen-imaging-center.jpg"
   },
   {
@@ -1557,6 +1605,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60001687",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/rachvipa-mri-center.jpg"
   },
   {
@@ -1581,6 +1630,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008031",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/ramathibodi-chakri-naruebodindra-hospital.jpg"
   },
   {
@@ -1601,6 +1651,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60000050",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/synphaet-hospital.webp"
   },
   {
@@ -1639,9 +1690,10 @@ export const hospitals: Hospital[] = [
       "HA (Thailand)"
     ],
     "languages": "Interpreter/coordination services confirmed in English, Arabic, Chinese, Japanese, Korean, Vietnamese, Myanmar, Cambodian, Burmese, Khmer; some sources cite up to 16 languages available",
-    "description": "Yanhee International Hospital, founded in 1984, is a 400-bed multi-specialty hospital in Bangkok's Bang Phlat district, JCI-accredited since 2011, and is one of Thailand's most internationally recognized cosmetic and gender-affirming surgery destinations — 72% of its international patients (from 160+ countries) come specifically for aesthetic procedures. Its team of 18 board-certified plastic surgeons is described as the largest dedicated cosmetic surgery team of any Thai private hospital, and Yanhee is particularly well known for sex-reassignment/gender-affirming surgery expertise, alongside a full menu of breast, facial, and body procedures. Beyond cosmetics, it operates as a genuine multi-specialty hospital with cardiology (Dear Heart Center), dental, dermatology, bariatric surgery, and fertility services, meaning cosmetic patients can combine procedures with other care in one stay. Yanhee also runs 'Operation Bright Smile,' a long-running charitable program providing free cleft lip/palate surgery to over 1,115 children since inception. Given its scale and specific reputation, Yanhee is a strong anchor listing for both Cosmetic & Plastic Surgery and Gender-Affirming Care categories specifically.",
+    "description": "Yanhee International Hospital, founded in 1984, is a 400-bed multi-specialty hospital in Bangkok's Bang Phlat district, JCI-accredited since 2011, and is one of Thailand's most internationally recognized cosmetic and gender-affirming surgery destinations — 72% of its international patients (from 160+ countries) come specifically for aesthetic procedures. Its team of 18 board-certified plastic surgeons is one of the largest at any Thai hospital, and Yanhee is particularly well known for sex-reassignment/gender-affirming surgery expertise, alongside a full menu of breast, facial, and body procedures. Beyond cosmetics, it operates as a genuine multi-specialty hospital with cardiology (Dear Heart Center), dental, dermatology, bariatric surgery, and fertility services, meaning cosmetic patients can combine procedures with other care in one stay. Yanhee also runs 'Operation Bright Smile,' a long-running charitable program providing free cleft lip/palate surgery to over 1,115 children since inception.",
     "notes": "",
     "ihcoId": "60000111",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/yanhee-hospital.jpg"
   },
   {
@@ -1662,6 +1714,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60005716",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/overbrook-hospital.jpg"
   },
   {
@@ -1700,9 +1753,10 @@ export const hospitals: Hospital[] = [
       "special JCI accreditation specifically for the Kidney Disease and Transplantation Institute"
     ],
     "languages": "English, Chinese (Mandarin), Burmese, Japanese, Cambodian, and Arabic via in-house medical translators; dedicated PR9 Medical Travel Programme with a referral office in Dhaka, Bangladesh",
-    "description": "Praram 9 Hospital, opened in July 1992 in Bangkok's Huai Khwang district, is JCI-accredited since 2010 and holds a rare, additional specialized JCI accreditation specifically for its Kidney Disease and Transplantation Institute, which has performed 1,400+ kidney transplants over 33 years — the most active kidney transplant program among Thailand's private hospitals, with a success rate above 95-96%. The Institute received the 'Research of the Year' award from the Asian Society of Transplantation in 1999 and has presented 64+ academic papers at international transplant congresses through 2025. Beyond transplant medicine, the 300-bed hospital operates a Cardiovascular Institute, Oncocare Centre, Infertility Centre, and Orthopaedic Centre, and was the first hospital in Thailand to introduce 640-slice CT scanning and 4D ultrasound. Its PR9 Medical Travel Programme provides in-house translation in English, Chinese, Burmese, Japanese, Cambodian, and Arabic, and the hospital operates a dedicated referral office in Dhaka, Bangladesh, reflecting a strong South Asian patient corridor. Given its uniquely deep and specifically JCI-certified kidney transplant program, Praram 9 is the clear anchor listing for your Organ Transplant category, and a solid secondary option for cardiology and fertility.",
+    "description": "Praram 9 Hospital, opened in July 1992 in Bangkok's Huai Khwang district, is JCI-accredited since 2010 and holds a rare, additional specialized JCI accreditation specifically for its Kidney Disease and Transplantation Institute, which has performed 1,400+ kidney transplants over 33 years — the most active kidney transplant program among Thailand's private hospitals. The Institute received the 'Research of the Year' award from the Asian Society of Transplantation in 1999 and has presented 64+ academic papers at international transplant congresses through 2025. Beyond transplant medicine, the 300-bed hospital operates a Cardiovascular Institute, Oncocare Centre, Infertility Centre, and Orthopaedic Centre, and was the first hospital in Thailand to introduce 640-slice CT scanning and 4D ultrasound. Its PR9 Medical Travel Programme provides in-house translation in English, Chinese, Burmese, Japanese, Cambodian, and Arabic, and the hospital operates a dedicated referral office in Dhaka, Bangladesh, reflecting a strong South Asian patient corridor. Transplant outcomes depend heavily on individual patient factors — your coordinator can arrange a direct conversation with the transplant team for your case.",
     "notes": "1,000+ kidney transplants performed; Newsweek Top 9 Thailand hospital 2025",
     "ihcoId": "60000110",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/praram-9-hospital.jpg"
   },
   {
@@ -1727,6 +1781,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008876",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/seriruk-hospital.webp"
   },
   {
@@ -1747,6 +1802,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008860",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/synphaet-lamlukka-hospital.jpg"
   },
   {
@@ -1771,6 +1827,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008265",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/prime-fertility-center.png"
   },
   {
@@ -1804,6 +1861,7 @@ export const hospitals: Hospital[] = [
     "description": "Ratchaphruek Hospital, located in Khon Kaen province (northeastern Thailand/Isaan region), is JCI accredited since August 2019 and holds a notable additional distinction: Global Healthcare Accreditation (GHA) for Medical Travel Services, making it the first hospital in northeastern Thailand and only the fourth in the entire Asia-Pacific region to earn this specific medical-tourism-focused accreditation. This signals a genuine strategic push toward international patients from a region otherwise underrepresented in Thailand's medical tourism industry (which concentrates heavily in Bangkok, Phuket, and Chiang Mai). The 14-floor hospital covers 60+ specialties and is currently developing what's described as the first dedicated Aesthetic Hospital wing in northeastern Thailand. It also holds an 'Excellent' (5-star) corporate governance rating from the Thai Institute of Directors Association — a governance credential rarely highlighted by hospitals but relevant for platform due-diligence purposes. Language support specifics weren't found in sources reviewed. Given its GHA medical-travel accreditation, this is a strong emerging listing for patients interested in northeastern Thailand as an alternative to Bangkok.",
     "notes": "",
     "ihcoId": "60007709",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/ratchaphruek-hospital.jpg"
   },
   {
@@ -1848,9 +1906,10 @@ export const hospitals: Hospital[] = [
       "ISO 9001:2015"
     ],
     "languages": "English, Japanese, Arabic, Mandarin with dedicated international patient coordinators and a specialized Japanese Medical Center",
-    "description": "Samitivej Sukhumvit Hospital, founded in 1979 on Sukhumvit Soi 49 in Bangkok's Thonglor district, is a 275-bed tertiary care hospital serving more than 400,000 patients annually with 400+ specialists among 1,200+ healthcare professionals. It was recognized as Thailand's first Mother and Baby-Friendly Hospital by WHO and UNICEF in 1999 and has held JCI accreditation since 2007, alongside Thailand's Hospital Accreditation (HA) and ISO 9001:2015 certification. The hospital offers 30+ medical specialties with particular depth in pediatrics (via its Children's Hospital campus with NICU/PICU), maternity and fertility (Women's Health and Maternity Center, including IVF), cardiology (Heart and Vascular Center), orthopedics and sports medicine, oncology, gastroenterology/liver disease, neurology, and ophthalmology. A distinguishing feature is its dedicated Japanese Medical Center, reflecting the hospital's long-standing service to Bangkok's Japanese expatriate community, alongside broader international patient services in English, Arabic, and Mandarin. Approximately 40% of the hospital's patients come from outside Thailand. On your platform, Samitivej Sukhumvit is well suited as an anchor listing for Maternity & Obstetrics, Pediatrics, and Fertility categories — particularly for patients seeking a hospital with strong Japanese-language support — while also covering cardiology and orthopedics for the broader Bangkok expatriate market.",
+    "description": "Samitivej Sukhumvit Hospital, founded in 1979 on Sukhumvit Soi 49 in Bangkok's Thonglor district, is a 275-bed tertiary care hospital serving more than 400,000 patients annually with 400+ specialists among 1,200+ healthcare professionals. It was recognized as Thailand's first Mother and Baby-Friendly Hospital by WHO and UNICEF in 1999 and has held JCI accreditation since 2007, alongside Thailand's Hospital Accreditation (HA) and ISO 9001:2015 certification. The hospital offers 30+ medical specialties with particular depth in pediatrics (via its Children's Hospital campus with NICU/PICU), maternity and fertility (Women's Health and Maternity Center, including IVF), cardiology (Heart and Vascular Center), orthopedics and sports medicine, oncology, gastroenterology/liver disease, neurology, and ophthalmology. A distinguishing feature is its dedicated Japanese Medical Center, reflecting the hospital's long-standing service to Bangkok's Japanese expatriate community, alongside broader international patient services in English, Arabic, and Mandarin. Approximately 40% of the hospital's patients come from outside Thailand.",
     "notes": "WHO/UNICEF Mother & Baby Friendly Hospital designation (1999)",
     "ihcoId": "60000777",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/samitivej-sukhumvit-hospital.webp"
   },
   {
@@ -1875,6 +1934,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60011078",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/knt-care-home.jpg"
   },
   {
@@ -1899,6 +1959,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60003541",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kluaynamthai-hospital.jpg"
   },
   {
@@ -1923,6 +1984,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60001726",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/mahachai-hospital.jpg"
   },
   {
@@ -1952,6 +2014,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60008591",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kasemrad-international-hospital-rattanatibeth.jpg"
   },
   {
@@ -1969,9 +2032,10 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Ladprao Medical Hospital (also known as Excellence Medical Center), JCI accredited since January 2024, is one of the more recently accredited facilities in this database. As a result, third-party medical tourism directories and review platforms have limited coverage of its specific specialty centers, technology, pricing, and international patient services. Recommend direct verification with the hospital before featuring it prominently, or revisiting research once more public information becomes available as the hospital's international-patient reputation develops.",
+    "description": "Ladprao Medical Hospital (also known as Excellence Medical Center) has been JCI accredited since January 2024. As one of the more recently accredited facilities, third-party medical tourism directories and review platforms have limited coverage of its specific specialty centers, technology, pricing, and international patient services.",
     "notes": "",
     "ihcoId": "60010356",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/ladprao-medical-hospital-excellence-medical-center.jpg"
   },
   {
@@ -1996,6 +2060,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60002791",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kluaynamthai2-geriatric-hospital.jpg"
   },
   {
@@ -2020,6 +2085,7 @@ export const hospitals: Hospital[] = [
     "description": "",
     "notes": "",
     "ihcoId": "60002065",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/krabi-nakharin-international-hospital.jpg"
   },
   {
@@ -2074,9 +2140,10 @@ export const hospitals: Hospital[] = [
       "Prime Minister's Export Award (2023/2024)"
     ],
     "languages": "English, Chinese, Japanese, Arabic as core languages; additional coverage reported up to 15+ languages including Burmese and Russian via international patient coordinators",
-    "description": "MedPark Hospital is Bangkok's newest flagship international hospital, opened in September 2020 by a consortium of leading Thai specialists (many former Bumrungrad chiefs) together with Mahachai Hospital PCL. The 25-story, 90,000-sqm tower sits on Rama IV Road opposite the Queen Sirikit National Convention Centre, directly connected to Queen Sirikit MRT station via skybridge. With 550 beds, 300 examination rooms, and 350+ specialists (70% holding overseas qualifications), MedPark achieved JCI 7th Edition accreditation in just two years of operation and has since renewed for a second consecutive term. The hospital covers 30+ specialties through named institutes: Heart & Vascular Institute, Neuroscience Institute, Cancer Institute (Elekta Versa HD and TrueBeam-class radiotherapy, PET-CT, LINAC), Orthopedic & Sports Medicine (Mako robotic joint replacement), and Women's Health & Fertility. It houses Thailand's first Hybrid Operating Room combining 256-slice CT with angiography, plus da Vinci Xi robotic surgery and a Bone Marrow Transplantation Unit. A full-scope Dental Center (digital scanning, sedation dentistry) and Hair Restoration Center round out its aesthetic offerings. Because it was purpose-built for international patients from the ground up, MedPark offers modern, uncluttered infrastructure and comparatively fast appointment availability versus older flagship hospitals. On your platform, MedPark is a strong anchor listing across nearly every major surgical category — especially Cancer, Cardiology, and Orthopedics — and a good option to feature for patients prioritizing newer facilities and technology.",
+    "description": "MedPark Hospital is Bangkok's newest flagship international hospital, opened in September 2020 by a consortium of leading Thai specialists (many former Bumrungrad chiefs) together with Mahachai Hospital PCL. The 25-story, 90,000-sqm tower sits on Rama IV Road opposite the Queen Sirikit National Convention Centre, directly connected to Queen Sirikit MRT station via skybridge. With 550 beds, 300 examination rooms, and 350+ specialists (70% holding overseas qualifications), MedPark achieved JCI 7th Edition accreditation in just two years of operation and has since renewed for a second consecutive term. The hospital covers 30+ specialties through named institutes: Heart & Vascular Institute, Neuroscience Institute, Cancer Institute (Elekta Versa HD and TrueBeam-class radiotherapy, PET-CT, LINAC), Orthopedic & Sports Medicine (Mako robotic joint replacement), and Women's Health & Fertility. It houses Thailand's first Hybrid Operating Room combining 256-slice CT with angiography, plus da Vinci Xi robotic surgery and a Bone Marrow Transplantation Unit. A full-scope Dental Center (digital scanning, sedation dentistry) and Hair Restoration Center round out its aesthetic offerings. Because it was purpose-built for international patients from the ground up, MedPark offers modern, uncluttered infrastructure and comparatively fast appointment availability versus older flagship hospitals.",
     "notes": "",
     "ihcoId": "60009653",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/medpark-hospital.jpg"
   },
   {
@@ -2105,9 +2172,10 @@ export const hospitals: Hospital[] = [
       "USA & EU) for emergency medical services"
     ],
     "languages": "9 languages via dedicated international coordinators, including Russian-speaking medical coordinators",
-    "description": "Bangkok Hospital Siriroj, formerly known as Phuket International Hospital and later Siriroj International Hospital, opened in 1982 as Phuket's — and southern Thailand's — first private hospital. It joined the Bangkok Dusit Medical Services (BDMS) network in 2014 and has since been awarded JCI accreditation three times. The 196-bed hospital occupies a six-story building with an 11-bed Intensive Care Unit and two floors of private patient rooms, serving over 100,000 patients annually from more than 100 countries. Its standout specialty is the Phuket Plastic Surgery Institute (PPSI), widely regarded as one of Southeast Asia's leading cosmetic surgery centers, performing breast augmentation, facelifts, and body contouring alongside its 30+ broader medical and surgical specialties across 18 centers. The hospital additionally holds CAMTS accreditation (both USA and EU standards) for its emergency medical services — a credential relatively rare among Thai hospitals and a strong signal of trauma/emergency care quality for an island destination popular with tourists. International Services coordinators speak 9 languages, including dedicated Russian-speaking staff, reflecting Phuket's significant Russian tourist and expatriate population. On your platform, Bangkok Hospital Siriroj is best positioned as your primary Cosmetic & Plastic Surgery listing for the Phuket region, complemented by its CAMTS-accredited emergency care as a safety differentiator for medical tourists combining treatment with an island holiday.",
+    "description": "Bangkok Hospital Siriroj, formerly known as Phuket International Hospital and later Siriroj International Hospital, opened in 1982 as Phuket's — and southern Thailand's — first private hospital. It joined the Bangkok Dusit Medical Services (BDMS) network in 2014 and has since been awarded JCI accreditation three times. The 196-bed hospital occupies a six-story building with an 11-bed Intensive Care Unit and two floors of private patient rooms, serving over 100,000 patients annually from more than 100 countries. Its standout specialty is the Phuket Plastic Surgery Institute (PPSI), performing breast augmentation, facelifts, and body contouring alongside its 30+ broader medical and surgical specialties across 18 centers. The hospital additionally holds CAMTS accreditation (both USA and EU standards) for its emergency medical services — a credential relatively rare among Thai hospitals and a strong signal of trauma/emergency care quality for an island destination popular with tourists. International Services coordinators speak 9 languages, including dedicated Russian-speaking staff, reflecting Phuket's significant Russian tourist and expatriate population.",
     "notes": "",
     "ihcoId": "60000192",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bangkok-hospital-siriroj.jpg"
   },
   {
@@ -2131,9 +2199,10 @@ export const hospitals: Hospital[] = [
       "JCI Ambulatory Care Program"
     ],
     "languages": "Not specified in detail in sources reviewed — verify directly",
-    "description": "BFC Dental, established in 1994 in the Bangna area of Bangkok, is a JCI-accredited dental clinic (Ambulatory Care Program, since March 2020, re-accredited 2023) with a team of 25+ dentists placing over 4,600 dental implants annually — a substantial volume that suggests significant experience specifically in implant dentistry. Its in-house dental laboratory allows faster turnaround for crowns, veneers, and other lab-fabricated restorations compared to clinics that outsource lab work. The clinic also offers clear-aligner orthodontics (ClearSmile, Fastbraces) alongside standard restorative and cosmetic dentistry, supported by 3D imaging and laser technology. Several of its dentists hold advanced international training credentials (Harvard implant training, German Society for Oral Implantology, Royal College of Dental Surgeons of Thailand fellowships). As a high-volume, JCI-accredited implant specialist with in-house lab capability, BFC Dental is a strong secondary listing for your Dental Care category, particularly for patients specifically seeking dental implants.",
+    "description": "BFC Dental, established in 1994 in the Bangna area of Bangkok, is a JCI-accredited dental clinic (Ambulatory Care Program, since March 2020, re-accredited 2023) with a team of 25+ dentists placing over 4,600 dental implants annually — a substantial volume that suggests significant experience specifically in implant dentistry. Its in-house dental laboratory allows faster turnaround for crowns, veneers, and other lab-fabricated restorations compared to clinics that outsource lab work. The clinic also offers clear-aligner orthodontics (ClearSmile, Fastbraces) alongside standard restorative and cosmetic dentistry, supported by 3D imaging and laser technology. Several of its dentists hold advanced international training credentials (Harvard implant training, German Society for Oral Implantology, Royal College of Dental Surgeons of Thailand fellowships).",
     "notes": "",
     "ihcoId": "60008305",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/bfc-dental.jpg"
   },
   {
@@ -2163,9 +2232,10 @@ export const hospitals: Hospital[] = [
       "JCI accredited since November 2015"
     ],
     "languages": "English, Japanese, Chinese (Mandarin), Arabic, French, Thai, and several others; 8 languages reported by one source",
-    "description": "Kamol Cosmetic Hospital, founded in 2002 by Dr. Kamol Pansritum and moved to its current purpose-built 5,200-square-meter facility in 2009, is one of Southeast Asia's premier destinations specifically for gender-affirming and cosmetic surgery — the first hospital in Thailand designed entirely around this specialty rather than adding it to a general hospital's service list. Dr. Kamol is a WPATH member and one of the highest-volume sex-reassignment surgeons in the world, having personally performed over 5,000 gender confirmation surgeries and more than 10,000 related procedures since 1997, currently averaging 200+ male-to-female vaginoplasty procedures annually; the hospital also trains surgeons internationally in advanced gender-affirming surgical techniques. The facility operates 8 operating rooms and 30 private recovery rooms, with an adjacent K Garden Medical Hotel and dedicated 7th-floor recovery apartments for close medical supervision during extended recovery. Beyond gender-affirming surgery, the 11-surgeon team covers a full cosmetic menu (facelifts, rhinoplasty, breast surgery, body contouring) and bariatric surgery. Given its singular focus and surgeon volume, Kamol is arguably the strongest, most specific anchor listing in this entire database for your Gender-Affirming Care category, and a strong secondary listing for Cosmetic & Plastic Surgery.",
+    "description": "Kamol Cosmetic Hospital, founded in 2002 by Dr. Kamol Pansritum and moved to its current purpose-built 5,200-square-meter facility in 2009, is one of Southeast Asia's premier destinations specifically for gender-affirming and cosmetic surgery — the first hospital in Thailand designed entirely around this specialty rather than adding it to a general hospital's service list. Dr. Kamol is a WPATH member who has personally performed over 5,000 gender confirmation surgeries and more than 10,000 related procedures since 1997, currently averaging 200+ male-to-female vaginoplasty procedures annually; the hospital also trains surgeons internationally in advanced gender-affirming surgical techniques. The facility operates 8 operating rooms and 30 private recovery rooms, with an adjacent K Garden Medical Hotel and dedicated 7th-floor recovery apartments for close medical supervision during extended recovery. Beyond gender-affirming surgery, the 11-surgeon team covers a full cosmetic menu (facelifts, rhinoplasty, breast surgery, body contouring) and bariatric surgery.",
     "notes": "",
     "ihcoId": "60003958",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kamol-cosmetic-hospital.webp"
   },
   {
@@ -2187,9 +2257,10 @@ export const hospitals: Hospital[] = [
       "and Thailand HA accreditations"
     ],
     "languages": "Not specified for this specific branch — verify directly",
-    "description": "Kasemrad Prachachuen Hospital, JCI accredited since January 2024, is one of 15+ hospitals in the Kasemrad Hospital Group under Bangkok Chain Hospital Public Company Limited (BCH), Thailand's second-largest private hospital chain. As with several other Kasemrad branches in this database (Ramkhamhaeng, International Rattanatibeth), it benefits from group-wide quality and accreditation systems, but branch-specific specialty and international-patient-service details were not found in the sources reviewed. Recommend direct verification before featuring this specific branch prominently on your platform.",
+    "description": "Kasemrad Prachachuen Hospital, JCI accredited since January 2024, is one of 15+ hospitals in the Kasemrad Hospital Group under Bangkok Chain Hospital Public Company Limited (BCH), Thailand's second-largest private hospital chain. As with several other Kasemrad branches (Ramkhamhaeng, International Rattanatibeth), it benefits from group-wide quality and accreditation systems, but branch-specific specialty and international-patient-service details were not found in the sources reviewed.",
     "notes": "",
     "ihcoId": "60010385",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": "/images/hospitals/kasemrad-prachachuen-hospital.jpg"
   },
   {
@@ -2234,9 +2305,10 @@ export const hospitals: Hospital[] = [
       "HA (Thailand MOPH) typical of BDMS network — verify"
     ],
     "languages": "English, French, German, Russian, Chinese, Thai; translation reported in up to 8 languages via BDMS international patient network",
-    "description": "Bangkok Hospital Samui, founded in 2004, is part of the Bangkok Dusit Medical Services (BDMS) network and is widely regarded as Koh Samui's premier international hospital. Located in Chaweng Noi, roughly 15 minutes from Samui International Airport, the 50-bed facility (including 12 ICU beds and 2 operating rooms) serves an island population where over 60% of patients are international. JCI-accredited since 2012 and ISO 9001 certified, it provides a full range of services — emergency and trauma care, internal medicine, cardiology, orthopedics, general surgery, pediatrics, obstetrics/gynecology, ENT, ophthalmology, dental, and advanced diagnostic imaging — alongside cosmetic/plastic surgery, skin care, and health check-up packages popular with visitors. A defining feature is its trained Medivac team and air-evacuation capability, which serve not only Koh Samui but also the neighboring islands of Koh Tao and Koh Phangan, making it the critical-care safety net for the wider archipelago. Multilingual staff support English, French, German, Russian, and Chinese, with translation services reported in up to 8 languages, plus direct international insurance billing. On your platform, Bangkok Hospital Samui is best positioned as the anchor listing for the Koh Samui region — particularly for health screenings, dental, and cosmetic procedures that pair naturally with an island stay, and as the essential emergency/trauma option for medical tourists holidaying anywhere in the Samui/Phangan/Tao island group. Given its smaller size, complex or highly specialized surgical cases are often referred to larger BDMS mainland campuses, so it suits elective, diagnostic, and destination-recovery care more than high-acuity tertiary treatment.",
+    "description": "Bangkok Hospital Samui, founded in 2004, is part of the Bangkok Dusit Medical Services (BDMS) network and is widely regarded as Koh Samui's premier international hospital. Located in Chaweng Noi, roughly 15 minutes from Samui International Airport, the 50-bed facility (including 12 ICU beds and 2 operating rooms) serves an island population where over 60% of patients are international. JCI-accredited since 2012 and ISO 9001 certified, it provides a full range of services — emergency and trauma care, internal medicine, cardiology, orthopedics, general surgery, pediatrics, obstetrics/gynecology, ENT, ophthalmology, dental, and advanced diagnostic imaging — alongside cosmetic/plastic surgery, skin care, and health check-up packages popular with visitors. A defining feature is its trained Medivac team and air-evacuation capability, which serve not only Koh Samui but also the neighboring islands of Koh Tao and Koh Phangan, making it the critical-care safety net for the wider archipelago. Multilingual staff support English, French, German, Russian, and Chinese, with translation services reported in up to 8 languages, plus direct international insurance billing. Given its smaller size, complex or highly specialized surgical cases are often referred to larger BDMS mainland campuses, so it suits elective, diagnostic, and destination-recovery care more than high-acuity tertiary treatment.",
     "notes": "Added by user as H067. NOTE: not present in the JCI directory export the user provided earlier (which listed 66); third-party sources consistently confirm JCI accreditation since 2012. 50 beds, 12 ICU beds, founded 2004, BDMS network. Medivac hub for Koh Tao & Koh Phangan.",
     "ihcoId": "Not in user-provided JCI export; JCI-accredited since 2012 per multiple third-party sources — verify current IHCO ID directly with JCI directory",
+    "mophApprovalStatus": "unconfirmed",
     "imageFile": null
   }
 ]

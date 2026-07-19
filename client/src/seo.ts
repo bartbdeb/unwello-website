@@ -72,6 +72,23 @@ export function hospitalJsonLd(h: { name: string; city: string; slug: string; im
   }
 }
 
+// Real Hospigo team member, sourced from their own public profile — never
+// mark up as a medical/clinical role (Physician, MedicalOrganization staff,
+// etc.) unless they hold that license; jobTitle should match the real,
+// current title on record.
+export function personJsonLd(p: { name: string; jobTitle: string; slug: string; photo: string; description: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: p.name,
+    jobTitle: p.jobTitle,
+    url: `${SITE_URL}/coordinators/${p.slug}`,
+    image: SITE_URL + p.photo,
+    description: p.description,
+    worksFor: { '@type': 'Organization', name: 'Hospigo' },
+  }
+}
+
 // Deliberately has no "provider" field naming Hospigo — the procedure is
 // performed by independent third-party hospitals, not by Hospigo itself.
 export function medicalProcedureJsonLd(name: string, description: string) {

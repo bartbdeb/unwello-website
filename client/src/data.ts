@@ -23,11 +23,41 @@ export const treatments: Treatment[] = [
   { name: 'Fertility / IVF', slug: 'fertility-ivf', icon: '🍼', price: '$4,100', blurb: 'IVF, ICSI and egg freezing at leading centres.', imgLabel: 'fertility centre', image: '/images/treatments/fertility-ivf.jpg' },
 ]
 
+// Real, verifiable stats only (per content-compliance skill, section 1 — no
+// invented social proof). hospitalCount is derived from the real hospital
+// database (client/src/content/hospitals.ts), not a marketing round-number.
+// The Thailand #2 ranking was independently verified against the cited
+// source (Travel & Tour World's "Top 50 Medical Tourism Destinations 2026")
+// on 2026-07-19 — re-verify before reusing if this file is edited much later.
+// `kind: 'stat'` renders as the highlighted gradient tile; `kind: 'promise'`
+// renders as an icon + heading + body tile.
+import { hospitals as _hospitalsForCount } from './content/hospitals'
 export const trustStats = [
-  { value: '4.9★', label: 'Average patient rating' },
-  { value: '12,000+', label: 'Patients guided' },
-  { value: '140+', label: 'Vetted clinics' },
-  { value: '60+', label: 'JCI-accredited hospitals' },
+  {
+    kind: 'stat' as const,
+    value: String(_hospitalsForCount.length),
+    label: 'JCI-accredited hospitals in Thailand — the same standard used by top US hospitals',
+    source: 'Source: Joint Commission International',
+  },
+  {
+    kind: 'promise' as const,
+    icon: '🕒',
+    heading: '10+ years of healthcare experience',
+    body: 'Our team brings over a decade of experience in international healthcare and medical tourism.',
+  },
+  {
+    kind: 'promise' as const,
+    icon: '🌏',
+    heading: 'Ranked #2 worldwide',
+    body: "Thailand is ranked the world's #2 medical tourism destination for 2026.",
+    source: 'Source: Travel & Tour World, 2026 Rankings',
+  },
+  {
+    kind: 'promise' as const,
+    icon: '🤝',
+    heading: 'Free for patients',
+    body: 'Our partner clinics pay us — your price is the same as booking direct.',
+  },
 ]
 
 export const steps = [

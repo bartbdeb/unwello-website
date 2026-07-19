@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url'
 import express from 'express'
 import cors from 'cors'
 import Anthropic from '@anthropic-ai/sdk'
+import { getArticleViews } from './ga4.js'
 
 const app = express()
 // Use a dedicated var, NOT the ambient PORT (dev launchers/preview tools often
@@ -19,6 +20,10 @@ app.use(express.json({ limit: '1mb' }))
 const client = API_KEY ? new Anthropic({ apiKey: API_KEY }) : null
 
 const GOOGLE_PLACES_API_KEY = process.env.GOOGLE_PLACES_API_KEY
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY
+const LEAD_NOTIFY_EMAIL = process.env.LEAD_NOTIFY_EMAIL || 'info@hospigo.com'
+const LEAD_FROM_EMAIL = process.env.LEAD_FROM_EMAIL || 'quotes@hospigo.com'
 const reviewsCache = new Map() // query -> { data, expiresAt }
 const REVIEWS_CACHE_TTL_MS = 60 * 60 * 1000 // 1 hour, to limit paid API calls
 
@@ -80,8 +85,12 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, aiConfigured: !!client, model: MODEL })
 })
 
-app.get('/api/views', (_req, res) => {
-  res.json(viewCounts)
+app.get('/api/views', async (_req, res) => {
+  const ga4Views = await getArticleViews()
+  // Real GA4 numbers when available; self-hosted counter as fallback for any
+  // slug GA4 hasn't reported yet (e.g. brand-new articles, or GA4 not
+  // configured at all) — never silently show 0 for a real, published article.
+  res.json(ga4Views ? { ...viewCounts, ...ga4Views } : viewCounts)
 })
 
 app.post('/api/views/:slug', (req, res) => {
@@ -89,6 +98,60 @@ app.post('/api/views/:slug', (req, res) => {
   viewCounts[slug] = (viewCounts[slug] || 0) + 1
   saveViewCounts(viewCounts)
   res.json({ slug, views: viewCounts[slug] })
+})
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+}
+
+// Notifies info@hospigo.com by email when a patient submits the quote
+// funnel or the AI chat. This is the ONLY place an inquiry actually reaches
+// the team — the client also keeps a local copy in localStorage, but that
+// never leaves the visitor's own browser.
+app.post('/api/leads', async (req, res) => {
+  const { treatment, whoFor, timing, contactPref, first, last, email, phone, source } = req.body || {}
+  if (!String(first || '').trim() || !String(email || '').trim()) {
+    return res.status(400).json({ ok: false, error: 'Missing required fields.' })
+  }
+
+  if (!RESEND_API_KEY) {
+    console.warn('[leads] RESEND_API_KEY not configured — lead NOT emailed:', { first, last, email, treatment })
+    return res.json({ ok: true, emailed: false })
+  }
+
+  const html = `
+    <h2>New quote request</h2>
+    <p><strong>Name:</strong> ${escapeHtml(first)} ${escapeHtml(last || '')}</p>
+    <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+    <p><strong>Phone:</strong> ${escapeHtml(phone || '—')}</p>
+    <p><strong>Treatment:</strong> ${escapeHtml(treatment || '—')}</p>
+    <p><strong>Who for:</strong> ${escapeHtml(whoFor || '—')}</p>
+    <p><strong>Timing:</strong> ${escapeHtml(timing || '—')}</p>
+    <p><strong>Preferred contact method:</strong> ${escapeHtml(contactPref || '—')}</p>
+    <p><strong>Source:</strong> ${escapeHtml(source || 'funnel')}</p>
+  `.trim()
+
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from: `Hospigo Leads <${LEAD_FROM_EMAIL}>`,
+        to: LEAD_NOTIFY_EMAIL,
+        reply_to: email,
+        subject: `New quote request — ${treatment || 'General inquiry'} (${first} ${last || ''})`.trim(),
+        html,
+      }),
+    })
+    if (!r.ok) {
+      console.error('[leads] Resend error:', r.status, await r.text())
+      return res.status(502).json({ ok: false, error: 'email_failed' })
+    }
+    res.json({ ok: true, emailed: true })
+  } catch (err) {
+    console.error('[leads] error:', err?.message || err)
+    res.status(500).json({ ok: false, error: 'leads_failed' })
+  }
 })
 
 app.post('/api/chat', async (req, res) => {
@@ -207,5 +270,6 @@ app.get('/api/reviews', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`\n  Hospigo backend running on http://localhost:${PORT}`)
   console.log(`  AI assistant: ${client ? 'configured ✅ (model: ' + MODEL + ')' : 'NOT configured ⚠️  — add ANTHROPIC_API_KEY to server/.env'}`)
-  console.log(`  Google reviews: ${GOOGLE_PLACES_API_KEY ? 'configured ✅' : 'NOT configured ⚠️  — add GOOGLE_PLACES_API_KEY to server/.env'}\n`)
+  console.log(`  Google reviews: ${GOOGLE_PLACES_API_KEY ? 'configured ✅' : 'NOT configured ⚠️  — add GOOGLE_PLACES_API_KEY to server/.env'}`)
+  console.log(`  Lead emails: ${RESEND_API_KEY ? `configured ✅ (to ${LEAD_NOTIFY_EMAIL})` : 'NOT configured ⚠️  — add RESEND_API_KEY to server/.env, quote requests will NOT be emailed'}\n`)
 })

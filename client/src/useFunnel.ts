@@ -4,6 +4,7 @@ import {
   saveLead, makeId, type FunnelAnswers, type ContactDetails,
 } from './storage'
 import { WHATSAPP_NUMBER } from './data'
+import { API_BASE } from './apiBase'
 
 const TOTAL_QUESTION_STEPS = 5 // steps 1..5; step 6 = success
 const SUCCESS_STEP = 6
@@ -74,7 +75,8 @@ export function useFunnel() {
     if (!f.consent) return setFormError('Please accept the consent notice to continue.')
     setFormError('')
 
-    // Save the lead to localStorage, clear in-progress state.
+    // Save the lead locally (a local log only — see the fetch below for the
+    // actual delivery to the team), clear in-progress state.
     saveLead({
       id: makeId(),
       submittedAt: Date.now(),
@@ -88,6 +90,15 @@ export function useFunnel() {
     clearProgress()
     setHasSavedProgress(false)
     setStep(SUCCESS_STEP)
+
+    // Delivers the inquiry to the team via email (server-side). Fire-and-
+    // forget: a network hiccup here shouldn't strand the user on a broken
+    // success screen — the local copy above still exists as a fallback.
+    fetch(`${API_BASE}/api/leads`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...ans, first: f.first, last: f.last, email: f.email, phone: f.phone, source: 'funnel' }),
+    }).catch((err) => console.error('[leads] failed to notify team:', err))
 
     // WhatsApp handoff: if the user chose WhatsApp, open a pre-filled chat.
     if (ans.contactPref === 'WhatsApp') {

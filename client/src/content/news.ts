@@ -99,7 +99,8 @@ export type NewsArticle = {
   date: string
   views: number
   author: string
-  reviewer: { name: string; credentials: string }
+  authorSlug: string
+  reviewer: { name: string; credentials: string; slug: string }
   image: string
   categorySlug?: string
   costTable?: PriceRow[]
@@ -119,8 +120,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '8 min read',
     date: '3 June 2026',
     views: 6240,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Dr. Anong Pattanapong', credentials: 'DDS, Implantology' },
+    author: 'Dorus van der Kooij',
+    authorSlug: 'dorus-van-der-kooij',
+    reviewer: { name: 'Bart de Bruin', credentials: 'Founder', slug: 'bart-de-bruin' },
     categorySlug: 'dental',
     costTable: [
       { name: 'Single Dental Implant', th: 680, US: 4200, UK: 2600, AU: 4800 },
@@ -139,7 +141,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
       {
         heading: 'What "all-inclusive" should actually include',
         paragraphs: [
-          'What should be included in an all-inclusive dental quote? At minimum: the procedure itself, materials, clinic fees, and any sedation used. The best clinics also flag exactly what isn\'t included upfront — such as bone grafting if it turns out to be needed, which is a common variable cost that can catch patients off guard if it\'s not disclosed before treatment.',
+          'What should be included in an all-inclusive dental quote? At minimum: the procedure itself, materials, clinic fees, and any sedation used. Reputable clinics also flag exactly what isn\'t included upfront — such as bone grafting if it turns out to be needed, which is a common variable cost that can catch patients off guard if it\'s not disclosed before treatment.',
         ],
       },
       {
@@ -167,8 +169,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '18 May 2026',
     views: 4890,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Somchai Trirat', credentials: 'Licensed Immigration Consultant' },
+    author: 'Bart de Bruin',
+    authorSlug: 'bart-de-bruin',
+    reviewer: { name: 'Dorus van der Kooij', credentials: 'Medical Coordinator', slug: 'dorus-van-der-kooij' },
     sections: [
       {
         heading: 'Do you even need a special visa?',
@@ -208,8 +211,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '5 min read',
     date: '2 May 2026',
     views: 3150,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
+    author: 'Dorus van der Kooij',
+    authorSlug: 'dorus-van-der-kooij',
+    reviewer: { name: 'Bart de Bruin', credentials: 'Founder', slug: 'bart-de-bruin' },
     sections: [
       {
         heading: 'Why location matters more than you think',
@@ -243,13 +247,14 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     cat: 'Safety & Accreditation',
     format: 'Explainer',
     title: 'What JCI accreditation actually means for patients',
-    dek: 'JCI is the gold standard in international hospital accreditation — what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
-    excerpt: 'JCI is the gold standard in international hospital accreditation — here\'s what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
+    dek: 'JCI is widely regarded as the leading standard in international hospital accreditation — what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
+    excerpt: 'JCI is widely regarded as the leading standard in international hospital accreditation — here\'s what it verifies, what it doesn\'t, and why Hospigo only lists JCI hospitals.',
     read: '7 min read',
     date: '14 April 2026',
     views: 2780,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine' },
+    author: 'Bart de Bruin',
+    authorSlug: 'bart-de-bruin',
+    reviewer: { name: 'Dorus van der Kooij', credentials: 'Medical Coordinator', slug: 'dorus-van-der-kooij' },
     sections: [
       {
         heading: 'The audit behind the badge',
@@ -288,8 +293,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '29 March 2026',
     views: 2410,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
+    author: 'Dorus van der Kooij',
+    authorSlug: 'dorus-van-der-kooij',
+    reviewer: { name: 'Bart de Bruin', credentials: 'Founder', slug: 'bart-de-bruin' },
     sections: [
       {
         heading: 'Before you land',
@@ -328,8 +334,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '7 min read',
     date: '11 March 2026',
     views: 1930,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Somchai Trirat', credentials: 'Licensed Immigration Consultant' },
+    author: 'Dorus van der Kooij',
+    authorSlug: 'dorus-van-der-kooij',
+    reviewer: { name: 'Bart de Bruin', credentials: 'Founder', slug: 'bart-de-bruin' },
     sections: [
       {
         heading: 'What standard travel insurance actually covers',
@@ -367,8 +374,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '6 min read',
     date: '20 February 2026',
     views: 3560,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Nara Sirisak', credentials: 'Senior Patient Coordinator' },
+    author: 'Bart de Bruin',
+    authorSlug: 'bart-de-bruin',
+    reviewer: { name: 'Dorus van der Kooij', credentials: 'Medical Coordinator', slug: 'dorus-van-der-kooij' },
     sections: [
       {
         heading: 'Bangkok: the deepest bench',
@@ -412,8 +420,9 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
     read: '9 min read',
     date: '6 February 2026',
     views: 2050,
-    author: 'Hospigo Editorial Team',
-    reviewer: { name: 'Dr. Ananya Phromsuwan', credentials: 'MD, Internal Medicine' },
+    author: 'Bart de Bruin',
+    authorSlug: 'bart-de-bruin',
+    reviewer: { name: 'Dorus van der Kooij', credentials: 'Medical Coordinator', slug: 'dorus-van-der-kooij' },
     sections: [
       {
         heading: 'Why a checklist, not just marketing',
