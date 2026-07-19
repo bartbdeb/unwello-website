@@ -59,7 +59,16 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
     const stored = loadStoredConsent()
     setConsent(stored)
     setReady(true)
-    if (stored?.analytics) initAnalytics()
+    if (stored?.analytics) {
+      initAnalytics()
+      // ScrollToTop only reports page_view on route *changes*, and its own
+      // mount-time effect can fire before this one (React runs child effects
+      // before parent effects, and ScrollToTop sits below this provider) —
+      // so it silently no-ops if analytics isn't initialized yet. Send the
+      // landing page's hit explicitly here, or a returning visitor's very
+      // first page of the session never gets tracked at all.
+      trackPageView(window.location.pathname)
+    }
   }, [])
 
   const apply = (analytics: boolean) => {
