@@ -42,7 +42,11 @@ export async function getArticleViews() {
   try {
     const [response] = await client.runReport({
       property: `properties/${PROPERTY_ID}`,
-      dateRanges: [{ startDate: '2015-01-01', endDate: 'today' }],
+      // GA4 only allows querying within its actual data-retention window —
+      // a fixed old date like '2015-01-01' becomes invalid once enough time
+      // has passed, throwing INVALID_ARGUMENT. '365daysAgo' is a relative
+      // date GA4's API resolves dynamically, so it's always in range.
+      dateRanges: [{ startDate: '365daysAgo', endDate: 'today' }],
       dimensions: [{ name: 'pagePath' }],
       metrics: [{ name: 'screenPageViews' }],
       dimensionFilter: {
