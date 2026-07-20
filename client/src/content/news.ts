@@ -259,7 +259,7 @@ const articleDefs: Omit<NewsArticle, 'image'>[] = [
       {
         heading: 'The audit behind the badge',
         paragraphs: [
-          'Joint Commission International (JCI) accreditation is widely considered the gold standard for international hospital quality — a rigorous, on-site audit process covering patient safety protocols, infection control, staff qualifications, medication management and facility standards, renewed every three years.',
+          'Joint Commission International (JCI) accreditation is widely regarded as the leading standard for international hospital quality — a rigorous, on-site audit process covering patient safety protocols, infection control, staff qualifications, medication management and facility standards, renewed every three years.',
           'Unlike a marketing badge, JCI accreditation requires hospitals to demonstrate compliance with over a thousand specific measurable elements, verified by surveyors who spend several days on-site reviewing patient records, interviewing staff, and observing procedures in real time.',
         ],
       },

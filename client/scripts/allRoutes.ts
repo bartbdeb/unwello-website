@@ -6,6 +6,7 @@ import { procedures } from '../src/content/procedures'
 import { hospitals } from '../src/content/hospitals'
 import { patientStories } from '../src/content/stories'
 import { newsArticles } from '../src/content/news'
+import { coordinators } from '../src/content/coordinators'
 
 export type RouteEntry = { path: string; changefreq: string; priority: string }
 
@@ -25,4 +26,5 @@ export const allRoutes: RouteEntry[] = [
   ...hospitals.map((h) => ({ path: `/clinics/${h.slug}`, changefreq: 'monthly', priority: '0.6' })),
   ...patientStories.map((s) => ({ path: `/stories/${s.slug}`, changefreq: 'monthly', priority: '0.5' })),
   ...newsArticles.map((a) => ({ path: `/news/${a.slug}`, changefreq: 'monthly', priority: '0.6' })),
+  ...coordinators.map((c) => ({ path: `/coordinators/${c.slug}`, changefreq: 'monthly', priority: '0.5' })),
 ]

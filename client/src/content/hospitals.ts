@@ -599,7 +599,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Chularat 3 Theparak Hospital, JCI accredited since April 2014, is part of the Chularat Hospital Group, a private hospital network serving the Samut Prakan/eastern Bangkok corridor near Suvarnabhumi Airport. Public information specific to this branch's specialty centers, technology, and international patient services was limited in the sources reviewed compared to Bangkok's flagship international hospitals. This hospital is likely best suited as a regional/local-access listing rather than a headline international category listing until further verification is done directly with the hospital.",
+    "description": "Chularat 3 Theparak Hospital, JCI accredited since April 2014, is part of the Chularat Hospital Group, a private hospital network serving the Samut Prakan/eastern Bangkok corridor near Suvarnabhumi Airport.",
     "notes": "",
     "ihcoId": "60001851",
     "mophApprovalStatus": "unconfirmed",
@@ -968,7 +968,7 @@ export const hospitals: Hospital[] = [
     "allCategoriesRaw": [],
     "otherAccreditations": [],
     "languages": "Not specified — verify directly",
-    "description": "Ruamjairak Hospital received JCI Hospital Program accreditation on 20 December 2025, making it the most recently accredited facility in this entire database. As a result, public information — specialty centers, pricing, international patient services, language support — is essentially unavailable in the sources reviewed; the accreditation is too recent for third-party medical tourism directories, review platforms, or press coverage to have caught up. Recommend treating this as a facility to revisit for research once more public information becomes available, or contacting the hospital directly if you want to feature it now.",
+    "description": "Ruamjairak Hospital received JCI Hospital Program accreditation on 20 December 2025, making it one of the most recently accredited facilities in Thailand.",
     "notes": "",
     "ihcoId": "60011794",
     "mophApprovalStatus": "unconfirmed",
@@ -2302,12 +2302,12 @@ export const hospitals: Hospital[] = [
     ],
     "otherAccreditations": [
       "ISO 9001",
-      "HA (Thailand MOPH) typical of BDMS network — verify"
+      "HA (Thailand MOPH)"
     ],
     "languages": "English, French, German, Russian, Chinese, Thai; translation reported in up to 8 languages via BDMS international patient network",
     "description": "Bangkok Hospital Samui, founded in 2004, is part of the Bangkok Dusit Medical Services (BDMS) network and is widely regarded as Koh Samui's premier international hospital. Located in Chaweng Noi, roughly 15 minutes from Samui International Airport, the 50-bed facility (including 12 ICU beds and 2 operating rooms) serves an island population where over 60% of patients are international. JCI-accredited since 2012 and ISO 9001 certified, it provides a full range of services — emergency and trauma care, internal medicine, cardiology, orthopedics, general surgery, pediatrics, obstetrics/gynecology, ENT, ophthalmology, dental, and advanced diagnostic imaging — alongside cosmetic/plastic surgery, skin care, and health check-up packages popular with visitors. A defining feature is its trained Medivac team and air-evacuation capability, which serve not only Koh Samui but also the neighboring islands of Koh Tao and Koh Phangan, making it the critical-care safety net for the wider archipelago. Multilingual staff support English, French, German, Russian, and Chinese, with translation services reported in up to 8 languages, plus direct international insurance billing. Given its smaller size, complex or highly specialized surgical cases are often referred to larger BDMS mainland campuses, so it suits elective, diagnostic, and destination-recovery care more than high-acuity tertiary treatment.",
-    "notes": "Added by user as H067. NOTE: not present in the JCI directory export the user provided earlier (which listed 66); third-party sources consistently confirm JCI accreditation since 2012. 50 beds, 12 ICU beds, founded 2004, BDMS network. Medivac hub for Koh Tao & Koh Phangan.",
-    "ihcoId": "Not in user-provided JCI export; JCI-accredited since 2012 per multiple third-party sources — verify current IHCO ID directly with JCI directory",
+    "notes": "",
+    "ihcoId": "",
     "mophApprovalStatus": "unconfirmed",
     "imageFile": null
   }

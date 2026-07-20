@@ -24,7 +24,7 @@ export default function CoordinatorProfile() {
   return (
     <>
       <Seo
-        title={`${c.name} — ${c.role} | Hospigo`}
+        title={c.pageTitle}
         description={truncate(c.tagline, 158)}
         path={`/coordinators/${c.slug}`}
         image={SITE_URL + c.photo}
@@ -48,7 +48,7 @@ export default function CoordinatorProfile() {
 
       <section style={css('max-width:920px; margin:0 auto; padding:8px 32px 56px;')}>
         <div style={css('display:flex; align-items:center; gap:22px; margin-bottom:28px; flex-wrap:wrap;')}>
-          <img src={c.photo} alt={c.name} style={css('width:104px; height:104px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 10px 26px rgba(35,51,47,.12);')} />
+          <img src={c.photo} alt={`${c.name}, ${c.role} at Hospigo`} style={css('width:104px; height:104px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 10px 26px rgba(35,51,47,.12);')} />
           <div>
             <span style={css(eyebrow)}>{c.role}</span>
             <h1 style={css('font-size:32px; font-weight:800; letter-spacing:-.02em; margin:8px 0 4px; color:#16214A;')}>{c.name}</h1>
