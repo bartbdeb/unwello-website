@@ -44,19 +44,15 @@ export const coordinators: Coordinator[] = [
     role: 'Founder',
     pageTitle: 'Bart de Bruin — Hospigo Founder & Coordinator, Thailand',
     photo: '/images/coordinators/bart-de-bruin.jpg',
-    tagline: 'Healthcare supply-chain and logistics background, including pharmaceutical cold-chain and vaccine distribution — now applying that to founding Hospigo.',
+    tagline: 'Healthcare supply-chain background — pharmaceutical cold-chain and national vaccine distribution — now founder of Hospigo.',
     bio: [
-      "Before founding Hospigo, Bart managed contract logistics operations specifically for the healthcare sector in the Netherlands — overseeing warehousing and distribution for major pharmaceutical clients and a national COVID-19 vaccine distribution program. That meant directing temperature-controlled logistics across multiple ranges, from -80°C to room temperature, for sensitive vaccines and medicines under strict Good Distribution Practice (GDP) and Good Manufacturing Practice (GMP) standards, with full budget and P&L accountability for the operation.",
-      'He built that expertise through a competitive two-year leadership development program, which included site management of a large-scale operation with 50+ staff, transport planning and dispatch for a fleet of trucks, and safety-initiative leadership. He holds a Lean Six Sigma Green Belt and completed a certification in Organizational Behavioral Management at Vrije Universiteit Amsterdam.',
-      'Earlier in his career, Bart worked in B2B sales and business development, including a stretch selling into medical institutes and a life-sciences industry internship — early, direct exposure to how healthcare organizations buy and operate.',
-      'Bart currently also leads logistics operations, including Free Zone and general warehousing, for an international freight and supply-chain company in Thailand, and serves as a Board Member of the Netherlands-Thai Chamber of Commerce (NTCC). He studied at Hogeschool Utrecht.',
+      "Before founding Hospigo, Bart managed contract logistics for the healthcare sector in the Netherlands — overseeing distribution for major pharmaceutical clients and a national COVID-19 vaccine program, including temperature-controlled logistics from -80°C to room temperature under strict Good Distribution Practice (GDP) and Good Manufacturing Practice (GMP) standards.",
+      "That direct experience with pharmaceutical compliance and patient-safety standards shapes how Hospigo evaluates and works with partner hospitals today. He's also a Board Member of the Netherlands-Thai Chamber of Commerce.",
     ],
     highlights: [
-      'Managed contract logistics for Tier-1 pharmaceutical clients and a national vaccine distribution program',
+      'Managed contract logistics for pharmaceutical clients and a national vaccine distribution program',
       'GDP/GMP-compliant cold-chain operations (-80°C to room temperature)',
-      'Lean Six Sigma Green Belt; Organizational Behavioral Management certification (Vrije Universiteit Amsterdam)',
       'Board Member, Netherlands-Thai Chamber of Commerce',
-      'Studied at Hogeschool Utrecht',
     ],
   },
 ]
